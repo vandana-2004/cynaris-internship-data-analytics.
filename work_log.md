@@ -23,7 +23,15 @@ What are the most common SQL mistakes junior data analysts make?
 
 ### CIA Insights
 
-[Paste CIA's response here.]
+CIA highlighted these common SQL mistakes:
+
+1. Using SELECT \* in production queries instead of selecting only required columns.
+2. Missing or incorrect JOIN conditions, which can cause duplicate rows or incorrect totals.
+3. Not using table aliases, which can make queries harder to read and debug.
+4. Misusing GROUP BY and HAVING; WHERE should be used for row-level filtering.
+5. Not handling NULL values correctly; use IS NULL and appropriate functions such as COALESCE.
+6. Using UNION when UNION ALL would be sufficient, causing unnecessary duplicate-removal processing.
+7. Writing scalar subqueries that return multiple rows when only one value is expected.
 
 ## CIA Research
 
@@ -33,7 +41,14 @@ What SQL concepts do data analyst job descriptions require most often?
 
 ### Key Concepts
 
-[Paste CIA's response here.]
+CIA identified these SQL concepts as frequently required in data-analyst job postings:
+
+- Core SQL syntax: SELECT, FROM, WHERE, GROUP BY, ORDER BY, HAVING, and JOINs.
+- Aggregation and analytics: COUNT(), SUM(), AVG(), MIN(), MAX(), and ranking/percentile functions.
+- Window functions: OVER(), PARTITION BY, LAG(), LEAD(), and ROW_NUMBER().
+- Subqueries and CTEs: sub-SELECTs and WITH (Common Table Expressions).
+- Data transformation: CAST(), CONVERT(), DATE functions, COALESCE(), and CASE WHEN.
+- Indexing and performance: CREATE INDEX, ANALYZE, and EXPLAIN PLAN.
 
 ## CIA Career Research
 
@@ -43,7 +58,13 @@ SQL Fundamentals
 
 ### Required Skills
 
-[Paste the relevant skills/roles found in CIA Career.]
+CIA Career results identified these important SQL skills:
+
+- Core SQL commands: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, INSERT, UPDATE, DELETE.
+- JOINs: INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN.
+- Data modeling basics: tables, rows, columns, primary keys, foreign keys, normalization, and indexes.
+- Common SQL data types: INT, VARCHAR, DATE, TIMESTAMP, DECIMAL, and BOOLEAN.
+- Advanced SQL concepts: subqueries, CTEs, window functions such as ROW_NUMBER() and RANK(), and transaction control using COMMIT and ROLLBACK.
 
 ## Viva Preparation
 
