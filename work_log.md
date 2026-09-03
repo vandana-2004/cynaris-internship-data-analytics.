@@ -79,3 +79,15 @@ FROM and WHERE are logically processed before SELECT.
 ### How does IS NULL differ from = NULL?
 
 IS NULL is used to check for NULL values. = NULL does not correctly test for NULL.
+
+## Week 1 Day 2
+
+### CIA Insight
+
+### CIA Research Insight
+
+JOIN order can affect SQL query performance because it changes the size of intermediate results and the cost of the query plan. Modern database systems usually use a cost-based optimizer to choose an efficient join order automatically. Keeping database statistics and indexes up to date helps the optimizer make better decisions.
+
+### Business Reporting Example
+
+For a customer-order report, INNER JOIN shows only customers who placed orders, while LEFT JOIN shows every customer, including customers with no orders. COALESCE can be used to display 0 for customers with no orders.
