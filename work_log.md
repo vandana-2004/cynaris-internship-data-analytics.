@@ -91,3 +91,54 @@ JOIN order can affect SQL query performance because it changes the size of inter
 ### Business Reporting Example
 
 For a customer-order report, INNER JOIN shows only customers who placed orders, while LEFT JOIN shows every customer, including customers with no orders. COALESCE can be used to display 0 for customers with no orders.
+
+## Week 1 Day 3 — SQL Aggregations
+
+### CIA Research
+
+#### Question
+
+What are the most useful SQL aggregate functions for financial and business reporting?
+
+#### CIA Insights
+
+CIA highlighted the following aggregate functions as useful for financial and business reporting:
+
+- SUM() — used for totals such as revenue, sales, and costs.
+- AVG() — used for averages such as average order value and average salary.
+- COUNT() — used to count rows or records.
+- COUNT(DISTINCT) — used to count unique customers or products.
+- MIN() — used to find the smallest value.
+
+### CIA Career Research
+
+#### Search
+
+SQL Aggregations
+
+#### Key Skills
+
+CIA Career research highlighted these SQL aggregation skills:
+
+- COUNT() — counts rows or non-NULL values.
+- SUM() — calculates the total of a numeric column.
+- AVG() — calculates the mean of a numeric column.
+- MIN() — finds the smallest value.
+- MAX() — finds the largest value.
+- GROUP BY — groups rows with identical values in selected columns.
+- HAVING — filters groups after aggregation.
+- Conditional aggregation — uses CASE inside aggregate functions to calculate values based on conditions.
+
+### CIA Review
+
+#### Deliverable Reviewed
+
+queries_day3.sql
+
+#### CIA Feedback
+
+CIA reviewed the Day 3 SQL aggregation queries and provided the following feedback:
+
+- USE retail_sales; is valid for MySQL/MariaDB but is not supported in PostgreSQL or SQL Server.
+- COUNT(\*) is valid and generally fine, but performance should be considered for very large tables.
+- SUM(sales_amount) is correct; if sales_amount can contain NULL values, COALESCE(sales_amount, 0) can be considered.
