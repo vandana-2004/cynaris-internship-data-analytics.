@@ -142,3 +142,109 @@ CIA reviewed the Day 3 SQL aggregation queries and provided the following feedba
 - USE retail_sales; is valid for MySQL/MariaDB but is not supported in PostgreSQL or SQL Server.
 - COUNT(\*) is valid and generally fine, but performance should be considered for very large tables.
 - SUM(sales_amount) is correct; if sales_amount can contain NULL values, COALESCE(sales_amount, 0) can be considered.
+
+Week 1 Day 4 — SQL Subqueries & CTEs
+
+CIA Insight
+
+CIA Research Insight
+
+CTEs (Common Table Expressions) are temporary named result sets created using the WITH clause. They help improve SQL query readability by breaking complex queries into logical steps. Multiple CTEs can be chained together, allowing one CTE to use the result of another.
+
+Business Reporting Example
+
+For a customer sales report, a CTE can first calculate total sales for each customer and then filter customers based on their total sales. This makes multi-step reporting queries easier to read and maintain.
+
+CIA Research
+
+Question
+
+What are recursive CTEs and when are they used in real data pipelines?
+
+CIA Insights
+
+CIA explained that recursive CTEs are CTEs that refer to themselves during query execution. They contain an anchor member that starts the recursion and a recursive member that processes subsequent levels.
+
+Recursive CTEs are useful for hierarchical and tree-structured data such as employee-manager relationships, product categories, bill-of-materials structures, and graph traversal.
+
+CIA Career Research
+
+Search
+
+SQL CTEs
+
+Required Skills
+
+CIA Career results identified these important SQL skills:
+
+- Understanding CTEs and the WITH clause.
+- Creating multiple and chained CTEs.
+- Using CTEs with aggregation and filtering.
+- Understanding recursive CTEs.
+- Using CTEs for complex and multi-step SQL analysis.
+- Applying recursive CTEs to hierarchical data.
+
+CIA Review
+
+Deliverable Reviewed
+
+queries_day4.sql
+
+CIA Feedback
+
+CIA reviewed the Day 4 SQL subqueries and CTE work and highlighted the importance of using CTEs to make complex queries more readable and organized. It also highlighted recursive CTEs as useful for hierarchical data and multi-level relationships.
+
+CIA Career Activity
+
+Search
+
+SQL CTEs
+
+Key Learning
+
+CIA Career results showed that CTEs are an important SQL skill for data analyst roles, particularly for writing readable multi-step queries, working with aggregations, and handling hierarchical data.
+
+### CIA — Research
+
+**Query:** What are the most useful Pandas methods for exploratory data analysis?
+
+**Key Insights:**
+
+- `head()` and `tail()` are useful for quickly viewing the first and last rows.
+- `info()` shows column names, data types, and missing values.
+- `describe()` provides statistical summaries such as count, mean, minimum, maximum, and quartiles.
+- `value_counts()` helps understand the frequency of values in a column.
+- `isnull()` and `dropna()` are useful for identifying and handling missing data.
+- Filtering and column selection help focus the analysis on relevant records.
+- `groupby()` is useful for summarising data by categories.
+- `to_csv()` can be used to export cleaned data for further analysis.
+
+### CIA — Research: Python Libraries
+
+**Query:** What Python libraries do professional data analysts use beyond Pandas?
+
+**Key Insights:**
+
+- **NumPy** — numerical calculations and array operations.
+- **Matplotlib** — creating charts and visualisations.
+- **Seaborn** — statistical visualisations and attractive charts.
+- **SciPy** — scientific and statistical calculations.
+- **Scikit-learn** — machine learning and predictive analysis.
+- **Plotly** — interactive charts and dashboards.
+
+**Career Takeaway:** Pandas is commonly used together with these libraries to perform data cleaning, analysis, visualisation, statistics, and machine learning tasks.
+
+### CIA — Career
+
+**Query:** Python Pandas
+
+**Key Insights:**
+
+- Pandas is an important skill for Data Analyst roles.
+- It is widely used for data cleaning and preprocessing.
+- Pandas supports exploratory data analysis and finding patterns in datasets.
+- Analysts use Pandas to work with CSV, Excel, SQL, and JSON data.
+- Pandas works well with visualisation libraries such as Matplotlib and Seaborn.
+- Pandas is built on NumPy.
+
+**Career Takeaway:** Learning Pandas is important for a Data Analyst because it is commonly used to clean, explore, transform, and analyse real-world datasets.
