@@ -288,3 +288,22 @@ CIA reviewed the Week 1 Day 5 Pandas deliverable and stated:
 - Important areas to learn include choosing the appropriate chart type, creating clear visualisations, and communicating insights effectively.
 
 **Application:** I applied these concepts by creating five visualisations using Matplotlib and Seaborn with the sales dataset.
+
+## Week 2 Day 1 — Data Visualisation
+
+### Deliverable
+
+- visualisations.ipynb
+- images/line_chart.png
+- images/bar_chart.png
+- images/scatter_chart.png
+- images/histogram.png
+- images/box_plot.png
+
+### Practical Tasks Completed
+
+- Created line, bar, scatter, histogram, and box plot visualisations.
+- Applied a Seaborn theme.
+- Added chart annotations.
+- Saved visualisations as PNG files.
+- Embedded the visualisations in `visualisations.ipynb`.
