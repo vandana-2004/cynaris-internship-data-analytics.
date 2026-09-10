@@ -260,3 +260,31 @@ analysis_day5.ipynb
 CIA reviewed the Week 1 Day 5 Pandas deliverable and stated:
 
 "Excellent work on your Week 1 Day 5 Pandas deliverable! You've demonstrated a solid understanding."
+
+## CIA Session — Data Visualisation
+
+**Question:** What chart type should I use for each type of data relationship?
+
+**Key Insights:**
+
+- Use a **bar chart** to compare values between categories.
+- Use a **line chart** to show trends or changes over time.
+- Use a **scatter chart** to show relationships between two numerical variables.
+- Use a **histogram** to show the distribution of numerical data.
+- Use a **box plot** to show data spread and identify potential outliers.
+
+**Application:** I used line, bar, scatter, histogram, and box plot visualisations on the sales dataset in `visualisations.ipynb`.
+
+## CIA Career Search — Data Visualisation
+
+**Search:** Data Visualisation
+
+**Key Insights:**
+
+- Data visualisation helps communicate analytical findings clearly to technical and non-technical stakeholders.
+- Visualisations help identify patterns, trends, and anomalies in data.
+- Clear visualisations support data-driven decision-making.
+- Data visualisation projects can strengthen a Data Analyst portfolio.
+- Important areas to learn include choosing the appropriate chart type, creating clear visualisations, and communicating insights effectively.
+
+**Application:** I applied these concepts by creating five visualisations using Matplotlib and Seaborn with the sales dataset.
