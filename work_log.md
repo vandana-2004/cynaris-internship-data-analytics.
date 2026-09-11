@@ -307,3 +307,20 @@ CIA reviewed the Week 1 Day 5 Pandas deliverable and stated:
 - Added chart annotations.
 - Saved visualisations as PNG files.
 - Embedded the visualisations in `visualisations.ipynb`.
+
+## CIA Session — Week 2 Day 2: Pandas Advanced
+
+### CIA Status
+
+CIA AI was unavailable while completing this lesson.
+
+### Planned CIA Questions
+
+- What advanced Pandas operations do senior data analysts use most in production?
+- Explain pd.merge() vs pd.concat() with a practical data pipeline example
+
+### CIA Career Search
+
+Search term: Pandas Advanced
+
+CIA AI was unavailable, so the Research/Review activity could not be completed at this time.
