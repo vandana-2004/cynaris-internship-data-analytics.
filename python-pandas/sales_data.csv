@@ -1,0 +1,11 @@
+order_id,customer,region,category,sales,quantity
+1001,Anita,South,Electronics,25000,2
+1002,Rahul,North,Furniture,18000,1
+1003,Priya,South,Electronics,32000,3
+1004,Kiran,West,Clothing,12000,4
+1005,Suresh,North,Furniture,22000,2
+1006,Meena,South,Clothing,15000,2
+1007,Arun,West,Electronics,28000,1
+1008,Divya,North,Clothing,11000,3
+1009,Ravi,South,Furniture,19500,1
+1010,Neha,West,Electronics,35000,2
