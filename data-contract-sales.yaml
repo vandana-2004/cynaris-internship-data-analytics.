@@ -1,0 +1,49 @@
+# Data Contract: Sales Dataset
+
+contract:
+  name: sales_data_contract
+  version: "1.0"
+  description: "Defines quality and usage rules for the sales dataset."
+
+producer:
+  team: Data Analytics
+  responsibility: Provide accurate, complete, and consistently formatted sales records.
+
+consumer:
+  team: Analytics and Reporting
+  responsibility: Validate the dataset before analysis and reporting.
+
+dataset:
+  path: python-pandas/sales_data.csv
+  format: CSV
+  required_columns:
+    - order_id
+    - customer
+    - region
+    - category
+    - sales
+    - quantity
+
+quality_rules:
+  - column: order_id
+    rule: Must be unique and non-null.
+  - column: customer
+    rule: Must not be null or blank.
+  - column: region
+    rule: Must not be null or blank.
+  - column: category
+    rule: Must not be null or blank.
+  - column: sales
+    rule: Must be numeric and greater than or equal to zero.
+  - column: quantity
+    rule: Must be numeric and greater than zero.
+
+privacy:
+  customer:
+    classification: Potential personal data
+    protection: Restrict access and use pseudonymization when customer identity is not needed.
+    note: Confirm what the customer field contains before assigning a final classification.
+
+change_management:
+  owner: Data Analytics
+  process: Notify consumers of schema or rule changes and validate the dataset before release.

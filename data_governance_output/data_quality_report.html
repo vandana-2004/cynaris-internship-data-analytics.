@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Day 6 Data Quality Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 30px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+th { background: #eee; }
+</style>
+</head>
+<body>
+<h1>Data Governance — Quality Report</h1>
+<p>Dataset: python-pandas/sales_data.csv</p>
+<p>Rows checked: 10</p>
+<p>Passing checks: 8 of 8</p>
+<table>
+<tr><th>Check</th><th>Status</th><th>Details</th></tr>
+<tr><td>1. Required values complete</td><td>PASS</td><td>Required fields should not contain missing values.</td></tr><tr><td>2. Order IDs unique</td><td>PASS</td><td>Each order_id should occur only once.</td></tr><tr><td>3. Sales non-negative</td><td>PASS</td><td>Sales must be numeric and at least zero.</td></tr><tr><td>4. Quantity positive</td><td>PASS</td><td>Quantity must be numeric and greater than zero.</td></tr><tr><td>5. Sales numeric</td><td>PASS</td><td>Every sales value must be numeric.</td></tr><tr><td>6. Quantity numeric</td><td>PASS</td><td>Every quantity value must be numeric.</td></tr><tr><td>7. Region values valid</td><td>PASS</td><td>Region must not be blank.</td></tr><tr><td>8. Category values valid</td><td>PASS</td><td>Category must not be blank.</td></tr>
+</table>
+<h2>Intentional Error Tests</h2>
+<p>Errors caught: 3 of 3</p>
+</body>
+</html>

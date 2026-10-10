@@ -1,0 +1,4 @@
+injected_error,caught
+duplicate order_id,True
+negative sales,True
+zero quantity,True
