@@ -363,3 +363,45 @@ Completed the Week 2 Day 3 EDA Workflow practical task using the sales dataset.
 ### CIA
 
 - Attempted the required CIA EDA checklist query, but CIA AI was unavailable.
+
+Week 2 — Day 4: Data Cleaning
+What I Worked On
+Performed systematic data cleaning using Pandas.
+Checked missing values using isnull().sum().
+Confirmed that no missing values were found, so no imputation was required.
+Checked for duplicate rows using duplicated().sum().
+Confirmed that no duplicate rows were found.
+Standardised text columns by removing leading and trailing whitespace.
+Detected numerical outliers using the IQR method.
+Applied IQR-based capping to numerical columns.
+Created a before/after data quality comparison.
+Exported the cleaned dataset as cleaned_dataset.csv.
+Created cleaning_log.md to document the cleaning decisions.
+Tools / Technologies
+Python
+Pandas
+NumPy
+VS Code
+Git/GitHub
+Deliverables
+data_cleaning.ipynb
+cleaned_dataset.csv
+cleaning_log.md
+CIA Blocker
+
+CIA was unavailable during the Day 4 session, so I could not complete the required CIA queries, Career search, or Review submission. The practical data-cleaning tasks and Git deliverables were completed successfully.
+
+Key Learning
+
+Data cleaning improves the reliability and consistency of datasets before analysis. Missing values, duplicate records, inconsistent text values, and outliers should be identified and handled using appropriate methods rather than applying the same treatment to every dataset.
+
+### Week 2 — Day 5: NumPy for Data
+
+- **Status:** Completed
+- **Deliverable:** `python-pandas/numpy_analysis.ipynb`
+- **Topics:** 1D, 2D, and 3D arrays; vectorised operations; aggregation; boolean masking; fancy indexing; statistics; correlation; broadcasting.
+- **Performance benchmark:** Compared Python list comprehension and NumPy vectorisation using 1 million values.
+- **Result:** Verified that both methods produced matching results.
+- **CIA activity:** To be recorded after completing the CIA session.
+- **Git branch:** `feature/week-2-day-5`
+- **Pull request:** To be added after creating the PR.
