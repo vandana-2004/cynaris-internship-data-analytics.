@@ -413,3 +413,68 @@ Data cleaning improves the reliability and consistency of datasets before analys
 - **Status:** Attempted, but CIA returned "Request failed".
 - **Learning completed independently:** Studied NumPy broadcasting, vectorised operations, statistical calculations, and performance benchmarking.
 - **Follow-up:** Retry CIA when the service is available.
+
+## Week 2 — Day 6: Data Governance
+
+### What I Worked On
+
+Implemented data quality validation and data governance practices using Pandas and Great Expectations.
+
+### Practical Tasks Completed
+
+- Validated required fields and checked for missing values.
+- Checked uniqueness of order IDs.
+- Validated non-negative sales values and positive quantities.
+- Tested validation logic using intentionally injected data errors.
+- Created a data contract describing the sales dataset, its columns, and quality rules.
+- Created a data quality scorecard covering data quality dimensions.
+- Generated Pandas-based validation reports.
+- Installed Great Expectations version 1.24.0.
+- Implemented Great Expectations validation for the sales dataset.
+- Ran the validation successfully and confirmed that all configured expectations passed.
+- Exported the Great Expectations validation results to CSV.
+
+### Deliverables
+
+- `data_governance_day6.py`
+- `data-contract-sales.yaml`
+- `data_quality_scorecard.md`
+- `great_expectations_day6.py`
+- `data_governance_output/validation_results.csv`
+- `data_governance_output/injected_error_tests.csv`
+- `data_governance_output/data_quality_report.html`
+- `data_governance_output/great_expectations_results.csv`
+
+### Tools and Technologies
+
+- Python
+- Pandas
+- Great Expectations 1.24.0
+- CSV and YAML
+- VS Code
+- Git and GitHub
+
+### Validation Results
+
+- The existing Pandas validation checks passed on the original sales dataset.
+- Intentional error tests confirmed detection of duplicate order IDs, negative sales, and zero quantity.
+- Great Expectations validated the 10-row sales dataset.
+- All configured Great Expectations checks passed.
+- Validation results were saved to `data_governance_output/great_expectations_results.csv`.
+
+### GitHub
+
+- Feature branch: `feature/week-2-day-6`
+- Original Day 6 work was merged into `main`.
+- Additional Great Expectations branch: `feature/week-2-day-6-great-expectations`
+- Additional Great Expectations changes were committed, pushed, and merged into `main`.
+
+### Key Learning
+
+Data governance improves trust in analytical datasets through documented data contracts, validation rules, quality scorecards, and repeatable testing. Pandas and Great Expectations can help identify data quality issues before data is used for reporting or decision-making.
+
+### Outstanding Follow-up
+
+- Verify accuracy, consistency, and timeliness using suitable source data and business rules.
+- Retry required CIA activities when the CIA service becomes available, if still outstanding.
+- Confirm the learning portal reflects the completed practical work.
