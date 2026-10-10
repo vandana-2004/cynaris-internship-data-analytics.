@@ -405,3 +405,11 @@ Data cleaning improves the reliability and consistency of datasets before analys
 - **CIA activity:** To be recorded after completing the CIA session.
 - **Git branch:** `feature/week-2-day-5`
 - **Pull request:** To be added after creating the PR.
+
+### CIA Activity — Week 2 Day 5
+
+- **Topic:** NumPy for Data
+- **Attempted query:** Explain NumPy broadcasting with a simple Python example.
+- **Status:** Attempted, but CIA returned "Request failed".
+- **Learning completed independently:** Studied NumPy broadcasting, vectorised operations, statistical calculations, and performance benchmarking.
+- **Follow-up:** Retry CIA when the service is available.
