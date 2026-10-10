@@ -1,0 +1,4 @@
+test,column,detected
+duplicate_order_id,order_id,True
+negative_sales,sales,True
+zero_quantity,quantity,True

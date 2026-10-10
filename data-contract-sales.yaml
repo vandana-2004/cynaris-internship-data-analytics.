@@ -1,22 +1,21 @@
 # Data Contract: Sales Dataset
 
-contract:
-  name: sales_data_contract
+dataContractSpecification: "0.9.3"
+
+id: sales-orders-v1
+
+info:
+  title: Sales Dataset Contract
   version: "1.0"
-  description: "Defines quality and usage rules for the sales dataset."
-
-producer:
-  team: Data Analytics
-  responsibility: Provide accurate, complete, and consistently formatted sales records.
-
-consumer:
-  team: Analytics and Reporting
-  responsibility: Validate the dataset before analysis and reporting.
+  owner: Data Analytics
+  producer: "Data Analytics Intern"
+  consumer: "BI Dashboard"
+  description: "Defines the schema, quality requirements, privacy controls, and change management rules for the sales dataset."
 
 dataset:
   path: python-pandas/sales_data.csv
   format: CSV
-  required_columns:
+  required_fields:
     - order_id
     - customer
     - region
@@ -25,25 +24,44 @@ dataset:
     - quantity
 
 quality_rules:
-  - column: order_id
-    rule: Must be unique and non-null.
-  - column: customer
-    rule: Must not be null or blank.
-  - column: region
-    rule: Must not be null or blank.
-  - column: category
-    rule: Must not be null or blank.
-  - column: sales
-    rule: Must be numeric and greater than or equal to zero.
-  - column: quantity
-    rule: Must be numeric and greater than zero.
+  - field: order_id
+    requirements:
+      - required
+      - unique
+  - field: customer
+    requirements:
+      - required
+      - not_blank
+  - field: region
+    requirements:
+      - required
+      - not_blank
+  - field: category
+    requirements:
+      - required
+      - not_blank
+  - field: sales
+    requirements:
+      - numeric
+      - minimum: 0
+  - field: quantity
+    requirements:
+      - numeric
+      - minimum_exclusive: 0
+
+service_level:
+  freshness_target: "To be agreed with the BI dashboard consumer"
+  monitoring: "Validate data before using it in reporting"
 
 privacy:
-  customer:
-    classification: Potential personal data
-    protection: Restrict access and use pseudonymization when customer identity is not needed.
-    note: Confirm what the customer field contains before assigning a final classification.
+  - field: customer
+    classification: "Potential personal data"
+    protection:
+      - "Restrict access to authorised users"
+      - "Mask customer identifiers in reports when identity is not needed"
+      - "Use pseudonymisation or tokenisation when appropriate"
+    note: "Confirm the actual contents of the customer field and applicable privacy requirements before final classification."
 
 change_management:
   owner: Data Analytics
-  process: Notify consumers of schema or rule changes and validate the dataset before release.
+  process: "Notify the BI dashboard consumer of schema or quality-rule changes and validate the dataset before release."
