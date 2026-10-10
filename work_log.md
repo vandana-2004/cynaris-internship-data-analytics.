@@ -324,3 +324,42 @@ CIA AI was unavailable while completing this lesson.
 Search term: Pandas Advanced
 
 CIA AI was unavailable, so the Research/Review activity could not be completed at this time.
+
+## Week 2 — Day 3: EDA Workflow
+
+### What I Worked On
+
+Completed the Week 2 Day 3 EDA Workflow practical task using the sales dataset.
+
+### Tasks Completed
+
+- Performed dataset overview and structure analysis.
+- Checked data types.
+- Checked missing values.
+- Checked duplicate records.
+- Generated descriptive statistics.
+- Created numeric distribution plots.
+- Created a correlation matrix and heatmap.
+- Performed IQR-based outlier detection.
+- Analyzed sales by region and category.
+- Documented business insights and conclusions.
+
+### Deliverable
+
+- `eda_report.ipynb`
+
+### Tools / Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+- VS Code
+- Git
+- GitHub
+
+### CIA
+
+- Attempted the required CIA EDA checklist query, but CIA AI was unavailable.
