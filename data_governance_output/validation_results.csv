@@ -1,0 +1,9 @@
+check,passed,details
+1. Required values complete,True,Required fields should not contain missing values.
+2. Order IDs unique,True,Each order_id should occur only once.
+3. Sales non-negative,True,Sales must be numeric and at least zero.
+4. Quantity positive,True,Quantity must be numeric and greater than zero.
+5. Sales numeric,True,Every sales value must be numeric.
+6. Quantity numeric,True,Every quantity value must be numeric.
+7. Region values valid,True,Region must not be blank.
+8. Category values valid,True,Category must not be blank.
