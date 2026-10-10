@@ -1,0 +1,10 @@
+expectation,success
+expect_column_values_to_not_be_null,True
+expect_column_values_to_be_unique,True
+expect_column_values_to_not_be_null,True
+expect_column_values_to_not_be_null,True
+expect_column_values_to_not_be_null,True
+expect_column_values_to_not_be_null,True
+expect_column_values_to_be_between,True
+expect_column_values_to_not_be_null,True
+expect_column_values_to_be_between,True
