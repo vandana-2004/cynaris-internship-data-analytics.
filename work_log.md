@@ -478,3 +478,30 @@ Data governance improves trust in analytical datasets through documented data co
 - Verify accuracy, consistency, and timeliness using suitable source data and business rules.
 - Retry required CIA activities when the CIA service becomes available, if still outstanding.
 - Confirm the learning portal reflects the completed practical work.
+
+## Week 3 — Day 1: Power BI Fundamentals
+
+**Status:** Completed
+
+### Tasks Completed
+
+- Imported the sales dataset into Power BI Desktop.
+- Created a Sales Overview page with a sales chart, Total Sales card, and Region and Category slicers.
+- Created a Regional Drill-Down page with a regional sales chart.
+- Created a KPI Summary page with Total Sales, Average Sales, and Total Quantity cards.
+- Tested the report slicers and confirmed that the displayed sales value changes when filtering.
+
+### Deliverables
+
+- `sales_dashboard.pbix`
+- `powerbi_dashboard.png`
+
+### GitHub
+
+- Branch: `feature/week-3-day-1`
+- Commit: `769e9a9`
+- Pull Request: #15 — merged into `main`
+
+### Notes
+
+- A date slicer was not added because a suitable date field was not available in the imported fields.
