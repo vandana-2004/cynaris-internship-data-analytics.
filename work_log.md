@@ -489,3 +489,49 @@ Data governance improves trust in analytical datasets through documented data co
 ### Outstanding Practical Task
 
 - **Date slicer:** Not added because no suitable date field was available in the imported dataset. Confirm whether the source dataset contains a date column before making further changes.
+  @'
+
+## Week 3 — Day 2: DAX Basics
+
+### Learning Objective
+
+Write DAX expressions for calculated columns and measures used in dynamic business reporting.
+
+### Practical Work
+
+- Created `python-pandas/dax_measures.md` with five DAX expressions and explanations.
+- Documented `CALCULATE()` for applying filters to measures.
+- Documented a Year-to-Date sales measure using `DATESYTD()`.
+- Documented a running total expression using `EARLIER()`.
+- Documented a calculated column for profit margin percentage.
+- Explained row context, filter context, and context transition.
+
+### Data Limitations
+
+- The current sales dataset does not contain a suitable date column for a working YTD calculation.
+- Actual profit data is required to calculate a meaningful profit margin.
+- The documented DAX expressions should be validated in Power BI when the required data and model relationships are available.
+
+### Deliverable
+
+- `python-pandas/dax_measures.md`
+
+### GitHub
+
+- Feature branch: `feature/week-3-day-2`
+- Commit: `0218dfe` — `feat: dax-basics week-3-day-2 complete`
+- Pull request: #17
+- Status: Merged into `main` at merge commit `896adf5`.
+
+### CIA Tasks
+
+- Required query: "Explain the difference between a DAX measure and a calculated column with examples."
+- Status: Pending verification; do not mark completed until the query is successfully submitted.
+- Career tab search: "DAX Basics" — pending verification.
+- Next action: Complete these tasks when CIA is available and record the results.
+
+### Outstanding Follow-up
+
+- Verify the practical DAX expressions in Power BI when suitable source data is available.
+- Confirm the portal checklist, quiz, and work-log requirements are complete.
+  '@ | Add-Content .\work_log.md
