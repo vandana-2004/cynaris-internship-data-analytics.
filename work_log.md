@@ -478,3 +478,14 @@ Data governance improves trust in analytical datasets through documented data co
 - Verify accuracy, consistency, and timeliness using suitable source data and business rules.
 - Retry required CIA activities when the CIA service becomes available, if still outstanding.
 - Confirm the learning portal reflects the completed practical work.
+
+### CIA Tasks — Blocked
+
+- **Required query:** "What are the best practices for designing a Power BI dashboard for executives?"
+- **Status:** Unable to complete because CIA is currently unavailable.
+- **Career tab:** Power BI skills search pending until CIA becomes available.
+- **Next action:** Retry the CIA query and Career search when the service is working.
+
+### Outstanding Practical Task
+
+- **Date slicer:** Not added because no suitable date field was available in the imported dataset. Confirm whether the source dataset contains a date column before making further changes.
