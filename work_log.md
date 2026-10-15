@@ -526,12 +526,11 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 ### CIA Tasks
 
 - Required query: "Explain the difference between a DAX measure and a calculated column with examples."
-- Status: Pending verification; do not mark completed until the query is successfully submitted.
+- Status: Blocked — CIA displayed "Request failed"; no response was received.
 - Career tab search: "DAX Basics" — pending verification.
-- Next action: Complete these tasks when CIA is available and record the results.
+- Next action: Retry the required query, Career search, and deliverable review when CIA becomes available.
 
 ### Outstanding Follow-up
 
 - Verify the practical DAX expressions in Power BI when suitable source data is available.
 - Confirm the portal checklist, quiz, and work-log requirements are complete.
-  '@ | Add-Content .\work_log.md
