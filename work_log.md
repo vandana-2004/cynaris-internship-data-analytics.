@@ -505,3 +505,11 @@ Data governance improves trust in analytical datasets through documented data co
 ### Notes
 
 - A date slicer was not added because a suitable date field was not available in the imported fields.
+
+### Power BI Service
+
+- **Publishing status:** Published successfully; report is visible in Power BI Service.
+- **Report:** `sales_dashboard`
+- **Report link:** https://app.powerbi.com/links/9JhAz0N-Wq?ctid=a6dbc183-3bd5-46bc-8f30-e30bf936be7e&pbi_source=linkShare
+- **Sharing:** Organization-link access; onward sharing permission needs confirmation.
+- **Date slicer:** Not added because no suitable date field was available in the imported dataset.
