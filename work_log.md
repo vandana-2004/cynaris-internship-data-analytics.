@@ -489,3 +489,76 @@ Data governance improves trust in analytical datasets through documented data co
 ### Outstanding Practical Task
 
 - **Date slicer:** Not added because no suitable date field was available in the imported dataset. Confirm whether the source dataset contains a date column before making further changes.
+  @'
+
+## Week 3 - Day 2: DAX Basics
+
+### Learning Objective
+
+Write DAX expressions for calculated columns and measures used in dynamic business reporting.
+
+### Practical Work
+
+- Created `python-pandas/dax_measures.md` with five DAX expressions and explanations.
+- Documented `CALCULATE()` for applying filters to measures.
+- Documented a Year-to-Date (YTD) sales measure using `DATESYTD()`.
+- Documented a running total expression using `EARLIER()`.
+- Documented a calculated column for profit margin percentage.
+- Explained row context, filter context, and context transition.
+- Created a separate `TestSales` table with sample sales, profit, and order dates.
+- Created a `DateTable` and established a relationship with `TestSales`.
+- Tested the YTD Sales measure and verified the sample totals:
+  - January 5, 2025: 1,000
+  - June 15, 2025: 3,000
+  - January 10, 2026: 1,500
+  - March 20, 2026: 4,000
+- Created and formatted the Profit Margin % calculated column and verified the sample percentages:
+  - January 5, 2025: 25%
+  - June 15, 2025: 30%
+  - January 10, 2026: 20%
+  - March 20, 2026: 30%
+
+### Data Limitations
+
+- The original `sales_data` table does not contain a suitable date column for a working YTD calculation.
+- The original `sales_data` table does not contain actual profit data for calculating profit margin.
+- YTD Sales and Profit Margin % were tested using separate sample data. These results do not represent actual business results from the original dataset.
+
+### Deliverable
+
+- `python-pandas/dax_measures.md`
+
+### GitHub
+
+- Feature branch: `feature/week-3-day-2`
+- Original feature commit: `0218dfe` - `feat: dax-basics week-3-day-2 complete`
+- Pull request: #17
+- Status: Merged into `main` at merge commit `896adf5`.
+- Documentation updates are pending a new commit and push.
+
+### CIA Tasks
+
+- Required query: "Explain the difference between a DAX measure and a calculated column with examples."
+- Status: Blocked - CIA displayed "Request failed"; no response was received.
+- Career tab search: "DAX Basics" - pending verification.
+- Next action: Retry the required query, Career search, and deliverable review when CIA becomes available.
+
+### Outstanding Follow-up
+
+- Confirm the portal checklist, quiz, and work-log requirements are complete.
+- Retry the CIA tasks when the service becomes available.
+- Commit and push the updated documentation files to the feature branch.
+
+## Week 3 — Day 3: Excel for Analysis
+
+- **Status:** Practical work completed; Git submission pending.
+- Created `analysis_workbook.xlsx` with sales data, Profit, Profit Margin, and Quarter columns.
+- Created a PivotTable summarising revenue by region, product, and quarter.
+- Created a PivotChart with Region and Product slicers and verified interactive filtering.
+- Applied conditional formatting for profit-margin thresholds.
+- Used Power Query to combine multiple CSV files and refreshed the query successfully, verifying six imported records.
+- Created a quarterly revenue summary and calculated quarter-over-quarter growth percentages. Q4 growth displays N/A because the original sales data has no Q4 records.
+- **CIA insights:** Pending verification.
+- **Career research:** Pending.
+- **Deliverable:** `analysis_workbook.xlsx`
+- **Git commit / PR:** Pending.

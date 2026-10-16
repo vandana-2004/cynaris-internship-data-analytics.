@@ -18,7 +18,7 @@ CALCULATE(
 )
 ```
 
-**Explanation:** `CALCULATE()` evaluates the measure under a modified filter context, here restricting the calculation to the South region.
+**Explanation:** `CALCULATE()` evaluates a measure under a modified filter context. Here, the calculation is restricted to the South region.
 
 ## 3. Year-to-Date Sales
 
@@ -30,7 +30,20 @@ CALCULATE(
 )
 ```
 
-**Explanation:** Calculates sales from the beginning of the year through the current date in the applicable date context. This requires a proper Date table related to the sales table.
+**Explanation:** Calculates sales from the beginning of the calendar year through the current date in the applicable date context. This requires a proper Date table related to the sales table.
+
+**Practical verification:** Created a separate `TestSales` table and a `DateTable` in Power BI, then established a relationship between `DateTable[Date]` and `TestSales[OrderDate]`. The YTD measure was tested with sample data.
+
+Expected sample results:
+
+| Date             | YTD Sales |
+| ---------------- | --------: |
+| January 5, 2025  |     1,000 |
+| June 15, 2025    |     3,000 |
+| January 10, 2026 |     1,500 |
+| March 20, 2026   |     4,000 |
+
+The total resets at the beginning of 2026. These are sample results, not actual totals from the original `sales_data` table.
 
 ## 4. Running Total Calculated Column
 
@@ -45,27 +58,32 @@ CALCULATE(
 )
 ```
 
-**Explanation:** Calculates cumulative sales up to the current row's order ID. `EARLIER()` refers to an earlier row context. This example assumes order IDs define the intended sequence; a date-based running total would require a suitable date column.
+**Explanation:** Calculates cumulative sales up to the current row's order ID. `EARLIER()` refers to an earlier row context. This example assumes order IDs define the intended sequence. A date-based running total would require a suitable date column.
+
+**Practical verification:** Created a running total calculated column in Power BI using `TestSales[order_id]`. The calculation assumes that order IDs represent the intended sequence.
 
 ## 5. Profit Margin Calculated Column
 
 ```dax
 Profit Margin % =
 DIVIDE(
-    sales_data[profit],
-    sales_data[sales],
+    TestSales[Profit],
+    TestSales[Sales],
     0
-) * 100
+)
 ```
 
-**Explanation:** Calculates profit as a percentage of sales and returns zero when sales is zero. This requires a `profit` column in the data; the current dataset does not contain one, so this expression cannot be evaluated until profit data is available.
+**Explanation:** Divides profit by sales and returns zero when sales is zero. The result is formatted as a percentage in Power BI. Do not multiply by 100 when using Percentage formatting.
 
-## Row Context, Filter Context and Context Transition
+**Practical verification:** Created the calculated column in the separate `TestSales` table and formatted it as Percentage.
 
-- **Row context:** Evaluates an expression for the current row, as in a calculated column.
-- **Filter context:** The rows included in a calculation after report filters, slicers and DAX filters are applied.
-- **Context transition:** `CALCULATE()` can convert an existing row context into filter context, allowing an expression to be evaluated for the current row's values.
+Expected sample results:
 
-## Data Limitations
+| Sales | Profit | Profit Margin |
+| ----: | -----: | ------------: |
+| 1,000 |    250 |           25% |
+| 2,000 |    600 |           30% |
+| 1,500 |    300 |           20% |
+| 2,500 |    750 |           30% |
 
-The current sales dataset has no date or profit column. The YTD measure requires a proper date table and relationship. The profit margin column requires actual profit data. These fields must be added from a valid source before those calculations can be used in the report.
+These values use sample data, not
