@@ -578,3 +578,14 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 
 - **Original Pull Request:** #18 — merged.
 - **Work-log follow-up:** PR #19 pending.
+
+## Week 3 Day 5 — KPI Design
+
+- **Practical work:** Created `kpi_framework.md` with 10 KPIs and their formulas, owners, review frequencies, targets, and leading/lagging classifications.
+- **Dashboard:** Created `KPI Dashboard.pbix` with Total Sales, Total Orders, Average Order Value, Sales by Region, and Sales by Category.
+- **Interactivity:** Tested Region and Category slicers.
+- **Screenshot:** Saved as `kpi_dashboard.png`.
+- **Narrative:** Created `kpi_narrative.md` describing the dashboard, key indicators, recommendations, and data limitations.
+- **CIA query:** Pending — record the actual response to “What is the difference between a KPI, a metric, and a measure?” when available.
+- **CIA Career search:** Pending — search for “KPI Design” when available.
+- **Status:** Practical deliverables completed. CIA activities remain pending.
