@@ -551,7 +551,7 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 
 ## Week 3 — Day 3: Excel for Analysis
 
-- **Status:** Practical work completed; PR #18 merged. CIA activities partially blocked by service availability.
+- **Status:** Practical work completed; original PR #18 merged. CIA activities partially blocked by service availability.
 - Created `analysis_workbook.xlsx` with sales data, Profit, Profit Margin, and Quarter columns.
 - Created a PivotTable summarising revenue by region, product, and quarter.
 - Created a PivotChart with Region and Product slicers and verified interactive filtering.
@@ -577,4 +577,4 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 ### Git Submission
 
 - **Original Pull Request:** #18 — merged.
-- **Work-log follow-up:** Documentation update pending merge.
+- **Work-log follow-up:** Follow-up PR pending.
