@@ -589,3 +589,11 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - **CIA query:** Pending — record the actual response to “What is the difference between a KPI, a metric, and a measure?” when available.
 - **CIA Career search:** Pending — search for “KPI Design” when available.
 - **Status:** Practical deliverables completed. CIA activities remain pending.
+
+## Week 3 Day 5 — CIA and Career Search Update
+
+- **CIA query:** Attempted the question, "What is the difference between a KPI, a metric, and a measure?"
+- **Result:** CIA was unavailable, so no response was received.
+- **Career search:** Attempted to access the Career tab and search for "KPI Design".
+- **Result:** Unable to complete the search because CIA was not working.
+- **Next action:** Retry both activities when CIA becomes available.
