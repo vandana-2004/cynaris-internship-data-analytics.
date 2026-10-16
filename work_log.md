@@ -548,3 +548,17 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - Confirm the portal checklist, quiz, and work-log requirements are complete.
 - Retry the CIA tasks when the service becomes available.
 - Commit and push the updated documentation files to the feature branch.
+
+## Week 3 — Day 3: Excel for Analysis
+
+- **Status:** Practical work completed; Git submission pending.
+- Created `analysis_workbook.xlsx` with sales data, Profit, Profit Margin, and Quarter columns.
+- Created a PivotTable summarising revenue by region, product, and quarter.
+- Created a PivotChart with Region and Product slicers and verified interactive filtering.
+- Applied conditional formatting for profit-margin thresholds.
+- Used Power Query to combine multiple CSV files and refreshed the query successfully, verifying six imported records.
+- Created a quarterly revenue summary and calculated quarter-over-quarter growth percentages. Q4 growth displays N/A because the original sales data has no Q4 records.
+- **CIA insights:** Pending verification.
+- **Career research:** Pending.
+- **Deliverable:** `analysis_workbook.xlsx`
+- **Git commit / PR:** Pending.
