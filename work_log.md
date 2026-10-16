@@ -564,7 +564,7 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - **Status:** Attempted; CIA returned `Request failed`.
 - **Required query:** "What Excel features do professional analysts use beyond basic formulas?"
 - **Result:** No response received because the CIA request failed.
-- **Research activity:** Pending completion or verification.
+- **Research activity:** Pending.
 - **Career activity:** Pending; required roles and skills have not been verified.
 - **Review activity:** Pending; workbook feedback has not been obtained.
 - **Follow-up:** Retry the required CIA activities when the service becomes available. No AI-generated findings were recorded because no response was received.
@@ -577,4 +577,4 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 ### Git Submission
 
 - **Original Pull Request:** #18 — merged.
-- **Work-log follow-up:** Follow-up PR pending.
+- **Work-log follow-up:** PR #19 pending.
