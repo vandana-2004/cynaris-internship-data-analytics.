@@ -551,14 +551,30 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 
 ## Week 3 — Day 3: Excel for Analysis
 
-- **Status:** Practical work completed; Git submission pending.
+- **Status:** Practical work completed; original PR #18 merged. CIA activities partially blocked by service availability.
 - Created `analysis_workbook.xlsx` with sales data, Profit, Profit Margin, and Quarter columns.
 - Created a PivotTable summarising revenue by region, product, and quarter.
 - Created a PivotChart with Region and Product slicers and verified interactive filtering.
-- Applied conditional formatting for profit-margin thresholds.
+- Applied conditional formatting to highlight profit-margin thresholds.
 - Used Power Query to combine multiple CSV files and refreshed the query successfully, verifying six imported records.
-- Created a quarterly revenue summary and calculated quarter-over-quarter growth percentages. Q4 growth displays N/A because the original sales data has no Q4 records.
-- **CIA insights:** Pending verification.
-- **Career research:** Pending.
-- **Deliverable:** `analysis_workbook.xlsx`
-- **Git commit / PR:** Pending.
+- Created a quarterly revenue summary and calculated quarter-over-quarter growth percentages. Q4 growth displays `N/A` because no Q4 revenue was present in the original sales data.
+
+### CIA Activities
+
+- **Status:** Attempted; CIA returned `Request failed`.
+- **Required query:** "What Excel features do professional analysts use beyond basic formulas?"
+- **Result:** No response received because the CIA request failed.
+- **Research activity:** Pending.
+- **Career activity:** Pending; required roles and skills have not been verified.
+- **Review activity:** Pending; workbook feedback has not been obtained.
+- **Follow-up:** Retry the required CIA activities when the service becomes available. No AI-generated findings were recorded because no response was received.
+
+### Deliverables
+
+- `analysis_workbook.xlsx`
+- `work_log.md`
+
+### Git Submission
+
+- **Original Pull Request:** #18 — merged.
+- **Work-log follow-up:** PR #19 pending.
