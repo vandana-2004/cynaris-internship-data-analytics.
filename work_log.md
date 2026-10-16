@@ -551,7 +551,7 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 
 ## Week 3 — Day 3: Excel for Analysis
 
-- **Status:** Practical work completed; Git submission merged. CIA activities partially blocked by service availability.
+- **Status:** Practical work completed; PR #18 merged. CIA activities partially blocked by service availability.
 - Created `analysis_workbook.xlsx` with sales data, Profit, Profit Margin, and Quarter columns.
 - Created a PivotTable summarising revenue by region, product, and quarter.
 - Created a PivotChart with Region and Product slicers and verified interactive filtering.
@@ -564,9 +564,9 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - **Status:** Attempted; CIA returned `Request failed`.
 - **Required query:** "What Excel features do professional analysts use beyond basic formulas?"
 - **Result:** No response received because the CIA request failed.
-- **Research activity:** Pending confirmation; CIA availability prevented completion if the request also failed.
-- **Career activity:** Pending; roles and required skills could not be verified.
-- **Review activity:** Pending; workbook feedback could not be obtained from CIA.
+- **Research activity:** Pending completion or verification.
+- **Career activity:** Pending; required roles and skills have not been verified.
+- **Review activity:** Pending; workbook feedback has not been obtained.
 - **Follow-up:** Retry the required CIA activities when the service becomes available. No AI-generated findings were recorded because no response was received.
 
 ### Deliverables
@@ -576,5 +576,5 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 
 ### Git Submission
 
-- **Pull Request:** #18
-- **Status:** Merged, if GitHub confirms the merge.
+- **Original Pull Request:** #18 — merged.
+- **Work-log follow-up:** Documentation update pending merge.
