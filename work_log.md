@@ -606,4 +606,4 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - **Tools Used:** Google Sheets, Google Looker Studio, Git, GitHub.
 - **Deliverables:** `looker_studio_dashboard.png`; dashboard link added to `README.md`.
 - **Git:** Commit `ef9c94d`; PR #22 merged.
-- **Challenges:** The scorecard metric required troubleshooting. CIA session and Career tab activities remain incomplete if CIA was unavailable.
+- **Challenges:** - **Challenges:** The scorecard metric required troubleshooting. CIA was unavailable because the required Groq, OpenRouter, and Gemini API keys were not configured. CIA session and Career tab activities remain pending.
