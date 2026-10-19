@@ -597,3 +597,13 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - **Career search:** Attempted to access the Career tab and search for "KPI Design".
 - **Result:** Unable to complete the search because CIA was not working.
 - **Next action:** Retry both activities when CIA becomes available.
+
+## Week 3 — Day 4: Looker Studio
+
+- **Hours Worked:** 1.0
+- **Topics Covered:** Looker Studio dashboards, Google Sheets integration, chart creation, interactive filters, and dashboard sharing.
+- **Work Completed:** Connected Google Sheets and created a sales dashboard with a scorecard, bar chart, line chart, pie chart, and table. Added Region and Category filters and applied the Edge theme.
+- **Tools Used:** Google Sheets, Google Looker Studio, Git, GitHub.
+- **Deliverables:** `looker_studio_dashboard.png`; dashboard link added to `README.md`.
+- **Git:** Commit `ef9c94d`; PR #22 merged.
+- **Challenges:** - **Challenges:** The scorecard metric required troubleshooting. CIA was unavailable because the required Groq, OpenRouter, and Gemini API keys were not configured. CIA session and Career tab activities remain pending.
