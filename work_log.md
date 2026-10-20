@@ -689,3 +689,84 @@ Python, Pandas, NumPy, Matplotlib, Jupyter Notebook, VS Code, Git, GitHub, and C
 - Updated `statistics_analysis.ipynb` and merged PR #25 into `main`.
 - Commit: `05c6586`
 - PR: #25 — `feat: improve descriptive statistics interpretation`
+
+# Week 4 — Day 2: Probability
+
+**Date:** 20 October 2026
+
+**Hours Worked:** 1.5 hours (adjust to your actual time if needed)
+
+**Status:** Practical work completed; GitHub PR merged.
+
+## Topics Covered
+
+- Basic, joint, and conditional probability
+- Normal distribution and the empirical 68–95–99.7 rule
+- Binomial distribution and simulation
+- Central Limit Theorem (CLT)
+- Applications of probability in data analytics and business forecasting
+
+## Work Completed
+
+1. Created `probability_notebook.ipynb` for probability analysis.
+2. Used a Pandas contingency table to calculate basic, joint, and conditional probabilities.
+3. Generated a normal distribution plot and calculated the proportions of observations within one, two, and three standard deviations.
+4. Simulated a binomial distribution using NumPy and compared its simulated mean with the theoretical mean.
+5. Demonstrated the Central Limit Theorem using repeated sample means from an exponential population.
+6. Executed the notebook and verified that the outputs and plots were generated.
+7. Completed the probability quiz with a score of 100%.
+
+## Tools and Technologies Used
+
+Python, NumPy, Pandas, Matplotlib, Jupyter Notebook, Visual Studio Code, Git, GitHub, and Cynaris Intelligent Assistant (CIA).
+
+## CIA Activities
+
+### 1. Research: Probability in Real Data Analyst Work
+
+**Status:** Completed
+
+**Query:** Where does probability theory show up in real data analyst work?
+
+**Key Insights:**
+
+- Business forecasting: estimating demand and accounting for uncertainty.
+- Customer analytics: examining customer behavior, churn, conversions, and A/B testing.
+- Risk analysis: evaluating uncertainty, potential losses, and fraud risk.
+- Business decision-making: comparing possible outcomes using probabilistic reasoning and simulations.
+- Probability provides a foundation for statistical analysis and predictive modeling.
+
+### 2. Learning: Central Limit Theorem
+
+**Status:** Completed
+
+**Query:** Explain the Central Limit Theorem with a business forecasting example.
+
+**Key Insights:**
+
+- The distribution of sample means approaches a normal distribution when sufficiently large random samples are repeatedly drawn from a population with a finite mean and variance.
+- The original population does not need to be normally distributed.
+- The CLT supports statistical inference, including confidence intervals and hypothesis testing, when the relevant assumptions are satisfied.
+- Business example: repeatedly sampling customer spending and calculating each sample's mean to study how sample averages behave and estimate the population average.
+
+### 3. Career Advice: Probability
+
+**Status:** Completed
+
+**Query:** Probability
+
+**Key Insights:**
+
+- Probability helps analysts generalize from samples to populations and quantify uncertainty.
+- Important concepts include events, sample spaces, addition and complement rules, independence, conditional probability, and Bayes' theorem.
+- Probability supports predictive modeling, including methods such as Naive Bayes.
+- Conditional probability can help analysts investigate relationships between customer engagement and churn.
+
+**Career Relevance:** Probability, statistical reasoning, and Python-based data analysis are useful foundations for data analytics and predictive modeling.
+
+**Note:** CIA provided career-oriented learning guidance. The response did not identify specific job vacancies or verify employer-specific requirements.
+
+## Git and GitHub
+
+- **Branch:** `feature/week-4-day-2`
+- **Initial commit:** `3e2027b` — `
