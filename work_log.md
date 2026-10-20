@@ -607,3 +607,74 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - **Deliverables:** `looker_studio_dashboard.png`; dashboard link added to `README.md`.
 - **Git:** Commit `ef9c94d`; PR #22 merged.
 - **Challenges:** - **Challenges:** The scorecard metric required troubleshooting. CIA was unavailable because the required Groq, OpenRouter, and Gemini API keys were not configured. CIA session and Career tab activities remain pending.
+
+# Week 4 — Day 1: Statistics
+
+**Date:** 20 October 2026
+
+**Hours Worked:** 1.5
+
+**Topics Covered:** Descriptive statistics, mean, median, mode, variance, standard deviation, percentiles, quartiles, frequency distributions, outliers, and box plots.
+
+## What I Worked On
+
+Created `statistics_analysis.ipynb` to apply descriptive statistics to a sample business sales dataset containing Online and Store sales groups.
+
+Completed the following practical tasks:
+
+- Calculated mean, median, mode, variance, and standard deviation using Pandas and NumPy.
+- Calculated the 25th, 50th, 75th, and 90th percentiles.
+- Generated a five-number summary and descriptive statistics.
+- Created a histogram to visualize the sales frequency distribution.
+- Created side-by-side box plots to compare Online and Store sales.
+- Examined how an unusually high sales value affects the mean and distribution.
+- Added interpretation notes explaining central tendency, variability, outliers, and distribution shape.
+
+## Tools / Technologies Used
+
+Python, Pandas, NumPy, Matplotlib, Jupyter Notebook, VS Code, Git, GitHub, and Cynaris Intelligent Assistant (CIA).
+
+## Deliverable
+
+- `statistics_analysis.ipynb` — descriptive statistics calculations and visualizations.
+
+## Git Tasks
+
+- Created branch: `feature/week-4-day-1`
+- Commit: `1f519fd`
+- Commit message: `feat: descriptive-statistics week-4-day-1 complete`
+- Pushed the branch to GitHub.
+- Created Pull Request #24.
+- Merged PR #24 into `main` successfully.
+- Pulled the latest changes into the local `main` branch.
+
+## CIA Activities and Insights
+
+### 1. Chat — Mean vs. Median
+
+**Query:** When should I use median instead of mean to describe a dataset?
+
+**Insight:** The mean is useful for roughly symmetric distributions without highly influential outliers. The median is more resistant to extreme values and is often more representative of skewed datasets, such as salaries and house prices.
+
+### 2. Search — Statistics Interview Topics
+
+**Search topic:** Key statistical concepts tested in data analyst interviews.
+
+**Key findings:**
+
+- Mean, median, and mode describe central tendency.
+- Variance and standard deviation measure data dispersion.
+- Percentiles describe the relative position of values in a dataset.
+- Normal, binomial, and Poisson distributions describe different patterns of data or random outcomes.
+- Outliers should be investigated to determine whether they indicate data errors or meaningful unusual observations.
+
+### 3. Career Advice — Statistics for Data Analysts
+
+**Activity:** Reviewed CIA career guidance on statistical skills for Junior Data Analyst roles.
+
+**Key insights:**
+
+- Apply descriptive statistics and exploratory data analysis to understand datasets.
+- Identify outliers and investigate missing values and data quality.
+- Understand probability distributions and inferential statistics.
+- Learn hypothesis testing, p-values, confidence intervals
