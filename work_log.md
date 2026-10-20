@@ -678,3 +678,14 @@ Python, Pandas, NumPy, Matplotlib, Jupyter Notebook, VS Code, Git, GitHub, and C
 - Identify outliers and investigate missing values and data quality.
 - Understand probability distributions and inferential statistics.
 - Learn hypothesis testing, p-values, confidence intervals
+
+### Week 4 Day 1 — Statistics Improvements
+
+- Identified the sales distribution as right-skewed (skewness: 4.13).
+- Calculated Q1 (133.75), Q3 (160.0), and IQR (26.25).
+- Applied the 1.5 × IQR rule and identified 500 as an outlier.
+- Explained why the median and IQR are more robust than the mean and standard deviation when data is skewed or contains outliers.
+- Received CIA Chat feedback confirming that the notebook meets the baseline requirements.
+- Updated `statistics_analysis.ipynb` and merged PR #25 into `main`.
+- Commit: `05c6586`
+- PR: #25 — `feat: improve descriptive statistics interpretation`
