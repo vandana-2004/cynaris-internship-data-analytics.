@@ -853,3 +853,73 @@ The CIA Chat interface did not support uploading the notebook for direct review.
 - [ ] Notebook code checked against the CIA feedback checklist, if not already reviewed.
 
 **Final Status:** The practical tasks, CIA learning activities, and original GitHub pull request are completed. The direct CIA file review was unavailable, and the final work-log merge status and any remaining self-review checks are not yet confirmed.
+
+## Week 4 — Day 3: Regression Analysis
+
+**Status:** Practical work completed, notebook executed successfully, and pull request #28 opened.
+
+### Practical Work
+
+- Created `regression_analysis.ipynb` for regression analysis using Python.
+- Covered correlation analysis, linear regression, model evaluation, and regression diagnostics.
+- Used Pandas and NumPy for data preparation and calculations.
+- Used Matplotlib and Seaborn for data visualization and diagnostic plots.
+- Used Scikit-learn for regression modeling and model evaluation.
+- Executed the notebook cells and verified that the regression results and plots appeared successfully.
+
+### CIA Learning Activities
+
+- **Research:** Reviewed linear, multiple linear, logistic, regularized, tree-based, polynomial, and time-series regression techniques and their business applications.
+- **Chat:** Learned the difference between correlation and causation. Reviewed the example of rainy weather influencing both umbrella sales and customer complaints.
+- **Regression Overview:** Reviewed regression assumptions, multicollinearity, residual diagnostics, regularization, and model evaluation practices.
+
+### Key Learnings
+
+- Regression helps estimate continuous business outcomes and analyze relationships between variables.
+- Correlation does not necessarily imply causation.
+- Residual plots help identify potential problems with a regression model.
+- Multicollinearity can affect the interpretation of multiple regression coefficients.
+- Evaluation metrics help assess how well a regression model performs.
+- Regularization can help reduce overfitting in suitable regression models.
+
+### Tools and Technologies Used
+
+- Python
+- Jupyter Notebook
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Git and GitHub
+
+### Deliverables
+
+- `regression_analysis.ipynb`
+- `work_log.md`
+
+### Validation
+
+- Notebook cells executed successfully.
+- Regression results and diagnostic plots verified.
+- Changes committed and pushed to GitHub.
+- Pull request #28 opened for merging into `main`.
+- No merge conflicts reported by GitHub.
+
+### Git Submission
+
+- **Branch:** `feature/week-4-day-3`
+- **Initial commit:** `23bb72a` — `feat: correlation-regression week-4-day-3 complete`
+- **Work-log commit:** `2556338` — `docs: update week-4-day-3 work log`
+- **Notebook correction commit:** `f29f171` — `fix: save complete regression analysis notebook`
+- **Pull request:** #28 — `feat: Week 4 Day 3 Regression Analysis`
+- **Pull request status:** Open; merge not yet confirmed.
+
+### Challenges / Blockers
+
+- The CIA regression overview response did not clearly identify which tab generated it.
+- The notebook initially contained only a test cell. The complete regression notebook was subsequently saved, committed, pushed, and executed successfully.
+
+### Final Status
+
+Practical work, CIA learning activities, notebook execution, and Git submission are completed. Pull request #28 is awaiting merge confirmation.
