@@ -1117,7 +1117,12 @@ Dashboard components include:
 
 Tested the interactive slicers and confirmed that dashboard values changed when selections were applied.
 
-The dashboard was saved locally as a Power BI file. Publication to Power BI Service has not been confirmed.
+**Power BI Service publication**
+
+- Published `capstone_dashboard.pbix` to Power BI Service.
+- Selected My workspace as the publication destination.
+- **Power BI Dashboard Link:** https://app.powerbi.com/groups/me/reports/48efef76-5e2c-42e9-b18e-7bc96de41ed5/2d6aaac5ed755a3dccf2?experience=power-bi
+- Open the published report in your browser and confirm it loads before recording it as verified.
 
 ### 7. Executive Summary and Recommendations
 
@@ -1144,6 +1149,7 @@ Evaluate how discount levels relate to profitability. Test discount changes care
 - SciPy
 - Jupyter Notebook
 - Power BI Desktop
+- Power BI Service
 - Git and GitHub
 - Markdown
 
@@ -1154,6 +1160,7 @@ Evaluate how discount levels relate to profitability. Test discount changes care
 - `executive_summary.md` — business findings and three actionable recommendations.
 - `data/raw/archive/Sample - Superstore.csv` — source dataset.
 - `work_log.md` — internship work log.
+- Power BI Service report URL — paste the actual report URL in the Power BI Dashboard section above.
 
 ## CIA Activities
 
@@ -1189,17 +1196,16 @@ Evaluate how discount levels relate to profitability. Test discount changes care
 ## Challenges and Blockers
 
 - The CIA Review request failed, preventing automated feedback on the executive summary.
-- The Power BI dashboard is saved locally; publication to Power BI Service has not been confirmed.
+- The Power BI report was published to Power BI Service, but the report URL still needs to be pasted into this work log and verified in a browser.
 
 ## Git Status
 
-- Branch: `feature/week-4-day-5`
+- Branch: `main`
 - Capstone commit: `1108653`
 - Commit message: `feat: complete week-4 data analysis capstone`
-- Push: Completed.
-- Pull request: Creation and merge status to be confirmed.
-- Work log: This W4D5 entry must be saved, committed, and pushed as a follow-up update.
+- Pull request: #31 — merged.
+- Follow-up work-log update: Save, commit, and push the updated dashboard link after inserting the actual URL.
 
 ## Conclusion
 
-Completed the main capstone analysis, exploratory visualizations, statistical comparison, Power BI dashboard, and executive summary. The analysis identified regional and category-level differences in profitability and produced three recommendations for further business investigation. The CIA Review request remains blocked by a failed request.
+Completed the main capstone analysis, exploratory visualizations, statistical comparison, Power BI dashboard, and executive summary. The analysis identified regional and category-level differences in profitability and produced three recommendations for further business investigation. The CIA Review request remains blocked by a failed request. The published dashboard URL must be added to this work log and checked before the documentation is considered fully updated.
