@@ -689,3 +689,167 @@ Python, Pandas, NumPy, Matplotlib, Jupyter Notebook, VS Code, Git, GitHub, and C
 - Updated `statistics_analysis.ipynb` and merged PR #25 into `main`.
 - Commit: `05c6586`
 - PR: #25 — `feat: improve descriptive statistics interpretation`
+
+# Week 4 — Day 2: Probability
+
+**Date:** 20 October 2026  
+**Hours Worked:** 1.5 hours (adjust to your actual time)  
+**Status:** Practical tasks completed; original Pull Request merged.
+
+## Learning Objective
+
+Understand probability concepts and key distributions used in data analysis and business forecasting.
+
+## Topics Covered
+
+- Basic, joint, and conditional probability
+- Normal distribution and the 68–95–99.7 rule
+- Binomial distribution and simulation
+- Central Limit Theorem (CLT)
+- Applications of probability in data analytics and business forecasting
+
+## Practical Tasks Completed
+
+### 1. Probability Calculations
+
+- Created a contingency table using Pandas.
+- Calculated basic probability, joint probability, and conditional probability.
+- Practised interpreting probability results in a business context.
+
+### 2. Normal Distribution
+
+- Generated random observations from a normal distribution using NumPy.
+- Plotted the distribution using Matplotlib.
+- Calculated the proportions of observations within one, two, and three standard deviations to examine the 68–95–99.7 rule.
+
+### 3. Binomial Distribution
+
+- Simulated binomial outcomes using NumPy.
+- Plotted the simulated distribution.
+- Compared the simulated mean with the theoretical mean.
+
+### 4. Central Limit Theorem
+
+- Generated data from an exponential population.
+- Repeatedly sampled observations and calculated sample means.
+- Plotted the distribution of sample means to demonstrate the CLT.
+
+**Verification:** Executed the notebook and confirmed that the outputs and plots were generated successfully.
+
+## Tools and Technologies Used
+
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Jupyter Notebook
+- Visual Studio Code
+- Git and GitHub
+- Cynaris Intelligent Assistant (CIA)
+
+## CIA Activities
+
+### 1. Research — Probability in Real Data Analyst Work
+
+**Status:** Completed
+
+**Query:** Where does probability theory show up in real data analyst work?
+
+**Key Insights:**
+
+- Business forecasting uses probability and statistical models to estimate demand and account for uncertainty.
+- Customer analytics uses statistical reasoning to investigate customer behavior, churn, conversions, and A/B testing.
+- Risk analysis uses probability-based methods to assess uncertainty and potential losses.
+- Business decision-making can use simulations to compare possible outcomes.
+- Probability is a foundation for statistical analysis and predictive modeling.
+
+### 2. Learning — Central Limit Theorem
+
+**Status:** Completed
+
+**Query:** Explain the Central Limit Theorem with a business forecasting example.
+
+**Key Insights:**
+
+- The distribution of sample means approaches a normal distribution when sufficiently large random samples are repeatedly drawn from a population with a finite mean and variance.
+- The original population does not need to be normally distributed.
+- The CLT supports statistical inference, including confidence intervals and hypothesis testing when the required assumptions are satisfied.
+- Business example: repeatedly sampling customer spending and calculating sample averages to understand their distribution and estimate the population average.
+
+### 3. Career Advice — Probability
+
+**Status:** Completed
+
+**Query:** Probability
+
+**Key Insights:**
+
+- Probability helps analysts generalize from samples to populations and quantify uncertainty.
+- Core concepts include events, sample spaces, addition and complement rules, independence, conditional probability, and Bayes' theorem.
+- Probability supports predictive modeling techniques, including Naive Bayes.
+- Conditional probability can help investigate whether customer engagement is associated with churn.
+
+**Career Relevance:** Probability, statistical reasoning, and Python-based data analysis are useful foundations for data analytics and predictive modeling.
+
+**Note:** CIA provided career-oriented learning guidance, not verified job vacancies or employer-specific requirements.
+
+### 4. Review — Probability Notebook
+
+**Status:** Conceptual feedback received; direct notebook review unavailable.
+
+**Deliverable:** `probability_notebook.ipynb`
+
+**Review Method:** Shared a summary of the practical tasks with CIA because the Chat interface did not support file uploads.
+
+**Feedback Received:**
+
+- Verify the conditional probability formula and the denominator used.
+- Check contingency-table totals and explain the results in context.
+- Verify the normal-distribution intervals using the mean and standard deviation.
+- Compare the simulated binomial mean with the theoretical mean.
+- Explain the distribution of sample means in the CLT simulation.
+
+**Limitation:** CIA could not inspect the actual notebook code or independently verify its calculations. The feedback was a conceptual checklist, not a formal code review.
+
+## Git and GitHub
+
+- **Branch:** `feature/week-4-day-2`
+- **Initial commit:** `3e2027b` — `feat: probability-distributions week-4-day-2 complete`
+- **Correction commit:** `50ce66a` — `fix: save probability analysis notebook`
+- **Pull Request:** #26
+- **Original Pull Request status:** Merged into `main`
+- **Merge commit:** `18f5ee4`
+- **Practical deliverable:** `probability_notebook.ipynb`
+
+**Work Log Note:** The work-log changes made after PR #26 was merged were pushed to the feature branch separately. Their inclusion in `main` must be confirmed.
+
+## Challenges and Resolutions
+
+The notebook was initially committed before its contents were saved correctly. The notebook was subsequently saved, corrected, and committed in a follow-up commit. The changes were pushed to GitHub, and PR #26 was merged into `main`. The notebook outputs were verified.
+
+The CIA Chat interface did not support uploading the notebook for direct review. A text-based conceptual checklist was obtained instead.
+
+## Learning Outcomes
+
+- Applied basic, joint, and conditional probability calculations.
+- Visualized a normal distribution and examined the empirical rule.
+- Simulated a binomial distribution using NumPy.
+- Demonstrated the CLT using repeated sampling.
+- Connected probability concepts with forecasting, customer analytics, and risk analysis.
+- Identified checks for reviewing statistical calculations and simulations.
+
+## Final Checklist
+
+- [x] Practical notebook created and saved.
+- [x] Notebook cells executed and outputs verified.
+- [x] Probability quiz completed with 100%.
+- [x] CIA research completed and documented.
+- [x] CIA CLT explanation completed and documented.
+- [x] CIA Career Advice query completed and documented.
+- [x] CIA conceptual review guidance received and documented.
+- [x] Notebook changes committed and pushed.
+- [x] Original Pull Request #26 merged into `main`.
+- [ ] Latest work-log changes confirmed in `main`.
+- [ ] Notebook code checked against the CIA feedback checklist, if not already reviewed.
+
+**Final Status:** The practical tasks, CIA learning activities, and original GitHub pull request are completed. The direct CIA file review was unavailable, and the final work-log merge status and any remaining self-review checks are not yet confirmed.
