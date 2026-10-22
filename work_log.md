@@ -1019,9 +1019,187 @@ Used CIA Search to explore career opportunities and skills related to hypothesis
 - `hypothesis_tests.ipynb`
 - `work_log.md`
 
-### Git Status
+Git Status
 
-- Branch: `feature/week-4-day-4`
-- Commit: Pending
-- Push: Pending
-- Pull request: Pending
+Branch: feature/week-4-day-4
+
+Commit: Completed
+
+Push: Completed
+
+Pull request: Created and merged into main (PR #30)
+
+# Week 4 Day 5 — Data Analysis Capstone
+
+## Learning Objective
+
+Apply the complete data analysis workflow to a real-world dataset, from data cleaning and exploratory analysis to statistical testing, dashboard development, and business recommendations.
+
+## Business Question
+
+How can a retail business improve profitability by identifying its strongest products, regions, and discounting patterns?
+
+## Practical Tasks Completed
+
+### 1. Dataset Selection and Loading
+
+- Selected the Kaggle Sample Superstore dataset.
+- Dataset file: `data/raw/archive/Sample - Superstore.csv`
+- Loaded the dataset into Pandas using Python.
+- Confirmed the dataset contains 9,994 rows and 21 columns.
+
+### 2. Data Inspection and Cleaning
+
+- Inspected dataset columns, data types, and sample records.
+- Checked for missing values and duplicate rows.
+- Confirmed there were no missing values or duplicate rows in the dataset.
+- Converted `Order Date` and `Ship Date` into datetime data types.
+- Reviewed numerical columns, including Sales, Profit, Quantity, and Discount.
+- Retained negative profit values because they represent valid business losses.
+
+### 3. Exploratory Data Analysis (EDA)
+
+Analyzed sales and profitability across regions, product categories, sub-categories, and time periods.
+
+**Key business metrics**
+
+- Total Sales: $2,297,200.86
+- Total Profit: $286,397.02
+- Total Orders: 5,009
+- Units Sold: 37,873
+
+**Regional analysis**
+
+- West: Sales $725,457.82; Profit $108,418.45
+- East: Sales $678,781.24; Profit $91,522.78
+- Central: Sales $501,239.89; Profit $39,706.36
+- South: Sales $391,721.90; Profit $46,749.43
+
+**Category analysis**
+
+- Technology: Sales $836,154.03; Profit $145,454.95
+- Furniture: Sales $741,999.80; Profit $18,451.27
+- Office Supplies: Sales $719,047.03; Profit $122,490.80
+
+### 4. Data Visualization
+
+Created visualizations in `capstone_analysis.ipynb` to investigate:
+
+- Monthly sales and profit trends.
+- Sales and profit by region.
+- Profitability by product sub-category.
+- The relationship between discount levels and profit.
+
+Used the visualizations to identify strong-performing regions and categories, as well as areas requiring further profitability analysis.
+
+### 5. Statistical Analysis
+
+- Compared record-level profit for discounted and non-discounted transactions.
+- Conducted Welch's t-test to assess whether the average profit differed between the two groups.
+- Used the notebook's statistical output to evaluate the evidence of a difference.
+- Recognized that an observed association between discounts and profit does not, by itself, establish causation.
+
+### 6. Power BI Dashboard
+
+Created `capstone_dashboard.pbix` using Power BI Desktop.
+
+Dashboard components include:
+
+- Total Sales KPI card.
+- Total Profit KPI card.
+- Total Orders KPI card using distinct order IDs.
+- Monthly Sales Trend line chart.
+- Profit by Region bar chart.
+- Profit by Product Sub-Category bar chart.
+- Region slicer.
+- Category slicer.
+- Order Date slicer.
+
+Tested the interactive slicers and confirmed that dashboard values changed when selections were applied.
+
+The dashboard was saved locally as a Power BI file. Publication to Power BI Service has not been confirmed.
+
+### 7. Executive Summary and Recommendations
+
+Created `executive_summary.md` to communicate the business question, findings, methodology, and recommendations.
+
+**Recommendation 1 — Improve Furniture profitability**
+
+Investigate Furniture sub-categories, pricing, costs, and discount levels to identify products that contribute to weak profits. Test targeted improvements and monitor their effects.
+
+**Recommendation 2 — Use regional performance to guide decisions**
+
+Study the West region's product mix and sales practices to identify approaches worth testing elsewhere. Investigate the Central region's comparatively low profit relative to sales.
+
+**Recommendation 3 — Review discounting practices**
+
+Evaluate how discount levels relate to profitability. Test discount changes carefully and monitor both sales and profit before making broader decisions.
+
+## Tools and Technologies Used
+
+- Python
+- Pandas
+- Matplotlib
+- Seaborn
+- SciPy
+- Jupyter Notebook
+- Power BI Desktop
+- Git and GitHub
+- Markdown
+
+## Deliverables
+
+- `capstone_analysis.ipynb` — data inspection, cleaning, EDA, visualizations, and statistical analysis.
+- `capstone_dashboard.pbix` — interactive Power BI dashboard.
+- `executive_summary.md` — business findings and three actionable recommendations.
+- `data/raw/archive/Sample - Superstore.csv` — source dataset.
+- `work_log.md` — internship work log.
+
+## CIA Activities
+
+### CIA Research
+
+**Question:** What does a strong data analyst portfolio project look like on GitHub?
+
+**Key insights:**
+
+- Clearly explain the business problem and project objectives.
+- Organize the repository so the analysis and deliverables are easy to find.
+- Make the analysis reproducible and document the workflow.
+- Combine technical analysis with visualizations and business storytelling.
+- Include a clear README and relevant documentation.
+
+### CIA Career Search
+
+**Search:** Data Analysis Capstone
+
+**Key insights:**
+
+- Define a clear business question and relevant metrics.
+- Demonstrate an end-to-end data analysis workflow.
+- Explain findings in a way that supports business decisions.
+- Present the notebook, dashboard, and recommendations as a coherent portfolio project.
+
+### CIA Review
+
+**Request:** Review my executive summary and suggest improvements for a business audience.
+
+**Outcome:** The request failed. Recorded as a blocker; no review feedback was received.
+
+## Challenges and Blockers
+
+- The CIA Review request failed, preventing automated feedback on the executive summary.
+- The Power BI dashboard is saved locally; publication to Power BI Service has not been confirmed.
+
+## Git Status
+
+- Branch: `feature/week-4-day-5`
+- Capstone commit: `1108653`
+- Commit message: `feat: complete week-4 data analysis capstone`
+- Push: Completed.
+- Pull request: Creation and merge status to be confirmed.
+- Work log: This W4D5 entry must be saved, committed, and pushed as a follow-up update.
+
+## Conclusion
+
+Completed the main capstone analysis, exploratory visualizations, statistical comparison, Power BI dashboard, and executive summary. The analysis identified regional and category-level differences in profitability and produced three recommendations for further business investigation. The CIA Review request remains blocked by a failed request.
