@@ -853,3 +853,42 @@ The CIA Chat interface did not support uploading the notebook for direct review.
 - [ ] Notebook code checked against the CIA feedback checklist, if not already reviewed.
 
 **Final Status:** The practical tasks, CIA learning activities, and original GitHub pull request are completed. The direct CIA file review was unavailable, and the final work-log merge status and any remaining self-review checks are not yet confirmed.
+
+## Week 4 — Day 3: Regression Analysis
+
+**Status:** Practical notebook committed and pushed; CIA learning interactions completed.
+
+### Practical Work
+
+- Created `regression_analysis.ipynb` for regression analysis using Python.
+- Prepared analysis covering correlation, linear regression, model evaluation, and regression diagnostics.
+- Used Python data analysis and machine learning libraries, including Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn.
+
+### CIA Activities
+
+- **Research:** Reviewed linear, multiple linear, logistic, regularized, tree-based, polynomial, and time-series regression techniques and their business applications.
+- **Chat:** Learned the difference between correlation and causation. Reviewed rainy weather as a confounding factor affecting umbrella sales and customer complaints.
+- **Regression overview:** Reviewed regression assumptions, multicollinearity, residual diagnostics, regularization, and model evaluation practices.
+
+### Key Learnings
+
+- Regression can estimate continuous business metrics and identify relationships between predictors and outcomes.
+- Correlation alone does not establish causation.
+- Residual plots and appropriate evaluation metrics help assess model performance.
+- Multicollinearity should be investigated when using multiple predictors.
+
+### Deliverables
+
+- `regression_analysis.ipynb`
+
+### Git Submission
+
+- Branch: `feature/week-4-day-3`
+- Commit: `23bb72a` — `feat: correlation-regression week-4-day-3 complete`
+- Notebook branch pushed to GitHub.
+- Pull request: verify the PR status and link before recording it here.
+
+### Challenges / Blockers
+
+- The CIA response for the regression overview did not clearly identify which tab generated it.
+- Notebook execution results and diagnostic plots should be verified before claiming that all analyses ran successfully.
