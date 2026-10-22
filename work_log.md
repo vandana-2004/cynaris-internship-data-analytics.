@@ -923,3 +923,105 @@ The CIA Chat interface did not support uploading the notebook for direct review.
 ### Final Status
 
 Practical work, CIA learning activities, notebook execution, and Git submission are completed. Pull request #28 is awaiting merge confirmation.
+
+# Work Log
+
+## Week 4 — Day 4: Hypothesis Testing
+
+**Day:** Thursday  
+**Lesson:** Hypothesis Testing  
+**Status:** Practical work completed; Git commit and pull request pending.
+
+### Learning Objectives
+
+Learn to formulate null and alternative hypotheses, perform statistical tests, interpret p-values and confidence intervals, and use statistical evidence to support business decisions.
+
+### Topics Covered
+
+- Null hypothesis (H₀) and alternative hypothesis (H₁)
+- One-sample and two-sample t-tests
+- P-values and statistical significance
+- Confidence intervals
+- Type I and Type II errors
+- A/B testing
+- Business interpretation of statistical results
+
+### Practical Work Completed
+
+- Created `hypothesis_tests.ipynb`.
+- Used Python statistical libraries to conduct hypothesis testing.
+- Formulated hypotheses for business scenarios.
+- Performed a one-sample t-test using `scipy.stats`.
+- Performed a two-sample t-test to compare two groups.
+- Interpreted p-values and confidence intervals.
+- Evaluated statistical significance using a significance level of 0.05.
+- Generated a graph to visualize the data.
+- Reviewed Type I and Type II errors and their business consequences.
+- Executed all notebook cells successfully and reviewed the outputs and graph.
+
+### CIA Research — A/B Testing and Hypothesis Testing
+
+- A/B testing compares a control version (A) with a treatment version (B) to evaluate differences in business metrics.
+- Random assignment helps reduce selection bias.
+- Statistical tests, p-values, confidence intervals, and effect sizes help assess experimental results.
+- Adequate sample size is important for statistical power.
+- Multiple testing can increase the risk of false-positive results.
+
+### CIA Research — P-values and Statistical Significance
+
+- A p-value measures how likely results at least as extreme as the observed results would be if the null hypothesis were true.
+- A common significance level is α = 0.05.
+- When the p-value is below the chosen significance level, the null hypothesis is rejected under the specified testing procedure.
+- Statistical significance does not necessarily imply practical or commercial importance.
+- Business decisions should consider effect size, confidence intervals, costs, and context.
+
+### CIA Career Research
+
+Used CIA Search to explore career opportunities and skills related to hypothesis testing.
+
+**Relevant career roles:**
+
+- A/B Testing and Experimentation Analyst
+- Marketing and Campaign Analyst
+- Clinical and Health-Data Analyst
+- Financial Risk and Credit Analyst
+- Operations and Supply-Chain Analyst
+- Business Intelligence Analyst
+
+**Relevant skills:**
+
+- Probability and statistical distributions
+- Hypothesis formulation and p-value interpretation
+- Experimental design and power analysis
+- Python, SciPy, statsmodels, and SQL
+- Data cleaning and transformation
+- Data visualization and communicating findings
+
+### Tools and Technologies Used
+
+- Python
+- Jupyter Notebook
+- NumPy
+- Pandas
+- SciPy
+- Matplotlib
+- Git and GitHub
+- Cynaris Intelligent Assistant (CIA Search)
+
+### Challenges and Blockers
+
+- The CIA Career tab returned information about an unrelated W8D4 lesson.
+- Used CIA Search as an alternative and completed the relevant career research.
+- No major issues occurred while running the hypothesis-testing notebook.
+
+### Deliverables
+
+- `hypothesis_tests.ipynb`
+- `work_log.md`
+
+### Git Status
+
+- Branch: `feature/week-4-day-4`
+- Commit: Pending
+- Push: Pending
+- Pull request: Pending
