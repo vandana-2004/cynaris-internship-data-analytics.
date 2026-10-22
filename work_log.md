@@ -1019,9 +1019,12 @@ Used CIA Search to explore career opportunities and skills related to hypothesis
 - `hypothesis_tests.ipynb`
 - `work_log.md`
 
-### Git Status
+Git Status
 
-- Branch: `feature/week-4-day-4`
-- Commit: Pending
-- Push: Pending
-- Pull request: Pending
+Branch: feature/week-4-day-4
+
+Commit: Completed
+
+Push: Completed
+
+Pull request: Created and merged into main (PR #30)
