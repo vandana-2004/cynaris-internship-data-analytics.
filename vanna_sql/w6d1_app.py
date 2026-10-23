@@ -3,6 +3,7 @@ import os
 import sqlite3
 from pathlib import Path
 
+import pandas as pd
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
@@ -25,11 +26,18 @@ TRAINING_EXAMPLES = [
     },
     {
         "question": "What are total sales by region?",
-        "sql": "SELECT region, SUM(quantity * unit_price * (1 - COALESCE(discount, 0) / 100.0)) AS total_sales FROM orders GROUP BY region",
+        "sql": (
+            "SELECT region, SUM(quantity * unit_price * "
+            "(1 - COALESCE(discount, 0) / 100.0)) AS total_sales "
+            "FROM orders GROUP BY region"
+        ),
     },
     {
         "question": "Which products have the highest quantity sold?",
-        "sql": "SELECT product, SUM(quantity) AS total_quantity FROM orders GROUP BY product ORDER BY total_quantity DESC",
+        "sql": (
+            "SELECT product, SUM(quantity) AS total_quantity "
+            "FROM orders GROUP BY product ORDER BY total_quantity DESC"
+        ),
     },
     {
         "question": "What is the average order quantity?",
@@ -37,13 +45,44 @@ TRAINING_EXAMPLES = [
     },
     {
         "question": "How many orders are in each category?",
-        "sql": "SELECT category, COUNT(*) AS order_count FROM orders GROUP BY category",
+        "sql": (
+            "SELECT category, COUNT(*) AS order_count "
+            "FROM orders GROUP BY category"
+        ),
     },
 ]
 
 
 class QueryRequest(BaseModel):
     question: str
+
+
+class ReadOnlySqliteRunner(SqliteRunner):
+    async def run_sql(self, args, context):
+        sql = args.sql.strip()
+
+        if not sql:
+            raise ValueError("SQL query cannot be empty.")
+
+        database_uri = DB_PATH.resolve().as_uri() + "?mode=ro"
+        connection = sqlite3.connect(database_uri, uri=True)
+
+        def authorize(action, arg1, arg2, database, trigger):
+            allowed_actions = {
+                sqlite3.SQLITE_SELECT,
+                sqlite3.SQLITE_READ,
+                sqlite3.SQLITE_FUNCTION,
+                sqlite3.SQLITE_RECURSIVE,
+            }
+            if action in allowed_actions:
+                return sqlite3.SQLITE_OK
+            return sqlite3.SQLITE_DENY
+
+        try:
+            connection.set_authorizer(authorize)
+            return pd.read_sql_query(sql, connection)
+        finally:
+            connection.close()
 
 
 class SimpleUserResolver(UserResolver):
@@ -72,10 +111,10 @@ def build_agent() -> Agent:
     tools = ToolRegistry()
     tools.register_local_tool(
         RunSqlTool(
-            sql_runner=SqliteRunner(database_path=str(DB_PATH)),
+            sql_runner=ReadOnlySqliteRunner(database_path=str(DB_PATH)),
             custom_tool_name="run_sales_sql",
             custom_tool_description=(
-                "Query the sales orders database. Use SELECT statements only."
+                "Query the sales orders database using read-only SQL."
             ),
         ),
         access_groups=["user"],
@@ -102,7 +141,10 @@ def health():
 async def sql_analyst(request: QueryRequest):
     question = request.question.strip()
     if not question:
-        raise HTTPException(status_code=400, detail="Question cannot be empty.")
+        raise HTTPException(
+            status_code=400,
+            detail="Question cannot be empty.",
+        )
 
     examples = "\n".join(
         f"Question: {item['question']}\nSQL: {item['sql']}"
@@ -113,8 +155,9 @@ async def sql_analyst(request: QueryRequest):
         "You are a careful SQLite sales analyst. "
         "Use the orders table and its columns: order_id, customer_name, "
         "product, category, quantity, unit_price, order_date, region, "
-        "sales_rep, discount. Use SELECT queries only; never modify data. "
-        "Treat discount as a fraction when calculating discounted sales. "
+        "sales_rep, discount. Use read-only SELECT queries only. "
+        "Treat discount as a percentage (divide by 100.0) when calculating "
+        "discounted sales; treat NULL discounts as zero. "
         "Here are examples of question-to-SQL patterns:\n"
         f"{examples}\n\n"
         f"Answer this question and use the SQL tool when needed: {question}"
