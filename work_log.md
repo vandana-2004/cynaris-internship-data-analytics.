@@ -1309,23 +1309,23 @@ Python, Pandas, DuckDB, Polars, CSV, Git.
 ### Challenges / Blockers
 CIA code-review attempts failed with a request error. CIA interactions remain incomplete; local execution succeeded. Benchmark timings varied between runs and are not definitive performance rankings.
 
-## Week 6 Day 1 — Vanna Setup: NL to SQL on Real Database
+## Week 6 Day 1 - Vanna Setup: NL to SQL on Real Database
 
 ### Practical Tasks Completed
 - Created `vanna_sql/w6d1_app.py` with a FastAPI endpoint at `POST /cia/sql-analyst`.
 - Connected the application to the local `sales.db` SQLite database and configured five question-to-SQL examples.
-- Verified that the database contains 10 orders.
-- Started the FastAPI server successfully and verified application startup.
+- Configured the OpenAI-compatible Groq API after Gemini model/service errors.
+- Verified the database contains 10 orders and tested natural-language queries for order counts, average quantity, category counts, customer counts, dates, regional quantities and sales, and product sales.
+- Cross-checked product net sales against SQLite. Laptop ranked first with net sales of 337500.0.
+- Corrected the regional sales example to apply discounts as percentages and treat NULL discounts as zero.
 
 ### Deliverables
 - `vanna_sql/w6d1_app.py`
 
 ### Tools / Technologies Used
-Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, OpenAI-compatible API, Git, PowerShell.
+Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, PowerShell.
 
 ### Challenges / Blockers
-- Gemini requests failed because of model availability and temporary service errors.
-- Switched to the OpenAI-compatible Groq API configuration.
-- The API server starts, but the natural-language query still returns an error. Successful SQL generation and execution remain unverified.
-- CIA review and the remaining lesson validation tasks are pending.
-
+- Gemini requests failed because of model availability and temporary service errors; switched to Groq.
+- An earlier total-sales query returned an incorrect negative value due to discount-percentage arithmetic. The product-sales query was verified against SQLite, but generated SQL still needs validation.
+- CIA review and final lesson validation remain pending.

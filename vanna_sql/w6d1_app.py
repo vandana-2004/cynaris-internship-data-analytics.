@@ -25,7 +25,7 @@ TRAINING_EXAMPLES = [
     },
     {
         "question": "What are total sales by region?",
-        "sql": "SELECT region, SUM(quantity * unit_price * (1 - discount)) AS total_sales FROM orders GROUP BY region",
+        "sql": "SELECT region, SUM(quantity * unit_price * (1 - COALESCE(discount, 0) / 100.0)) AS total_sales FROM orders GROUP BY region",
     },
     {
         "question": "Which products have the highest quantity sold?",
@@ -56,17 +56,17 @@ class SimpleUserResolver(UserResolver):
 
 
 def build_agent() -> Agent:
-    api_key = os.getenv("GOOGLE_API_KEY")
+    api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
-        raise RuntimeError("GOOGLE_API_KEY is not configured.")
+        raise RuntimeError("GROQ_API_KEY is not configured.")
 
     if not DB_PATH.exists():
         raise FileNotFoundError(f"Database not found: {DB_PATH}")
 
     llm = OpenAILlmService(
-    model="llama-3.3-70b-versatile",
-    api_key=os.getenv("GROQ_API_KEY"),
-    base_url="https://api.groq.com/openai/v1",
+        model="openai/gpt-oss-120b",
+        api_key=api_key,
+        base_url="https://api.groq.com/openai/v1",
     )
 
     tools = ToolRegistry()
