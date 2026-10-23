@@ -1270,6 +1270,7 @@ Practical analysis, three manual comparisons, and CIA Chat, Code, and Search act
 **Topics Covered:** Automated exploratory data analysis, SweetViz, AutoViz, feature distributions, class imbalance, and business recommendations.
 
 **What did you work on today?**
+
 - Generated `reports/w5d2/sweetviz_report.html` using a reproducible random sample of 5,000 transactions.
 - Created three charts using Pandas and Matplotlib.
 - Documented three dataset insights and compared AutoViz and SweetViz for business use.
@@ -1278,4 +1279,4 @@ Practical analysis, three manual comparisons, and CIA Chat, Code, and Search act
 
 **Challenges / Blockers:** AutoViz report generation was too resource-intensive to complete. SweetViz successfully generated an HTML report containing 5,000 sampled transactions, including 6 fraud transactions. Sample findings require validation against the full dataset.
 
-**CIA Review:** Consulted CIA about W5D2 deliverable requirements. Final review of the generated report and deliverables is pending.
+**CIA Review:** CIA reviewed W5D2 PR #34 and confirmed that the SweetViz HTML report, three charts, and documentation satisfy the practical intent of the lesson. The AutoViz limitation due to resource and environment constraints was accepted. PR #34 was successfully merged into `main`. The Cynaris lesson page shows Completed, and the quiz was passed with 100%..
