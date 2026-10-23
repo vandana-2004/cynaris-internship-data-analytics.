@@ -1,0 +1,100 @@
+{
+  "dataset": "sales_data.csv",
+  "row_count": 10,
+  "columns": [
+    "order_id",
+    "customer",
+    "region",
+    "category",
+    "sales",
+    "quantity"
+  ],
+  "manual_pandas_results": {
+    "total_sales": 217500.0,
+    "average_sales": 21750.0,
+    "highest_sales": 35000.0,
+    "lowest_sales": 11000.0,
+    "sales_by_region": {
+      "South": 91500.0,
+      "West": 75000.0,
+      "North": 51000.0
+    },
+    "sales_by_category": {
+      "Electronics": 120000.0,
+      "Furniture": 59500.0,
+      "Clothing": 38000.0
+    },
+    "total_quantity": 21,
+    "top_customer": "Neha",
+    "regions_ranked": [
+      {
+        "region": "South",
+        "sales": 91500.0
+      },
+      {
+        "region": "West",
+        "sales": 75000.0
+      },
+      {
+        "region": "North",
+        "sales": 51000.0
+      }
+    ],
+    "order_count": 10
+  },
+  "pandasai_results": [
+    {
+      "question": "What is the total sales?",
+      "status": "success",
+      "answer": "217500.0"
+    },
+    {
+      "question": "What is the average sales?",
+      "status": "success",
+      "answer": "21750.0"
+    },
+    {
+      "question": "Which order has the highest sales?",
+      "status": "success",
+      "answer": "Order 1010 has the highest sales of 35000."
+    },
+    {
+      "question": "Which order has the lowest sales?",
+      "status": "success",
+      "answer": "Order 1008 has the lowest sales of 11000."
+    },
+    {
+      "question": "What are total sales by region?",
+      "status": "success",
+      "answer": "  region  total_sales\n0  South      91500.0\n1   West      75000.0\n2  North      51000.0"
+    },
+    {
+      "question": "What are total sales by category?",
+      "status": "success",
+      "answer": "      category  total_sales\n0  Electronics     120000.0\n1    Furniture      59500.0\n2     Clothing      38000.0"
+    },
+    {
+      "question": "What is the total quantity sold?",
+      "status": "success",
+      "answer": "21"
+    },
+    {
+      "question": "Which customer has the highest sales?",
+      "status": "success",
+      "answer": "Neha"
+    },
+    {
+      "question": "Rank the regions from highest to lowest total sales.",
+      "status": "success",
+      "answer": "  region  total_sales\n0  South      91500.0\n1   West      75000.0\n2  North      51000.0"
+    },
+    {
+      "question": "How many orders are in the dataset?",
+      "status": "success",
+      "answer": "10"
+    }
+  ],
+  "ai_status": "completed",
+  "successful_queries": 10,
+  "total_queries": 10
+}

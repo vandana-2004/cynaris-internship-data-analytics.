@@ -1,0 +1,1320 @@
+2026-10-23 01:15:10,001 - ERROR - PandasAI query failed: What is the total sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:10,600 - ERROR - PandasAI query failed: What is the average sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:11,242 - ERROR - PandasAI query failed: Which order has the highest sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:11,819 - ERROR - PandasAI query failed: Which order has the lowest sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:12,430 - ERROR - PandasAI query failed: What are total sales by region?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:13,317 - ERROR - PandasAI query failed: What are total sales by category?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:13,833 - ERROR - PandasAI query failed: What is the total quantity sold?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:14,425 - ERROR - PandasAI query failed: Which customer has the highest sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:14,957 - ERROR - PandasAI query failed: Rank the regions from highest to lowest total sales.
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:15:15,564 - ERROR - PandasAI query failed: How many orders are in the dataset?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:16:58,002 - ERROR - PandasAI query failed: What is the total sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:16:58,671 - ERROR - PandasAI query failed: What is the average sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:16:59,192 - ERROR - PandasAI query failed: Which order has the highest sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:16:59,719 - ERROR - PandasAI query failed: Which order has the lowest sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:17:00,252 - ERROR - PandasAI query failed: What are total sales by region?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:17:00,781 - ERROR - PandasAI query failed: What are total sales by category?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:17:01,297 - ERROR - PandasAI query failed: What is the total quantity sold?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:17:01,833 - ERROR - PandasAI query failed: Which customer has the highest sales?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:17:02,266 - ERROR - PandasAI query failed: Rank the regions from highest to lowest total sales.
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
+2026-10-23 01:17:02,795 - ERROR - PandasAI query failed: How many orders are in the dataset?
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 578, in _make_common_sync_call
+    response = sync_httpx_client.post(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 1548, in post
+    _raise_masked_sync_error(e, stream)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\http_handler.py", line 544, in _raise_masked_sync_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '400 Bad Request' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 5948, in completion
+    response = _complete_groq(_dispatch_ctx)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 2177, in _complete_groq
+    return base_llm_http_handler.completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 920, in completion
+    response: Final = self._make_common_sync_call(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 595, in _make_common_sync_call
+    raise self._handle_error(e=e, provider_config=provider_config)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\llms\custom_httpx\llm_http_handler.py", line 6350, in _handle_error
+    raise provider_error
+litellm.llms.openai.common_utils.OpenAIError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\python-pandas\w5d1\pandasai_analysis.py", line 149, in main
+    answer = ai_df.chat(question)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\dataframe\base.py", line 118, in chat
+    return self._agent.chat(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 103, in chat
+    return self._process_query(query, output_type)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 284, in _process_query
+    code = self.generate_code_with_retries(str(query))
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 181, in generate_code_with_retries
+    return self._regenerate_code_after_error(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\agent\base.py", line 308, in _regenerate_code_after_error
+    return self._code_generator.generate_code(prompt)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 52, in generate_code
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\core\code_generation\base.py", line 33, in generate_code
+    code = self._context.config.llm.generate_code(prompt, self._context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai\llm\base.py", line 173, in generate_code
+    response = self.call(instruction, context)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\pandasai_litellm\litellm.py", line 68, in call
+    completion(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\chat_completions\dispatch.py", line 91, in completion
+    return _DISPATCH.run(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\rust_bridge\dispatch.py", line 81, in run
+    return python(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1983, in wrapper
+    raise e
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\utils.py", line 1834, in wrapper
+    result = original_function(*args, **kwargs)
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\main.py", line 6122, in completion
+    raise exception_type(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2745, in exception_type
+    raise e  # it's already mapped
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2492, in exception_type
+    _map_openai_exception(
+  File "C:\Users\Vandana\Desktop\sql-fundamentals\.venv-pandasai\lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 425, in _map_openai_exception
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: GroqException - 
