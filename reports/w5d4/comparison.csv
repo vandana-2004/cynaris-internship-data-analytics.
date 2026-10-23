@@ -1,0 +1,6 @@
+criterion,Pandas,DuckDB,Polars
+Query style,DataFrame methods,SQL,DataFrame expressions
+Execution,Mostly eager,Query engine,Eager or lazy
+Best fit,General analysis,SQL analytics,Fast DataFrame processing
+Data access,Loads into memory,Can query CSV directly,Loads or scans files
+Syntax,Python API,SQL,Python expression API

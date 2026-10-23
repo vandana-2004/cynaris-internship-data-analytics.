@@ -1288,3 +1288,23 @@ Practical analysis, three manual comparisons, and CIA Chat, Code, and Search act
 - Saved benchmark timings in `w5d3_benchmark_results.csv` and the comparison in `w5d3_comparison.md`.
 - **CIA review:** Attempted multiple times; CIA returned `Request failed` or generic responses and did not review the actual script.
 - **Blocker:** Code review remains pending until CIA is available.
+
+## Week 5 Day 4 - Polars: High-Performance DataFrame Operations
+
+### Practical Tasks Completed
+- Benchmarked Pandas, DuckDB, and Polars using the same 100,000-row sales CSV.
+- Compared total sales, sales by region, sales by category, quantity by region, and the top five orders.
+- Recorded execution times and created a high-level tool comparison.
+- Re-ran the benchmark successfully.
+
+### Deliverables
+- `benchmark_w5d4.py`
+- `reports/w5d4/benchmark_results.csv`
+- `reports/w5d4/comparison.csv`
+- `reports/w5d4/README.md`
+
+### Tools / Technologies Used
+Python, Pandas, DuckDB, Polars, CSV, Git.
+
+### Challenges / Blockers
+CIA code-review attempts failed with a request error. CIA interactions remain incomplete; local execution succeeded. Benchmark timings varied between runs and are not definitive performance rankings.
