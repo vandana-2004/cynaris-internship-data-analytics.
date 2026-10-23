@@ -11,3 +11,22 @@
 1   East  114938000.0
 2  South  114918000.0
 3  North  114889000.0
+
+## Data Quality Note
+
+A cross-tabulation of all 100,000 rows confirmed that each region contains only one category, with 25,000 rows per pairing:
+
+- East — Food
+- North — Electronics
+- South — Clothing
+- West — Home
+
+All other region-category combinations have zero rows. The reason for this structure has not been confirmed.
+
+## Business Insight
+
+Total sales across the four observed region-category pairings range from 114,889,000 to 114,967,000. West/Home has the highest total, while North/Electronics has the lowest. Since region and category are confounded, the difference cannot be attributed to either factor independently.
+
+## Limitation
+
+The dataset has no cost or profit fields, so profitability and profit margins cannot be calculated. A dataset with multiple categories represented in each region is needed to compare regional and category performance independently.
