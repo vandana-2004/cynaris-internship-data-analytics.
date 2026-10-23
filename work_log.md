@@ -1280,3 +1280,11 @@ Practical analysis, three manual comparisons, and CIA Chat, Code, and Search act
 **Challenges / Blockers:** AutoViz report generation was too resource-intensive to complete. SweetViz successfully generated an HTML report containing 5,000 sampled transactions, including 6 fraud transactions. Sample findings require validation against the full dataset.
 
 **CIA Review:** CIA reviewed W5D2 PR #34 and confirmed that the SweetViz HTML report, three charts, and documentation satisfy the practical intent of the lesson. The AutoViz limitation due to resource and environment constraints was accepted. PR #34 was successfully merged into `main`. The Cynaris lesson page shows Completed, and the quiz was passed with 100%..
+
+## Week 5 Day 3 — DuckDB Benchmark
+
+- Benchmarked DuckDB, Pandas, and Polars on the same 100,000-row sales CSV using five analytical operations.
+- Verified that all three tools produced matching aggregate results.
+- Saved benchmark timings in `w5d3_benchmark_results.csv` and the comparison in `w5d3_comparison.md`.
+- **CIA review:** Attempted multiple times; CIA returned `Request failed` or generic responses and did not review the actual script.
+- **Blocker:** Code review remains pending until CIA is available.
