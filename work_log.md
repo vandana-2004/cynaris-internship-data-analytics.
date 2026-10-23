@@ -1,4 +1,4 @@
-# Week 1 Day 1 — SQL Fundamentals
+﻿# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -92,7 +92,7 @@ JOIN order can affect SQL query performance because it changes the size of inter
 
 For a customer-order report, INNER JOIN shows only customers who placed orders, while LEFT JOIN shows every customer, including customers with no orders. COALESCE can be used to display 0 for customers with no orders.
 
-## Week 1 Day 3 — SQL Aggregations
+## Week 1 Day 3 â€” SQL Aggregations
 
 ### CIA Research
 
@@ -104,11 +104,11 @@ What are the most useful SQL aggregate functions for financial and business repo
 
 CIA highlighted the following aggregate functions as useful for financial and business reporting:
 
-- SUM() — used for totals such as revenue, sales, and costs.
-- AVG() — used for averages such as average order value and average salary.
-- COUNT() — used to count rows or records.
-- COUNT(DISTINCT) — used to count unique customers or products.
-- MIN() — used to find the smallest value.
+- SUM() â€” used for totals such as revenue, sales, and costs.
+- AVG() â€” used for averages such as average order value and average salary.
+- COUNT() â€” used to count rows or records.
+- COUNT(DISTINCT) â€” used to count unique customers or products.
+- MIN() â€” used to find the smallest value.
 
 ### CIA Career Research
 
@@ -120,14 +120,14 @@ SQL Aggregations
 
 CIA Career research highlighted these SQL aggregation skills:
 
-- COUNT() — counts rows or non-NULL values.
-- SUM() — calculates the total of a numeric column.
-- AVG() — calculates the mean of a numeric column.
-- MIN() — finds the smallest value.
-- MAX() — finds the largest value.
-- GROUP BY — groups rows with identical values in selected columns.
-- HAVING — filters groups after aggregation.
-- Conditional aggregation — uses CASE inside aggregate functions to calculate values based on conditions.
+- COUNT() â€” counts rows or non-NULL values.
+- SUM() â€” calculates the total of a numeric column.
+- AVG() â€” calculates the mean of a numeric column.
+- MIN() â€” finds the smallest value.
+- MAX() â€” finds the largest value.
+- GROUP BY â€” groups rows with identical values in selected columns.
+- HAVING â€” filters groups after aggregation.
+- Conditional aggregation â€” uses CASE inside aggregate functions to calculate values based on conditions.
 
 ### CIA Review
 
@@ -143,7 +143,7 @@ CIA reviewed the Day 3 SQL aggregation queries and provided the following feedba
 - COUNT(\*) is valid and generally fine, but performance should be considered for very large tables.
 - SUM(sales_amount) is correct; if sales_amount can contain NULL values, COALESCE(sales_amount, 0) can be considered.
 
-Week 1 Day 4 — SQL Subqueries & CTEs
+Week 1 Day 4 â€” SQL Subqueries & CTEs
 
 CIA Insight
 
@@ -204,7 +204,7 @@ Key Learning
 
 CIA Career results showed that CTEs are an important SQL skill for data analyst roles, particularly for writing readable multi-step queries, working with aggregations, and handling hierarchical data.
 
-### CIA — Research
+### CIA â€” Research
 
 **Query:** What are the most useful Pandas methods for exploratory data analysis?
 
@@ -219,22 +219,22 @@ CIA Career results showed that CTEs are an important SQL skill for data analyst 
 - `groupby()` is useful for summarising data by categories.
 - `to_csv()` can be used to export cleaned data for further analysis.
 
-### CIA — Research: Python Libraries
+### CIA â€” Research: Python Libraries
 
 **Query:** What Python libraries do professional data analysts use beyond Pandas?
 
 **Key Insights:**
 
-- **NumPy** — numerical calculations and array operations.
-- **Matplotlib** — creating charts and visualisations.
-- **Seaborn** — statistical visualisations and attractive charts.
-- **SciPy** — scientific and statistical calculations.
-- **Scikit-learn** — machine learning and predictive analysis.
-- **Plotly** — interactive charts and dashboards.
+- **NumPy** â€” numerical calculations and array operations.
+- **Matplotlib** â€” creating charts and visualisations.
+- **Seaborn** â€” statistical visualisations and attractive charts.
+- **SciPy** â€” scientific and statistical calculations.
+- **Scikit-learn** â€” machine learning and predictive analysis.
+- **Plotly** â€” interactive charts and dashboards.
 
 **Career Takeaway:** Pandas is commonly used together with these libraries to perform data cleaning, analysis, visualisation, statistics, and machine learning tasks.
 
-### CIA — Career
+### CIA â€” Career
 
 **Query:** Python Pandas
 
@@ -249,7 +249,7 @@ CIA Career results showed that CTEs are an important SQL skill for data analyst 
 
 **Career Takeaway:** Learning Pandas is important for a Data Analyst because it is commonly used to clean, explore, transform, and analyse real-world datasets.
 
-### CIA Review — Week 1 Day 5
+### CIA Review â€” Week 1 Day 5
 
 #### Deliverable Reviewed
 
@@ -261,7 +261,7 @@ CIA reviewed the Week 1 Day 5 Pandas deliverable and stated:
 
 "Excellent work on your Week 1 Day 5 Pandas deliverable! You've demonstrated a solid understanding."
 
-## CIA Session — Data Visualisation
+## CIA Session â€” Data Visualisation
 
 **Question:** What chart type should I use for each type of data relationship?
 
@@ -275,7 +275,7 @@ CIA reviewed the Week 1 Day 5 Pandas deliverable and stated:
 
 **Application:** I used line, bar, scatter, histogram, and box plot visualisations on the sales dataset in `visualisations.ipynb`.
 
-## CIA Career Search — Data Visualisation
+## CIA Career Search â€” Data Visualisation
 
 **Search:** Data Visualisation
 
@@ -289,7 +289,7 @@ CIA reviewed the Week 1 Day 5 Pandas deliverable and stated:
 
 **Application:** I applied these concepts by creating five visualisations using Matplotlib and Seaborn with the sales dataset.
 
-## Week 2 Day 1 — Data Visualisation
+## Week 2 Day 1 â€” Data Visualisation
 
 ### Deliverable
 
@@ -308,7 +308,7 @@ CIA reviewed the Week 1 Day 5 Pandas deliverable and stated:
 - Saved visualisations as PNG files.
 - Embedded the visualisations in `visualisations.ipynb`.
 
-## CIA Session — Week 2 Day 2: Pandas Advanced
+## CIA Session â€” Week 2 Day 2: Pandas Advanced
 
 ### CIA Status
 
@@ -325,7 +325,7 @@ Search term: Pandas Advanced
 
 CIA AI was unavailable, so the Research/Review activity could not be completed at this time.
 
-## Week 2 — Day 3: EDA Workflow
+## Week 2 â€” Day 3: EDA Workflow
 
 ### What I Worked On
 
@@ -364,7 +364,7 @@ Completed the Week 2 Day 3 EDA Workflow practical task using the sales dataset.
 
 - Attempted the required CIA EDA checklist query, but CIA AI was unavailable.
 
-Week 2 — Day 4: Data Cleaning
+Week 2 â€” Day 4: Data Cleaning
 What I Worked On
 Performed systematic data cleaning using Pandas.
 Checked missing values using isnull().sum().
@@ -395,7 +395,7 @@ Key Learning
 
 Data cleaning improves the reliability and consistency of datasets before analysis. Missing values, duplicate records, inconsistent text values, and outliers should be identified and handled using appropriate methods rather than applying the same treatment to every dataset.
 
-### Week 2 — Day 5: NumPy for Data
+### Week 2 â€” Day 5: NumPy for Data
 
 - **Status:** Completed
 - **Deliverable:** `python-pandas/numpy_analysis.ipynb`
@@ -406,7 +406,7 @@ Data cleaning improves the reliability and consistency of datasets before analys
 - **Git branch:** `feature/week-2-day-5`
 - **Pull request:** To be added after creating the PR.
 
-### CIA Activity — Week 2 Day 5
+### CIA Activity â€” Week 2 Day 5
 
 - **Topic:** NumPy for Data
 - **Attempted query:** Explain NumPy broadcasting with a simple Python example.
@@ -414,7 +414,7 @@ Data cleaning improves the reliability and consistency of datasets before analys
 - **Learning completed independently:** Studied NumPy broadcasting, vectorised operations, statistical calculations, and performance benchmarking.
 - **Follow-up:** Retry CIA when the service is available.
 
-## Week 2 — Day 6: Data Governance
+## Week 2 â€” Day 6: Data Governance
 
 ### What I Worked On
 
@@ -479,7 +479,7 @@ Data governance improves trust in analytical datasets through documented data co
 - Retry required CIA activities when the CIA service becomes available, if still outstanding.
 - Confirm the learning portal reflects the completed practical work.
 
-### CIA Tasks — Blocked
+### CIA Tasks â€” Blocked
 
 - **Required query:** "What are the best practices for designing a Power BI dashboard for executives?"
 - **Status:** Unable to complete because CIA is currently unavailable.
@@ -549,7 +549,7 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - Retry the CIA tasks when the service becomes available.
 - Commit and push the updated documentation files to the feature branch.
 
-## Week 3 — Day 3: Excel for Analysis
+## Week 3 â€” Day 3: Excel for Analysis
 
 - **Status:** Practical work completed; original PR #18 merged. CIA activities partially blocked by service availability.
 - Created `analysis_workbook.xlsx` with sales data, Profit, Profit Margin, and Quarter columns.
@@ -576,21 +576,21 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 
 ### Git Submission
 
-- **Original Pull Request:** #18 — merged.
+- **Original Pull Request:** #18 â€” merged.
 - **Work-log follow-up:** PR #19 pending.
 
-## Week 3 Day 5 — KPI Design
+## Week 3 Day 5 â€” KPI Design
 
 - **Practical work:** Created `kpi_framework.md` with 10 KPIs and their formulas, owners, review frequencies, targets, and leading/lagging classifications.
 - **Dashboard:** Created `KPI Dashboard.pbix` with Total Sales, Total Orders, Average Order Value, Sales by Region, and Sales by Category.
 - **Interactivity:** Tested Region and Category slicers.
 - **Screenshot:** Saved as `kpi_dashboard.png`.
 - **Narrative:** Created `kpi_narrative.md` describing the dashboard, key indicators, recommendations, and data limitations.
-- **CIA query:** Pending — record the actual response to “What is the difference between a KPI, a metric, and a measure?” when available.
-- **CIA Career search:** Pending — search for “KPI Design” when available.
+- **CIA query:** Pending â€” record the actual response to â€œWhat is the difference between a KPI, a metric, and a measure?â€ when available.
+- **CIA Career search:** Pending â€” search for â€œKPI Designâ€ when available.
 - **Status:** Practical deliverables completed. CIA activities remain pending.
 
-## Week 3 Day 5 — CIA and Career Search Update
+## Week 3 Day 5 â€” CIA and Career Search Update
 
 - **CIA query:** Attempted the question, "What is the difference between a KPI, a metric, and a measure?"
 - **Result:** CIA was unavailable, so no response was received.
@@ -598,7 +598,7 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - **Result:** Unable to complete the search because CIA was not working.
 - **Next action:** Retry both activities when CIA becomes available.
 
-## Week 3 — Day 4: Looker Studio
+## Week 3 â€” Day 4: Looker Studio
 
 - **Hours Worked:** 1.0
 - **Topics Covered:** Looker Studio dashboards, Google Sheets integration, chart creation, interactive filters, and dashboard sharing.
@@ -608,7 +608,7 @@ Write DAX expressions for calculated columns and measures used in dynamic busine
 - **Git:** Commit `ef9c94d`; PR #22 merged.
 - **Challenges:** - **Challenges:** The scorecard metric required troubleshooting. CIA was unavailable because the required Groq, OpenRouter, and Gemini API keys were not configured. CIA session and Career tab activities remain pending.
 
-# Week 4 — Day 1: Statistics
+# Week 4 â€” Day 1: Statistics
 
 **Date:** 20 October 2026
 
@@ -636,7 +636,7 @@ Python, Pandas, NumPy, Matplotlib, Jupyter Notebook, VS Code, Git, GitHub, and C
 
 ## Deliverable
 
-- `statistics_analysis.ipynb` — descriptive statistics calculations and visualizations.
+- `statistics_analysis.ipynb` â€” descriptive statistics calculations and visualizations.
 
 ## Git Tasks
 
@@ -650,13 +650,13 @@ Python, Pandas, NumPy, Matplotlib, Jupyter Notebook, VS Code, Git, GitHub, and C
 
 ## CIA Activities and Insights
 
-### 1. Chat — Mean vs. Median
+### 1. Chat â€” Mean vs. Median
 
 **Query:** When should I use median instead of mean to describe a dataset?
 
 **Insight:** The mean is useful for roughly symmetric distributions without highly influential outliers. The median is more resistant to extreme values and is often more representative of skewed datasets, such as salaries and house prices.
 
-### 2. Search — Statistics Interview Topics
+### 2. Search â€” Statistics Interview Topics
 
 **Search topic:** Key statistical concepts tested in data analyst interviews.
 
@@ -668,7 +668,7 @@ Python, Pandas, NumPy, Matplotlib, Jupyter Notebook, VS Code, Git, GitHub, and C
 - Normal, binomial, and Poisson distributions describe different patterns of data or random outcomes.
 - Outliers should be investigated to determine whether they indicate data errors or meaningful unusual observations.
 
-### 3. Career Advice — Statistics for Data Analysts
+### 3. Career Advice â€” Statistics for Data Analysts
 
 **Activity:** Reviewed CIA career guidance on statistical skills for Junior Data Analyst roles.
 
@@ -679,18 +679,18 @@ Python, Pandas, NumPy, Matplotlib, Jupyter Notebook, VS Code, Git, GitHub, and C
 - Understand probability distributions and inferential statistics.
 - Learn hypothesis testing, p-values, confidence intervals
 
-### Week 4 Day 1 — Statistics Improvements
+### Week 4 Day 1 â€” Statistics Improvements
 
 - Identified the sales distribution as right-skewed (skewness: 4.13).
 - Calculated Q1 (133.75), Q3 (160.0), and IQR (26.25).
-- Applied the 1.5 × IQR rule and identified 500 as an outlier.
+- Applied the 1.5 Ã— IQR rule and identified 500 as an outlier.
 - Explained why the median and IQR are more robust than the mean and standard deviation when data is skewed or contains outliers.
 - Received CIA Chat feedback confirming that the notebook meets the baseline requirements.
 - Updated `statistics_analysis.ipynb` and merged PR #25 into `main`.
 - Commit: `05c6586`
-- PR: #25 — `feat: improve descriptive statistics interpretation`
+- PR: #25 â€” `feat: improve descriptive statistics interpretation`
 
-# Week 4 — Day 2: Probability
+# Week 4 â€” Day 2: Probability
 
 **Date:** 20 October 2026  
 **Hours Worked:** 1.5 hours (adjust to your actual time)  
@@ -703,7 +703,7 @@ Understand probability concepts and key distributions used in data analysis and 
 ## Topics Covered
 
 - Basic, joint, and conditional probability
-- Normal distribution and the 68–95–99.7 rule
+- Normal distribution and the 68â€“95â€“99.7 rule
 - Binomial distribution and simulation
 - Central Limit Theorem (CLT)
 - Applications of probability in data analytics and business forecasting
@@ -720,7 +720,7 @@ Understand probability concepts and key distributions used in data analysis and 
 
 - Generated random observations from a normal distribution using NumPy.
 - Plotted the distribution using Matplotlib.
-- Calculated the proportions of observations within one, two, and three standard deviations to examine the 68–95–99.7 rule.
+- Calculated the proportions of observations within one, two, and three standard deviations to examine the 68â€“95â€“99.7 rule.
 
 ### 3. Binomial Distribution
 
@@ -749,7 +749,7 @@ Understand probability concepts and key distributions used in data analysis and 
 
 ## CIA Activities
 
-### 1. Research — Probability in Real Data Analyst Work
+### 1. Research â€” Probability in Real Data Analyst Work
 
 **Status:** Completed
 
@@ -763,7 +763,7 @@ Understand probability concepts and key distributions used in data analysis and 
 - Business decision-making can use simulations to compare possible outcomes.
 - Probability is a foundation for statistical analysis and predictive modeling.
 
-### 2. Learning — Central Limit Theorem
+### 2. Learning â€” Central Limit Theorem
 
 **Status:** Completed
 
@@ -776,7 +776,7 @@ Understand probability concepts and key distributions used in data analysis and 
 - The CLT supports statistical inference, including confidence intervals and hypothesis testing when the required assumptions are satisfied.
 - Business example: repeatedly sampling customer spending and calculating sample averages to understand their distribution and estimate the population average.
 
-### 3. Career Advice — Probability
+### 3. Career Advice â€” Probability
 
 **Status:** Completed
 
@@ -793,7 +793,7 @@ Understand probability concepts and key distributions used in data analysis and 
 
 **Note:** CIA provided career-oriented learning guidance, not verified job vacancies or employer-specific requirements.
 
-### 4. Review — Probability Notebook
+### 4. Review â€” Probability Notebook
 
 **Status:** Conceptual feedback received; direct notebook review unavailable.
 
@@ -814,8 +814,8 @@ Understand probability concepts and key distributions used in data analysis and 
 ## Git and GitHub
 
 - **Branch:** `feature/week-4-day-2`
-- **Initial commit:** `3e2027b` — `feat: probability-distributions week-4-day-2 complete`
-- **Correction commit:** `50ce66a` — `fix: save probability analysis notebook`
+- **Initial commit:** `3e2027b` â€” `feat: probability-distributions week-4-day-2 complete`
+- **Correction commit:** `50ce66a` â€” `fix: save probability analysis notebook`
 - **Pull Request:** #26
 - **Original Pull Request status:** Merged into `main`
 - **Merge commit:** `18f5ee4`
@@ -854,7 +854,7 @@ The CIA Chat interface did not support uploading the notebook for direct review.
 
 **Final Status:** The practical tasks, CIA learning activities, and original GitHub pull request are completed. The direct CIA file review was unavailable, and the final work-log merge status and any remaining self-review checks are not yet confirmed.
 
-## Week 4 — Day 3: Regression Analysis
+## Week 4 â€” Day 3: Regression Analysis
 
 **Status:** Practical work completed, notebook executed successfully, and pull request #28 opened.
 
@@ -909,10 +909,10 @@ The CIA Chat interface did not support uploading the notebook for direct review.
 ### Git Submission
 
 - **Branch:** `feature/week-4-day-3`
-- **Initial commit:** `23bb72a` — `feat: correlation-regression week-4-day-3 complete`
-- **Work-log commit:** `2556338` — `docs: update week-4-day-3 work log`
-- **Notebook correction commit:** `f29f171` — `fix: save complete regression analysis notebook`
-- **Pull request:** #28 — `feat: Week 4 Day 3 Regression Analysis`
+- **Initial commit:** `23bb72a` â€” `feat: correlation-regression week-4-day-3 complete`
+- **Work-log commit:** `2556338` â€” `docs: update week-4-day-3 work log`
+- **Notebook correction commit:** `f29f171` â€” `fix: save complete regression analysis notebook`
+- **Pull request:** #28 â€” `feat: Week 4 Day 3 Regression Analysis`
 - **Pull request status:** Open; merge not yet confirmed.
 
 ### Challenges / Blockers
@@ -926,7 +926,7 @@ Practical work, CIA learning activities, notebook execution, and Git submission 
 
 # Work Log
 
-## Week 4 — Day 4: Hypothesis Testing
+## Week 4 â€” Day 4: Hypothesis Testing
 
 **Day:** Thursday  
 **Lesson:** Hypothesis Testing  
@@ -938,7 +938,7 @@ Learn to formulate null and alternative hypotheses, perform statistical tests, i
 
 ### Topics Covered
 
-- Null hypothesis (H₀) and alternative hypothesis (H₁)
+- Null hypothesis (Hâ‚€) and alternative hypothesis (Hâ‚)
 - One-sample and two-sample t-tests
 - P-values and statistical significance
 - Confidence intervals
@@ -959,7 +959,7 @@ Learn to formulate null and alternative hypotheses, perform statistical tests, i
 - Reviewed Type I and Type II errors and their business consequences.
 - Executed all notebook cells successfully and reviewed the outputs and graph.
 
-### CIA Research — A/B Testing and Hypothesis Testing
+### CIA Research â€” A/B Testing and Hypothesis Testing
 
 - A/B testing compares a control version (A) with a treatment version (B) to evaluate differences in business metrics.
 - Random assignment helps reduce selection bias.
@@ -967,10 +967,10 @@ Learn to formulate null and alternative hypotheses, perform statistical tests, i
 - Adequate sample size is important for statistical power.
 - Multiple testing can increase the risk of false-positive results.
 
-### CIA Research — P-values and Statistical Significance
+### CIA Research â€” P-values and Statistical Significance
 
 - A p-value measures how likely results at least as extreme as the observed results would be if the null hypothesis were true.
-- A common significance level is α = 0.05.
+- A common significance level is Î± = 0.05.
 - When the p-value is below the chosen significance level, the null hypothesis is rejected under the specified testing procedure.
 - Statistical significance does not necessarily imply practical or commercial importance.
 - Business decisions should consider effect size, confidence intervals, costs, and context.
@@ -1029,7 +1029,7 @@ Push: Completed
 
 Pull request: Created and merged into main (PR #30)
 
-# Week 4 Day 5 — Data Analysis Capstone
+# Week 4 Day 5 â€” Data Analysis Capstone
 
 ## Learning Objective
 
@@ -1128,15 +1128,15 @@ Tested the interactive slicers and confirmed that dashboard values changed when 
 
 Created `executive_summary.md` to communicate the business question, findings, methodology, and recommendations.
 
-**Recommendation 1 — Improve Furniture profitability**
+**Recommendation 1 â€” Improve Furniture profitability**
 
 Investigate Furniture sub-categories, pricing, costs, and discount levels to identify products that contribute to weak profits. Test targeted improvements and monitor their effects.
 
-**Recommendation 2 — Use regional performance to guide decisions**
+**Recommendation 2 â€” Use regional performance to guide decisions**
 
 Study the West region's product mix and sales practices to identify approaches worth testing elsewhere. Investigate the Central region's comparatively low profit relative to sales.
 
-**Recommendation 3 — Review discounting practices**
+**Recommendation 3 â€” Review discounting practices**
 
 Evaluate how discount levels relate to profitability. Test discount changes carefully and monitor both sales and profit before making broader decisions.
 
@@ -1155,12 +1155,12 @@ Evaluate how discount levels relate to profitability. Test discount changes care
 
 ## Deliverables
 
-- `capstone_analysis.ipynb` — data inspection, cleaning, EDA, visualizations, and statistical analysis.
-- `capstone_dashboard.pbix` — interactive Power BI dashboard.
-- `executive_summary.md` — business findings and three actionable recommendations.
-- `data/raw/archive/Sample - Superstore.csv` — source dataset.
-- `work_log.md` — internship work log.
-- Power BI Service report URL — paste the actual report URL in the Power BI Dashboard section above.
+- `capstone_analysis.ipynb` â€” data inspection, cleaning, EDA, visualizations, and statistical analysis.
+- `capstone_dashboard.pbix` â€” interactive Power BI dashboard.
+- `executive_summary.md` â€” business findings and three actionable recommendations.
+- `data/raw/archive/Sample - Superstore.csv` â€” source dataset.
+- `work_log.md` â€” internship work log.
+- Power BI Service report URL â€” paste the actual report URL in the Power BI Dashboard section above.
 
 ## CIA Activities
 
@@ -1203,14 +1203,14 @@ Evaluate how discount levels relate to profitability. Test discount changes care
 - Branch: `main`
 - Capstone commit: `1108653`
 - Commit message: `feat: complete week-4 data analysis capstone`
-- Pull request: #31 — merged.
+- Pull request: #31 â€” merged.
 - Follow-up work-log update: Save, commit, and push the updated dashboard link after inserting the actual URL.
 
 ## Conclusion
 
 Completed the main capstone analysis, exploratory visualizations, statistical comparison, Power BI dashboard, and executive summary. The analysis identified regional and category-level differences in profitability and produced three recommendations for further business investigation. The CIA Review request remains blocked by a failed request. The published dashboard URL must be added to this work log and checked before the documentation is considered fully updated.
 
-## Week 5 — Day 1: PandasAI and Automated EDA
+## Week 5 â€” Day 1: PandasAI and Automated EDA
 
 ### Learning Objective
 
@@ -1242,11 +1242,11 @@ Python, Pandas, PandasAI, Groq API, LiteLLM, JSON, Markdown, PowerShell, Git.
 
 ### CIA Activities
 
-**Chat — Workflow Review:** Received recommendations on separating data loading, validating data types and missing values, improving business-oriented reporting, and comparing AI results with manual calculations.
+**Chat â€” Workflow Review:** Received recommendations on separating data loading, validating data types and missing values, improving business-oriented reporting, and comparing AI results with manual calculations.
 
-**Code — Code Review:** Received recommendations on path handling, schema validation, secure API-key management, exception handling, logging, dependency management, modular functions, and automated tests. Further improvements remain pending.
+**Code â€” Code Review:** Received recommendations on path handling, schema validation, secure API-key management, exception handling, logging, dependency management, modular functions, and automated tests. Further improvements remain pending.
 
-**Search — Best Practices:** Reviewed recommendations for data quality checks, reproducibility, numeric tolerance checks, unit testing, and documenting prompts and results.
+**Search â€” Best Practices:** Reviewed recommendations for data quality checks, reproducibility, numeric tolerance checks, unit testing, and documenting prompts and results.
 
 **Outcome:** All three CIA activities completed successfully. Recommendations are documented; additional code improvements have not yet been implemented.
 
@@ -1263,4 +1263,5 @@ Earlier API errors occurred during setup. The final PandasAI run completed all 1
 
 ### Status
 
-Practical analysis, three manual comparisons, and CIA Chat, Code, and Search activities completed. Work log saved; Git commit pending.
+Practical analysis, three manual comparisons, and CIA Chat, Code, and Search activities completed. All W5D1 deliverables and the work log have been committed, pushed, and merged into main.
+
