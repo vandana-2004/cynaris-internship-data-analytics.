@@ -1265,3 +1265,17 @@ Earlier API errors occurred during setup. The final PandasAI run completed all 1
 
 Practical analysis, three manual comparisons, and CIA Chat, Code, and Search activities completed. All W5D1 deliverables and the work log have been committed, pushed, and merged into main.
 
+**Hours Worked:** Enter your actual hours.
+
+**Topics Covered:** Automated exploratory data analysis, SweetViz, AutoViz, feature distributions, class imbalance, and business recommendations.
+
+**What did you work on today?**
+- Generated `reports/w5d2/sweetviz_report.html` using a reproducible random sample of 5,000 transactions.
+- Created three charts using Pandas and Matplotlib.
+- Documented three dataset insights and compared AutoViz and SweetViz for business use.
+
+**Tools / Technologies Used:** Python, Pandas, Matplotlib, SweetViz, AutoViz, Git, VS Code.
+
+**Challenges / Blockers:** AutoViz report generation was too resource-intensive to complete. SweetViz successfully generated an HTML report containing 5,000 sampled transactions, including 6 fraud transactions. Sample findings require validation against the full dataset.
+
+**CIA Review:** Consulted CIA about W5D2 deliverable requirements. Final review of the generated report and deliverables is pending.
