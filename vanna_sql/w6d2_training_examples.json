@@ -1,0 +1,22 @@
+﻿[
+  {
+    "question": "How many orders are there?",
+    "sql": "SELECT COUNT(*) AS total_orders FROM orders"
+  },
+  {
+    "question": "What are total discounted sales by region?",
+    "sql": "SELECT region, SUM(quantity * unit_price * (1 - COALESCE(discount, 0) / 100.0)) AS total_sales FROM orders GROUP BY region ORDER BY total_sales DESC"
+  },
+  {
+    "question": "Which products have the highest quantity sold?",
+    "sql": "SELECT product, SUM(quantity) AS total_quantity FROM orders GROUP BY product ORDER BY total_quantity DESC"
+  },
+  {
+    "question": "What is the average order quantity?",
+    "sql": "SELECT AVG(quantity) AS average_quantity FROM orders"
+  },
+  {
+    "question": "How many orders are in each category?",
+    "sql": "SELECT category, COUNT(*) AS order_count FROM orders GROUP BY category ORDER BY order_count DESC"
+  }
+]

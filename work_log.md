@@ -1292,26 +1292,31 @@ Practical analysis, three manual comparisons, and CIA Chat, Code, and Search act
 ## Week 5 Day 4 - Polars: High-Performance DataFrame Operations
 
 ### Practical Tasks Completed
+
 - Benchmarked Pandas, DuckDB, and Polars using the same 100,000-row sales CSV.
 - Compared total sales, sales by region, sales by category, quantity by region, and the top five orders.
 - Recorded execution times and created a high-level tool comparison.
 - Re-ran the benchmark successfully.
 
 ### Deliverables
+
 - `benchmark_w5d4.py`
 - `reports/w5d4/benchmark_results.csv`
 - `reports/w5d4/comparison.csv`
 - `reports/w5d4/README.md`
 
 ### Tools / Technologies Used
+
 Python, Pandas, DuckDB, Polars, CSV, Git.
 
 ### Challenges / Blockers
+
 CIA code-review attempts failed with a request error. CIA interactions remain incomplete; local execution succeeded. Benchmark timings varied between runs and are not definitive performance rankings.
 
 ## Week 6 Day 1 - Vanna Setup: NL to SQL on Real Database
 
 ### Practical Tasks Completed
+
 - Created `vanna_sql/w6d1_app.py` with a FastAPI endpoint at `POST /cia/sql-analyst`.
 - Connected the application to the local `sales.db` SQLite database and configured five question-to-SQL examples.
 - Configured the OpenAI-compatible Groq API after Gemini model/service errors.
@@ -1320,13 +1325,37 @@ CIA code-review attempts failed with a request error. CIA interactions remain in
 - Corrected the regional sales example to apply discounts as percentages and treat NULL discounts as zero.
 
 ### Deliverables
+
 - `vanna_sql/w6d1_app.py`
 
 ### Tools / Technologies Used
+
 Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, PowerShell.
 
 ### Challenges / Blockers
+
 - Gemini requests failed because of model availability and temporary service errors; switched to Groq.
 - An earlier total-sales query returned an incorrect negative value due to discount-percentage arithmetic. The product-sales query was verified against SQLite, but generated SQL still needs validation.
 - CIA review was unavailable after repeated attempts; the blocker was documented.
 - Final generated SQL validation remains incomplete and requires further testing.
+
+## W6D2 — Vanna Custom SQL Patterns
+
+### Work Completed
+
+- Created and verified 5 SQL Q&A examples in `vanna_sql/w6d2_training_examples.json`.
+- Ran 10 read-only SQL validation tests; all 10 passed.
+- Generated validation evidence: `reports/w6d2/sql_validation_results.csv`.
+- Confirmed API health; `sales.db` was available.
+- Tested `POST /cia/sql-analyst` with “How many orders are there?” The endpoint returned the correct result: 10 orders.
+- Completed 2 CIA interactions:
+  1. Asked how to calculate discounted sales by region. CIA initially provided a generic example using a different table and column names.
+  2. Clarified the actual `orders` schema. CIA returned a query using `COALESCE(discount, 0)` and grouped results by region.
+
+### Validation and Blockers
+
+- Static SQL validation: 10/10 passed.
+- API health check: passed.
+- SQL analyst endpoint test: passed for the order-count question.
+- CIA interactions: 2 completed successfully.
+- Note: The 10 SQL validation tests used predefined SQL queries; they do not represent 10 AI-generated query tests.
