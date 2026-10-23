@@ -1328,4 +1328,5 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 ### Challenges / Blockers
 - Gemini requests failed because of model availability and temporary service errors; switched to Groq.
 - An earlier total-sales query returned an incorrect negative value due to discount-percentage arithmetic. The product-sales query was verified against SQLite, but generated SQL still needs validation.
-- CIA review and final lesson validation remain pending.
+- CIA review was unavailable after repeated attempts; the blocker was documented.
+- Final generated SQL validation remains incomplete and requires further testing.
