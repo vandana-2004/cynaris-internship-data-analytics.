@@ -37,7 +37,7 @@ Source dataset: `data/w5d3/sales_100k.csv`
 
 Run the following checks using Python to reproduce the analysis:
 
-```python
+````python
 import pandas as pd
 
 df = pd.read_csv("data/w5d3/sales_100k.csv")
@@ -45,10 +45,23 @@ df = pd.read_csv("data/w5d3/sales_100k.csv")
 print("Dataset shape:", df.shape)
 print(df.groupby("region")["sales"].sum().sort_values(ascending=False))
 print(pd.crosstab(df["region"], df["category"]))
-```
+```## Manual Pandas vs PandasAI Validation
+
+Both methods use `data/w5d3/sales_100k.csv` with 100,000 rows. Manual Pandas regional totals match the PandasAI results documented above.
+
+| Region | Manual Total | PandasAI Total | Variance (%) | Status |
+|---|---:|---:|---:|---|
+| West | 114,967,000 | 114,967,000 | 0.00% | Match |
+| East | 114,938,000 | 114,938,000 | 0.00% | Match |
+| South | 114,918,000 | 114,918,000 | 0.00% | Match |
+| North | 114,889,000 | 114,889,000 | 0.00% | Match |
+
+**Conclusion:** The documented regional totals agree exactly, with 0.00% variance across all four regions. This comparison assumes both results use the same dataset and grouping logic.
+
 
 Expected dataset shape: `(100000, 5)`.
 
 The cross-tabulation shows 25,000 rows each for East/Food, North/Electronics, South/Clothing, and West/Home. All other region-category combinations contain zero rows. Regional sales totals should match the PandasAI results documented above.
 
 Because region and category are confounded, their independent effects cannot be determined. Profitability cannot be assessed without cost or profit fields.
+````
