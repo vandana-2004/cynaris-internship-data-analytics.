@@ -1,0 +1,16 @@
+operation,tool,seconds
+1_total_sales,DuckDB,0.004389100009575486
+2_average_sales,DuckDB,0.0011337000032654032
+3_sales_by_region,DuckDB,0.0042754000023705885
+4_category_quantity,DuckDB,0.005944600008660927
+5_high_value_orders,DuckDB,0.001541899997391738
+1_total_sales,Pandas,0.0014832000015303493
+2_average_sales,Pandas,0.0004326000052969903
+3_sales_by_region,Pandas,0.008709999994607642
+4_category_quantity,Pandas,0.009219999992637895
+5_high_value_orders,Pandas,0.0005458999949041754
+1_total_sales,Polars,0.0006621999928029254
+2_average_sales,Polars,0.0002032000047620386
+3_sales_by_region,Polars,0.0052654000028269365
+4_category_quantity,Polars,0.0018394999933661893
+5_high_value_orders,Polars,0.0014199000142980367
