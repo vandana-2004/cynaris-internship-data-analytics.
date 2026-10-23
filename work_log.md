@@ -1308,3 +1308,22 @@ Python, Pandas, DuckDB, Polars, CSV, Git.
 
 ### Challenges / Blockers
 CIA code-review attempts failed with a request error. CIA interactions remain incomplete; local execution succeeded. Benchmark timings varied between runs and are not definitive performance rankings.
+
+## Week 5 Day 5 - AI-Powered EDA on Business Data
+
+### Practical Tasks Completed
+- Analyzed the 100,000-row sales dataset using Pandas.
+- Checked missing values, duplicate rows, and duplicate order IDs.
+- Generated a JSON summary, Markdown report, and visualization chart.
+
+### Deliverables
+- `reports/w5d5/automated_eda.py`
+- `reports/w5d5/eda_summary.json`
+- `reports/w5d5/eda_report.md`
+- `reports/w5d5/charts/eda_overview.png`
+
+### Tools / Technologies Used
+Python, Pandas, Matplotlib, JSON, Markdown, Git.
+
+### Challenges / Blockers
+PandasAI execution is pending because the package and local API key are not configured in the current environment. No AI-generated findings are claimed. CIA interactions and review remain pending.
