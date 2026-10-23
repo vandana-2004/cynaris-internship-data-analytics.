@@ -1292,19 +1292,52 @@ Practical analysis, three manual comparisons, and CIA Chat, Code, and Search act
 ## Week 5 Day 4 - Polars: High-Performance DataFrame Operations
 
 ### Practical Tasks Completed
+
 - Benchmarked Pandas, DuckDB, and Polars using the same 100,000-row sales CSV.
 - Compared total sales, sales by region, sales by category, quantity by region, and the top five orders.
 - Recorded execution times and created a high-level tool comparison.
 - Re-ran the benchmark successfully.
 
 ### Deliverables
+
 - `benchmark_w5d4.py`
 - `reports/w5d4/benchmark_results.csv`
 - `reports/w5d4/comparison.csv`
 - `reports/w5d4/README.md`
 
 ### Tools / Technologies Used
+
 Python, Pandas, DuckDB, Polars, CSV, Git.
 
 ### Challenges / Blockers
+
 CIA code-review attempts failed with a request error. CIA interactions remain incomplete; local execution succeeded. Benchmark timings varied between runs and are not definitive performance rankings.
+
+## Week 5 Day 5 - AI-Powered EDA on Business Data
+
+### Practical Tasks Completed
+
+- Analyzed the 100,000-row sales dataset using Pandas.
+- Verified zero missing cells, duplicate rows, and duplicate order IDs.
+- Generated a JSON summary, Markdown EDA report, and visualization chart.
+- Used PandasAI to calculate total sales by region and saved the AI analysis.
+- Cross-tabulated region and category, confirming that each region contains only one category with 25,000 rows per pairing.
+- Documented the data-quality limitation, evidence-based business insight, and lack of cost/profit data.
+
+### Deliverables
+
+- `reports/w5d5/automated_eda.py`
+- `reports/w5d5/eda_summary.json`
+- `reports/w5d5/eda_report.md`
+- `reports/w5d5/charts/eda_overview.png`
+- `reports/w5d5/pandasai_analysis.md`
+
+### Tools / Technologies Used
+
+Python, Pandas, PandasAI, Matplotlib, JSON, Markdown, Git, Groq API.
+
+### Challenges / Blockers
+
+- Region and category are confounded in the dataset; the cause of this structure is not confirmed.
+- Profitability cannot be assessed because cost/profit fields are unavailable.
+- CIA reviewed the regional results and requested verification. The cross-tabulation was completed, and the findings were documented. A final CIA review is still pending.

@@ -1,0 +1,22 @@
+{
+  "rows": 100000,
+  "columns": 5,
+  "missing_cells": 0,
+  "duplicate_rows": 0,
+  "duplicate_order_ids": 0,
+  "total_sales": 459712000.0,
+  "average_sales": 4597.12,
+  "total_quantity": 550000,
+  "sales_by_region": {
+    "West": 114967000.0,
+    "East": 114938000.0,
+    "South": 114918000.0,
+    "North": 114889000.0
+  },
+  "sales_by_category": {
+    "Home": 114967000.0,
+    "Food": 114938000.0,
+    "Clothing": 114918000.0,
+    "Electronics": 114889000.0
+  }
+}
