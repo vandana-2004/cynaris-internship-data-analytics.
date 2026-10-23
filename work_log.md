@@ -1209,3 +1209,58 @@ Evaluate how discount levels relate to profitability. Test discount changes care
 ## Conclusion
 
 Completed the main capstone analysis, exploratory visualizations, statistical comparison, Power BI dashboard, and executive summary. The analysis identified regional and category-level differences in profitability and produced three recommendations for further business investigation. The CIA Review request remains blocked by a failed request. The published dashboard URL must be added to this work log and checked before the documentation is considered fully updated.
+
+## Week 5 — Day 1: PandasAI and Automated EDA
+
+### Learning Objective
+
+Use PandasAI to analyze sales data through natural-language queries and compare AI-generated results with manual Pandas calculations.
+
+### Practical Work
+
+- Loaded `python-pandas/sales_data.csv` containing 10 rows and 6 columns.
+- Created `python-pandas/w5d1/pandasai_analysis.py`.
+- Executed 10 natural-language queries using PandasAI and Groq.
+- Saved results in `query_results.json`.
+- Compared three AI answers with manual Pandas calculations in `pandas_comparison.md`.
+- Recorded errors encountered during troubleshooting in `errors.log`.
+
+### Key Results
+
+- Total sales: 217,500
+- Average sales: 21,750
+- Highest-sales order: 1010, with sales of 35,000
+- Lowest-sales order: 1008, with sales of 11,000
+- Highest-sales region: South, with sales of 91,500
+- Highest-sales category: Electronics, with sales of 120,000
+- Total quantity sold: 21
+- Total orders: 10
+
+### Tools and Technologies
+
+Python, Pandas, PandasAI, Groq API, LiteLLM, JSON, Markdown, PowerShell, Git.
+
+### CIA Activities
+
+**Chat — Workflow Review:** Received recommendations on separating data loading, validating data types and missing values, improving business-oriented reporting, and comparing AI results with manual calculations.
+
+**Code — Code Review:** Received recommendations on path handling, schema validation, secure API-key management, exception handling, logging, dependency management, modular functions, and automated tests. Further improvements remain pending.
+
+**Search — Best Practices:** Reviewed recommendations for data quality checks, reproducibility, numeric tolerance checks, unit testing, and documenting prompts and results.
+
+**Outcome:** All three CIA activities completed successfully. Recommendations are documented; additional code improvements have not yet been implemented.
+
+### Challenges and Blockers
+
+Earlier API errors occurred during setup. The final PandasAI run completed all 10 queries successfully. Earlier errors remain recorded in `errors.log`.
+
+### Deliverables
+
+- `python-pandas/w5d1/pandasai_analysis.py`
+- `python-pandas/w5d1/query_results.json`
+- `python-pandas/w5d1/pandas_comparison.md`
+- `python-pandas/w5d1/errors.log`
+
+### Status
+
+Practical analysis, three manual comparisons, and CIA Chat, Code, and Search activities completed. Work log saved; Git commit pending.
