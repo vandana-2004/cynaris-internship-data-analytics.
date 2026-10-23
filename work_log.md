@@ -1308,3 +1308,24 @@ Python, Pandas, DuckDB, Polars, CSV, Git.
 
 ### Challenges / Blockers
 CIA code-review attempts failed with a request error. CIA interactions remain incomplete; local execution succeeded. Benchmark timings varied between runs and are not definitive performance rankings.
+
+## Week 6 Day 1 — Vanna Setup: NL to SQL on Real Database
+
+### Practical Tasks Completed
+- Created `vanna_sql/w6d1_app.py` with a FastAPI endpoint at `POST /cia/sql-analyst`.
+- Connected the application to the local `sales.db` SQLite database and configured five question-to-SQL examples.
+- Verified that the database contains 10 orders.
+- Started the FastAPI server successfully and verified application startup.
+
+### Deliverables
+- `vanna_sql/w6d1_app.py`
+
+### Tools / Technologies Used
+Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, OpenAI-compatible API, Git, PowerShell.
+
+### Challenges / Blockers
+- Gemini requests failed because of model availability and temporary service errors.
+- Switched to the OpenAI-compatible Groq API configuration.
+- The API server starts, but the natural-language query still returns an error. Successful SQL generation and execution remain unverified.
+- CIA review and the remaining lesson validation tasks are pending.
+
