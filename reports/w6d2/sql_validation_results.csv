@@ -1,0 +1,11 @@
+query_id,question,status,columns,rows_returned,error
+Q01,How many orders are there?,PASS,total_orders,1,
+Q02,What are total discounted sales by region?,PASS,"region, total_sales",4,
+Q03,Which products have the highest quantity sold?,PASS,"product, total_quantity",10,
+Q04,What is the average order quantity?,PASS,average_quantity,1,
+Q05,How many orders are in each category?,PASS,"category, order_count",3,
+Q06,How many orders are in each region?,PASS,"region, order_count",4,
+Q07,What is the total quantity sold by product?,PASS,"product, total_quantity",10,
+Q08,What is the order count by sales representative?,PASS,"sales_rep, order_count",4,
+Q09,How many orders have no discount recorded?,PASS,missing_discount_orders,1,
+Q10,What is the net sales value of each order?,PASS,"order_id, net_sales",10,
