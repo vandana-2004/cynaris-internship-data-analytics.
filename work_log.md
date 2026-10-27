@@ -1369,14 +1369,13 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - Added `reports/w6d4/README.md` with API validation evidence and limitations.
 - Completed the CIA Code review and Role Mentor interactions. The review emphasized request validation, safe error handling, and preserving read-only database access. The Role Mentor covered schema context, training examples, production SQL risks, validation, and the Superset integration architecture.
 - Tested the API with FastAPI TestClient: health returned HTTP 200, an empty question returned HTTP 400, and a valid question without the key returned HTTP 503.
-- Configured `GROQ_API_KEY` in the current terminal and successfully tested four live Vanna/Groq questions; all returned HTTP 200.
-- Verified live results against direct, read-only SQLite queries: total orders = 10; category counts = Clothing 3, Electronics 4, Furniture 3; region counts = East 2, North 3, South 3, West 2; average quantity = 11.3.
+- Configured `GROQ_API_KEY` in the current terminal and successfully tested ten distinct live Vanna/Groq questions; all returned HTTP 200.
+- Verified all ten live query results against direct, read-only SQLite queries: total orders = 10; category counts = Clothing 3, Electronics 4, Furniture 3; region counts = East 2, North 3, South 3, West 2; average quantity = 11.3; total quantity = 113; sales by region = East 328000.0, North 485500.0, South 106500.0, West 189000.0; average unit price by category = Clothing 2900.0, Electronics 31875.0, Furniture 7500.0; orders by sales representative = Amit 2, Neha 2, Priya 3, Rahul 3; quantity by category = Clothing 42, Electronics 49, Furniture 22; highest order value = order #1, 375000.0.
 - Re-ran the existing W6D2 validator: all 10 predefined SQL checks passed, with 5 training examples.
 
 ### Validation and Remaining Work
 
-- Four live AI-assisted queries have been verified against SQLite; ten live AI-generated query tests have not been completed.
-- The existing 10/10 SQL checks use predefined queries and are not ten live LLM-generated tests.
+- Ten distinct live AI-generated query results have been verified against direct, read-only SQLite queries.
+- The existing 10/10 SQL checks use predefined queries and are separate from the ten live LLM-generated tests.
 - Superset installation, connection, and dashboard integration remain unverified.
-- More live AI-generated queries still need testing to reach ten; do not count the predefined SQL checks as live AI tests.
-- Final push and pull request update remain pending.
+- Final documentation review, commit, push, and PR #41 update remain pending.
