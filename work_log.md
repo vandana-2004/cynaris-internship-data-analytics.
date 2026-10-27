@@ -1360,24 +1360,64 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - CIA interactions: 2 completed successfully.
 - Note: The 10 SQL validation tests used predefined SQL queries; they do not represent 10 AI-generated query tests.
 
-## W6D5 — Natural-Language SQL Project
+## W6D5 — Week 6 Project: Natural-Language SQL
 
 ### Practical Tasks Completed
-- Tested 10 live natural-language questions through `POST /cia/sql-analyst`.
-- Independently checked all 10 results against SQLite queries on `sales.db`.
-- Verified total orders, category counts, total and regional sales, average quantity, top product by quantity, regional order counts, product quantities, top sales representative, and earliest order date.
-- Corrected the sales calculation to treat discounts as percentages and NULL discounts as zero.
-- Recorded the results in `reports/w6d5/README.md`.
 
-### Validation and Blockers
+- Set up Vanna and connected the application to the local SQLite database, `sales.db`.
+- Used five question-to-SQL training examples documented in `vanna_sql/w6d2_training_examples.json`.
+- Tested 10 live natural-language questions through `POST /cia/sql-analyst`.
+- Independently verified all 10 API results against SQLite.
+- Verified order counts, category counts, total and regional sales, average quantity, top product by quantity, regional order counts, product quantities, top sales representative, and earliest order date.
+- Verified the sales calculation uses discounts as percentages and treats NULL discounts as zero.
+- Tested read-only SQL protection: a SELECT query succeeded, while the tested DELETE statement was rejected.
+- Reviewed the CIA feedback shared during the W6D5 review and incorporated the relevant findings into the evidence README.
+
+### Validation Results
+
 - Live API queries: 10/10 successful responses.
 - Independent SQLite verification: 10/10 results matched.
-- W6D2 predefined SQL validation is a separate test set (10/10 passed).
-- CIA interactions and W6D5 Role Mentor review: pending confirmation.
-- The verified database contains sales-order data; a CRM-specific schema and completed dashboard were not established by these checks.
+- W6D2 predefined SQL validation: 10/10 passed in a separate test set.
+- Read-only SQL check: SELECT succeeded; tested DELETE was blocked.
+- These checks cover the tested queries and statements; they are not an exhaustive security audit.
+
+### CIA Review and Evaluation
+
+- CIA feedback received and reviewed; relevant documentation and safety recommendations were incorporated.
+- The lesson requires at least two CIA interactions and a Full Stack/Role Mentor code review.
+- Portal logging and formal Role Mentor review completion have not been independently confirmed. Do not mark these as completed until the portal confirms them.
 
 ### Deliverables
-- `reports/w6d5/README.md`
 
-### Tools / Technologies Used
-Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git.
+- `reports/w6d5/README.md` — query results, independent verification, read-only safety evidence, and limitations.
+- `vanna_sql/w6d1_app.py` — FastAPI endpoint and SQL execution protections.
+- `vanna_sql/w6d2_training_examples.json` — five training examples.
+- `vanna_sql/validate_w6d2.py` — predefined SQL validation tests.
+- PR #42 updated with W6D5 evidence.
+
+### Scope and Limitations
+
+- The verified database contains sales-order data.
+- A CRM-specific schema and a completed dashboard were not established by these checks.
+- The completed practical evidence demonstrates the tested natural-language SQL API workflow and query verification.
+
+### Tools and Technologies
+
+Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
+
+### Git and Pull Request Status
+
+- Branch: `feat/w6d5-3m-vandana`.
+- Latest pushed commit: `5d00869` — `docs: add W6D5 read-only SQL safety evidence`.
+- Local branch was synchronized with its origin branch at the last verification.
+- PR #42 remains open as of the last confirmed status.
+- Only `origin` is configured; no `upstream` remote is configured.
+
+### Final Actions
+
+1. Save and verify this work-log update.
+2. Commit and push the work-log update to the existing W6D5 branch.
+3. Check PR #42 for required reviews and status checks.
+4. Merge PR #42 when GitHub confirms it is eligible.
+5. Verify the PR shows Merged and record the final merge status.
+6. Confirm any required CIA interactions and Role Mentor review in the portal.
