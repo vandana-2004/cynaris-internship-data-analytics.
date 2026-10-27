@@ -1,4 +1,4 @@
-﻿# Week 1 Day 1 â€” SQL Fundamentals
+# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -1359,3 +1359,23 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - SQL analyst endpoint test: passed for the order-count question.
 - CIA interactions: 2 completed successfully.
 - Note: The 10 SQL validation tests used predefined SQL queries; they do not represent 10 AI-generated query tests.
+
+## W6D4 - Combining Vanna and Superset for Executive Reporting
+
+### Work Completed
+
+- Completed the W6D4 lesson and passed its quiz with 100%.
+- Improved `vanna_sql/w6d1_app.py` with lazy agent initialization and explicit handling when `GROQ_API_KEY` is missing.
+- Added `reports/w6d4/README.md` with API validation evidence and limitations.
+- Completed the CIA Code review and Role Mentor interactions. The review emphasized request validation, safe error handling, and preserving read-only database access. The Role Mentor covered schema context, training examples, production SQL risks, validation, and the Superset integration architecture.
+- Tested the API with FastAPI TestClient: health returned HTTP 200, an empty question returned HTTP 400, and a valid question without the key returned HTTP 503.
+- Configured `GROQ_API_KEY` in the current terminal and successfully tested the live Vanna/Groq endpoint. The question "How many orders are there?" returned HTTP 200; the SQL tool completed and returned `total_orders = 10`.
+- Re-ran the existing W6D2 validator: all 10 predefined SQL checks passed, with 5 training examples.
+
+### Validation and Remaining Work
+
+- One live AI-assisted query has been verified; ten live AI-generated query tests have not been completed.
+- The existing 10/10 SQL checks use predefined queries and are not ten live LLM-generated tests.
+- Superset installation, connection, and dashboard integration remain unverified.
+- Review the generated SQL and results for additional natural-language questions before claiming broader live-query coverage.
+- Final push and pull request update remain pending.
