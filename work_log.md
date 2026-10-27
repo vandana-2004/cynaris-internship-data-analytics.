@@ -1359,3 +1359,25 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - SQL analyst endpoint test: passed for the order-count question.
 - CIA interactions: 2 completed successfully.
 - Note: The 10 SQL validation tests used predefined SQL queries; they do not represent 10 AI-generated query tests.
+
+## W6D5 — Natural-Language SQL Project
+
+### Practical Tasks Completed
+- Tested 10 live natural-language questions through `POST /cia/sql-analyst`.
+- Independently checked all 10 results against SQLite queries on `sales.db`.
+- Verified total orders, category counts, total and regional sales, average quantity, top product by quantity, regional order counts, product quantities, top sales representative, and earliest order date.
+- Corrected the sales calculation to treat discounts as percentages and NULL discounts as zero.
+- Recorded the results in `reports/w6d5/README.md`.
+
+### Validation and Blockers
+- Live API queries: 10/10 successful responses.
+- Independent SQLite verification: 10/10 results matched.
+- W6D2 predefined SQL validation is a separate test set (10/10 passed).
+- CIA interactions and W6D5 Role Mentor review: pending confirmation.
+- The verified database contains sales-order data; a CRM-specific schema and completed dashboard were not established by these checks.
+
+### Deliverables
+- `reports/w6d5/README.md`
+
+### Tools / Technologies Used
+Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git.
