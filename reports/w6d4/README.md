@@ -26,11 +26,14 @@ and found five training examples. These tests validate known SQL queries;
 they do not prove that ten live AI-generated queries passed.
 
 ## Limitations and remaining work
-- One live LLM-generated query was tested with GROQ_API_KEY configured;
-  the question 'How many orders are there?' returned total_orders = 10.
+- Four live LLM-generated queries were tested with GROQ_API_KEY configured:
+  total orders = 10; category counts = Clothing 3, Electronics 4, Furniture 3;
+  region counts = East 2, North 3, South 3, West 2; average quantity = 11.3.
+- All four live results matched direct, read-only SQLite queries.
 - Superset installation and dashboard integration have not been verified.
 - The W6D4 combined Vanna and Superset workflow is not yet complete.
-- CIA review interactions and the final pull request remain pending.
+- Both CIA review interactions are complete and documented.
+- PR #41 remains open pending final review and merge.
 
 ## Safety
 The SQLite runner retains its read-only URI and SQL authorizer restrictions.
