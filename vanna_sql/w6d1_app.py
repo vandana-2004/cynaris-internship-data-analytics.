@@ -1,4 +1,3 @@
-
 import os
 import sqlite3
 from pathlib import Path
@@ -128,17 +127,23 @@ def build_agent() -> Agent:
     )
 
 
-app = FastAPI(title="W6D1 Vanna SQL Analyst")
-agent = build_agent()
+app = FastAPI(title="W6D4 Vanna SQL Analyst")
+agent = None
 
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "database": DB_PATH.name}
+    return {
+        "status": "ok",
+        "database": DB_PATH.name,
+        "llm_configured": bool(os.getenv("GROQ_API_KEY")),
+    }
 
 
 @app.post("/cia/sql-analyst")
 async def sql_analyst(request: QueryRequest):
+    global agent
+
     question = request.question.strip()
     if not question:
         raise HTTPException(
@@ -146,24 +151,38 @@ async def sql_analyst(request: QueryRequest):
             detail="Question cannot be empty.",
         )
 
-    examples = "\n".join(
-        f"Question: {item['question']}\nSQL: {item['sql']}"
-        for item in TRAINING_EXAMPLES
-    )
-
-    prompt = (
-        "You are a careful SQLite sales analyst. "
-        "Use the orders table and its columns: order_id, customer_name, "
-        "product, category, quantity, unit_price, order_date, region, "
-        "sales_rep, discount. Use read-only SELECT queries only. "
-        "Treat discount as a percentage (divide by 100.0) when calculating "
-        "discounted sales; treat NULL discounts as zero. "
-        "Here are examples of question-to-SQL patterns:\n"
-        f"{examples}\n\n"
-        f"Answer this question and use the SQL tool when needed: {question}"
-    )
-
     try:
+        if agent is None:
+            try:
+                agent = build_agent()
+            except RuntimeError as exc:
+                if "GROQ_API_KEY is not configured." in str(exc):
+                    raise HTTPException(
+                        status_code=503,
+                        detail=(
+                            "SQL analyst unavailable: "
+                            "GROQ_API_KEY is not configured."
+                        ),
+                    ) from exc
+                raise
+
+        examples = "\n".join(
+            f"Question: {item['question']}\nSQL: {item['sql']}"
+            for item in TRAINING_EXAMPLES
+        )
+
+        prompt = (
+            "You are a careful SQLite sales analyst. "
+            "Use the orders table and its columns: order_id, customer_name, "
+            "product, category, quantity, unit_price, order_date, region, "
+            "sales_rep, discount. Use read-only SELECT queries only. "
+            "Treat discount as a percentage (divide by 100.0) when calculating "
+            "discounted sales; treat NULL discounts as zero. "
+            "Here are examples of question-to-SQL patterns:\n"
+            f"{examples}\n\n"
+            f"Answer this question and use the SQL tool when needed: {question}"
+        )
+
         context = RequestContext(cookies={}, headers={})
         components = []
 
@@ -175,6 +194,8 @@ async def sql_analyst(request: QueryRequest):
 
         return {"question": question, "response": components}
 
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(
             status_code=500,
