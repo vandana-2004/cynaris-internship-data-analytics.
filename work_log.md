@@ -1421,3 +1421,60 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 4. Merge PR #42 when GitHub confirms it is eligible.
 5. Verify the PR shows Merged and record the final merge status.
 6. Confirm any required CIA interactions and Role Mentor review in the portal.
+## W7D1 - CIA Data Analyst Mode: CSV Upload + PandasAI Queries
+
+### Practical Tasks Completed
+
+- Configured PandasAI with the LiteLLM connector and Groq model using the existing `GROQ_API_KEY` environment variable.
+- Used a 1,000-row sample from the public Amazon India sales dataset at `python-pandas/amazon_india_sales_sample.csv`; the full source dataset remains outside Git.
+- Updated `scripts/w7d1_analysis.py` to run 10 natural-language questions, save results, compare selected answers against manual Pandas calculations, and record query failures.
+- Successfully executed all 10 natural-language queries after retrying earlier rate-limited queries.
+- Compared total sales, total quantity, and order count against manual Pandas calculations; all three numeric comparisons matched.
+
+### Validation Results
+
+- Natural-language queries: 10/10 successful.
+- Manual Pandas comparisons: 3/3 matched.
+- Verified comparison values: total sales `557229.0`, total quantity `871`, and order count `869`.
+- `git diff --check` passed at the last check.
+- An earlier run encountered Groq rate limits; the successful rerun completed all queries.
+
+### CIA Review and Evaluation
+
+- Two CIA interactions covered general security, error handling, correctness, Git hygiene, numeric validation, API-key protection, logging, and when manual Pandas is preferable.
+- These interactions provided general guidance; a line-by-line code review and formal Role Mentor approval have not been confirmed.
+
+### Deliverables
+
+- `python-pandas/amazon_india_sales_sample.csv` — 1,000-row analysis sample.
+- `scripts/w7d1_analysis.py` — PandasAI analysis script.
+- `reports/w7d1/query_results.csv` — results for the 10 questions.
+- `reports/w7d1/manual_comparison.csv` — manual Pandas comparison evidence.
+- `reports/w7d1/pandasai_errors.log` — query error log.
+- `reports/w7d1/README.md` — dataset source, results, limitations, and viva notes.
+
+### Scope and Limitations
+
+- The sample is drawn from a publicly shared Amazon India sales dataset; its status as verified company data has not been established.
+- Results describe the selected sample and must not be presented as verified real-world Amazon business findings.
+- Successful test queries do not guarantee every AI-generated answer will be correct.
+- Manual Pandas remains preferable for deterministic calculations and critical reporting.
+
+### Tools and Technologies
+
+Python, Pandas, PandasAI, LiteLLM, Groq, CSV, PowerShell, Git, GitHub.
+
+### Git and Pull Request Status
+
+- Branch: `feat/w7d1-3m-vandana`.
+- Implementation and evidence commit: `451eba2` (`feat: complete W7D1 PandasAI analysis`).
+- Work-log update: pending commit.
+- Push, pull request merge, Role Mentor review, and portal completion: pending verification.
+- Unrelated local files and environments must remain unstaged.
+
+### Final Actions
+
+1. Verify the work-log diff and Git status.
+2. Commit the W7D1 work-log update without staging unrelated files.
+3. Verify the remote and push the branch.
+4. Confirm the pull request, required review, and portal completion status.

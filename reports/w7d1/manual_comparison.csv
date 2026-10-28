@@ -1,0 +1,4 @@
+query_id,manual_pandas_result,pandasai_result,numeric_match,status
+total_sales,557229.0,557229.0,True,success
+total_quantity,871.0,871,True,success
+order_count,869.0,869,True,success
