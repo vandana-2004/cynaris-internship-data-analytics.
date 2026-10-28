@@ -1,17 +1,54 @@
 query_id,question,result,status
-total_sales,What is the total sales?,217500.0,success
-total_quantity,What is the total quantity sold?,21.0,success
-order_count,How many orders are in the dataset?,10,success
-average_sales,What is the average sales per order?,21750.0,success
-sales_by_region,What is the total sales for each region?,"  region  total_sales
-0  North      51000.0
-1  South      91500.0
-2   West      75000.0",success
-sales_by_category,What is the total sales for each category?,"      category  total_sales
-0     Clothing      38000.0
-1  Electronics     120000.0
-2    Furniture      59500.0",success
-top_category,Which category has the highest total sales?,Electronics,success
-top_order,What is the order ID with the highest sales?,1010,success
-top_region,Which region has the highest total sales?,South,success
-electronics_sales,What is the total sales for Electronics?,120000.0,success
+total_sales,What is the total Amount?,557229.0,success
+total_quantity,What is the total Qty?,871,success
+order_count,How many unique Order ID values are there?,869,success
+average_sales,What is the average Amount per row?,641.2301495972382,success
+sales_by_state,What is the total Amount for each ship-state?,"            ship_state  total_amount
+0          MAHARASHTRA       98320.0
+1            KARNATAKA       90849.0
+2        UTTAR PRADESH       57544.0
+3           TAMIL NADU       48170.0
+4            TELANGANA       38038.0
+5                DELHI       30737.0
+6          WEST BENGAL       21553.0
+7              Gujarat       21277.0
+8       ANDHRA PRADESH       20951.0
+9               KERALA       17883.0
+10             HARYANA       14449.0
+11           RAJASTHAN       12557.0
+12               BIHAR       10361.0
+13              ODISHA       10035.0
+14               ASSAM        9902.0
+15              PUNJAB        8906.0
+16      MADHYA PRADESH        7835.0
+17         UTTARAKHAND        6337.0
+18                 GOA        6186.0
+19    HIMACHAL PRADESH        4635.0
+20           JHARKHAND        4145.0
+21     JAMMU & KASHMIR        2961.0
+22          CHANDIGARH        2143.0
+23        CHHATTISGARH        1900.0
+24              SIKKIM        1889.0
+25          PUDUCHERRY        1651.0
+26            NAGALAND        1285.0
+27  ANDAMAN & NICOBAR         1220.0
+28             MANIPUR         836.0
+29     DADRA AND NAGAR         717.0
+30             MIZORAM         631.0
+31   ARUNACHAL PRADESH         432.0
+32           MEGHALAYA         301.0
+33                 Goa         301.0
+34              Odisha         292.0",success
+sales_by_category,What is the total Amount for each Category?,"        category  total_amount
+0            Set      286345.0
+1          kurta      149367.0
+2  Western Dress       76516.0
+3            Top       39741.0
+4   Ethnic Dress        2307.0
+5         Blouse        1043.0
+6         Bottom        1025.0
+7          Saree         885.0",success
+top_category,Which Category has the highest total Amount?,The category with the highest total amount is **Set** with a total of **286345.00**.,success
+top_order,Which Order ID has the highest Amount?,The Order ID with the highest Amount is 407-9758387-6970707.,success
+top_state,Which ship-state has the highest total Amount?,The ship-state with the highest total Amount is MAHARASHTRA with a total of 98320.0.,success
+kurta_sales,What is the total Amount for Category kurta?,149367.0,success

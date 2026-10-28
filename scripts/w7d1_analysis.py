@@ -1,4 +1,6 @@
-﻿import logging
+﻿
+
+import logging
 import os
 import re
 from pathlib import Path
@@ -8,7 +10,7 @@ from pandasai import Agent
 from pandasai_litellm.litellm import LiteLLM
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "python-pandas" / "sales_data.csv"
+DATA = ROOT / "python-pandas" / "amazon_india_sales_sample.csv"
 OUT = ROOT / "reports" / "w7d1"
 OUT.mkdir(parents=True, exist_ok=True)
 
@@ -18,70 +20,139 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(message)s",
 )
 
+# Load and clean the Indian e-commerce sample.
 df = pd.read_csv(DATA)
+
+df = df[
+    (df["currency"] == "INR")
+    & (df["Status"] != "Cancelled")
+    & df["Amount"].notna()
+].copy()
+
+df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
+df["Qty"] = pd.to_numeric(df["Qty"], errors="coerce")
+df = df.dropna(subset=["Amount", "Qty"])
+
+if df.empty:
+    raise ValueError("No usable INR records remain after cleaning.")
+
+# Configure the language model.
+api_key = os.environ.get("GROQ_API_KEY")
+if not api_key:
+    raise RuntimeError(
+        "GROQ_API_KEY is not set in this PowerShell session."
+    )
 
 llm = LiteLLM(
     model="groq/openai/gpt-oss-120b",
-    api_key=os.environ["GROQ_API_KEY"],
+    api_key=api_key,
 )
+
 agent = Agent(df, config={"llm": llm, "verbose": False})
 
 questions = [
-    ("total_sales", "What is the total sales?"),
-    ("total_quantity", "What is the total quantity sold?"),
-    ("order_count", "How many orders are in the dataset?"),
-    ("average_sales", "What is the average sales per order?"),
-    ("sales_by_region", "What is the total sales for each region?"),
-    ("sales_by_category", "What is the total sales for each category?"),
-    ("top_category", "Which category has the highest total sales?"),
-    ("top_order", "What is the order ID with the highest sales?"),
-    ("top_region", "Which region has the highest total sales?"),
-    ("electronics_sales", "What is the total sales for Electronics?"),
+    ("total_sales", "What is the total Amount?"),
+    ("total_quantity", "What is the total Qty?"),
+    ("order_count", "How many unique Order ID values are there?"),
+    ("average_sales", "What is the average Amount per row?"),
+    ("sales_by_state", "What is the total Amount for each ship-state?"),
+    ("sales_by_category", "What is the total Amount for each Category?"),
+    ("top_category", "Which Category has the highest total Amount?"),
+    ("top_order", "Which Order ID has the highest Amount?"),
+    ("top_state", "Which ship-state has the highest total Amount?"),
+    ("kurta_sales", "What is the total Amount for Category kurta?"),
 ]
 
+# Independent Pandas reference calculations.
 manual = {
-    "total_sales": df["sales"].sum(),
-    "total_quantity": df["quantity"].sum(),
-    "order_count": len(df),
+    "total_sales": df["Amount"].sum(),
+    "total_quantity": df["Qty"].sum(),
+    "order_count": df["Order ID"].nunique(),
 }
 
-results = {}
-query_rows = []
+# Load existing results so successful queries are not repeated.
+results_path = OUT / "query_results.csv"
 
+if results_path.exists():
+    existing_df = pd.read_csv(results_path).fillna("")
+    query_rows = existing_df.to_dict("records")
+
+    results = {
+        row["query_id"]: (
+            row["result"] if row["status"] == "success" else None
+        )
+        for row in query_rows
+    }
+else:
+    query_rows = []
+    results = {}
+
+row_by_id = {
+    row["query_id"]: i for i, row in enumerate(query_rows)
+}
+
+# Skip successful queries and retry only failed or missing queries.
 for query_id, question in questions:
+    if results.get(query_id) is not None:
+        print(f"[SKIP] {query_id}: already successful")
+        continue
+
     try:
         answer = agent.chat(question)
-        results[query_id] = str(answer)
-        query_rows.append({
+        answer_text = str(answer)
+        results[query_id] = answer_text
+
+        new_row = {
             "query_id": query_id,
             "question": question,
-            "result": str(answer),
+            "result": answer_text,
             "status": "success",
-        })
-        print(f"[OK] {query_id}: {answer}")
+        }
+        print(f"[OK] {query_id}: {answer_text}")
+
     except Exception as exc:
         results[query_id] = None
-        query_rows.append({
+
+        new_row = {
             "query_id": query_id,
             "question": question,
             "result": "",
             "status": "failed",
-        })
+        }
+
         logging.exception("Query %s failed: %s", query_id, question)
         print(f"[FAILED] {query_id}: {type(exc).__name__}: {exc}")
 
-pd.DataFrame(query_rows).to_csv(OUT / "query_results.csv", index=False)
+    # Update existing rows instead of creating duplicates.
+    if query_id in row_by_id:
+        query_rows[row_by_id[query_id]] = new_row
+    else:
+        row_by_id[query_id] = len(query_rows)
+        query_rows.append(new_row)
 
+# Save all results, including previous successes.
+pd.DataFrame(query_rows).to_csv(results_path, index=False)
+
+# Compare numeric answers against independent Pandas calculations.
 comparison_rows = []
+
 for query_id, expected in manual.items():
     actual = results.get(query_id)
-    numbers = re.findall(r"-?\d+(?:,\d{3})*(?:\.\d+)?", actual or "")
+
+    numbers = re.findall(
+        r"-?\d+(?:,\d{3})*(?:\.\d+)?",
+        actual or "",
+    )
+
     numeric_match = False
+
     if numbers:
         try:
             numeric_match = any(
-                abs(float(n.replace(",", "")) - float(expected)) < 0.01
-                for n in numbers
+                abs(
+                    float(number.replace(",", "")) - float(expected)
+                ) < 0.01
+                for number in numbers
             )
         except ValueError:
             pass
@@ -95,13 +166,21 @@ for query_id, expected in manual.items():
     })
 
 pd.DataFrame(comparison_rows).to_csv(
-    OUT / "manual_comparison.csv", index=False
+    OUT / "manual_comparison.csv",
+    index=False,
 )
 
 print("\nManual Pandas reference results:")
 for key, value in manual.items():
     print(f"{key}: {value}")
 
+print("\nFinal query status:")
+print(
+    pd.DataFrame(query_rows)["status"]
+    .value_counts()
+    .to_string()
+)
+
 print(f"\nResults saved to: {OUT}")
-print("Review query_results.csv and manual_comparison.csv.")
-print("See pandasai_errors.log if any query failed.")
+print("Check manual_comparison.csv for numeric validation.")
+print("Check pandasai_errors.log if any query failed.")
