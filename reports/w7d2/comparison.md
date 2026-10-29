@@ -1,9 +1,9 @@
 ﻿# AutoViz vs SweetViz — Business Recommendation
 
-Both tools automate exploratory data analysis, but their generated outputs differ.
+Both tools automate exploratory data analysis but present their findings differently.
 
-AutoViz produced five HTML visualizations for the 9,994-row Superstore dataset: categorical plots, numeric distributions, heatmaps, pair scatter plots, and violin plots. It completed successfully, although its logs reported classification limitations for several string columns and no detected date variables.
+AutoViz generated five HTML visualizations for the 9,994-row Superstore dataset, including categorical plots, numeric distributions, heatmaps, pair scatter plots, and violin plots. Some string columns were not classified, and no date variables were detected.
 
-SweetViz generated a structured HTML report using a reproducible sample of 5,000 rows. Its report is a convenient single artifact for sharing variable summaries and visualizations with stakeholders.
+SweetViz generated a consolidated HTML report using a reproducible 5,000-row sample, making variable summaries and visualizations easier to share.
 
-**Recommendation:** Use SweetViz as the primary stakeholder-facing report because it offers a consolidated report that is straightforward to share. Keep AutoViz as a complementary tool for exploring specific visual patterns. Validate automated outputs and add business context before making decisions.
+**Recommendation:** Use SweetViz as the primary stakeholder-facing report because it provides a single, shareable artifact. Retain AutoViz for complementary visual exploration. Validate automated findings and add business context before making decisions.
