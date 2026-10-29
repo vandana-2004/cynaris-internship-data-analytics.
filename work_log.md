@@ -1421,3 +1421,27 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 4. Merge PR #42 when GitHub confirms it is eligible.
 5. Verify the PR shows Merged and record the final merge status.
 6. Confirm any required CIA interactions and Role Mentor review in the portal.
+
+## Week 7 Day 2 — Automated EDA: AutoViz + SweetViz
+
+**Hours Worked:** Enter actual hours worked.
+
+**Topics Covered:** Automated exploratory data analysis, AutoViz, SweetViz, reproducible sampling, business insights, and report comparison.
+
+**What did you work on today?**
+
+- Generated a SweetViz HTML report using a reproducible sample of 5,000 rows.
+- Ran AutoViz separately on the full 9,994-row Superstore dataset and generated five HTML visualizations.
+- Validated dataset statistics: 0 missing cells and 0 duplicate rows.
+- Identified three business insights using Pandas aggregations: highest-sales category, highest-sales region, and lowest-profit sub-category.
+- Documented findings in `reports/w7d2/insights.md` and compared the tools in `reports/w7d2/comparison.md`.
+
+**Tools / Technologies Used:** Python, Pandas, SweetViz, AutoViz, Pathlib, Git, VS Code.
+
+**Challenges / Blockers:** AutoViz reported limitations classifying some string columns and detecting date variables. Business insights were calculated separately using Pandas. The large AutoViz pair-scatter HTML output was excluded from Git to reduce repository size.
+
+**Validation:** Python syntax check passed using `python -m py_compile reports\w7d2\automated_eda.py`.
+
+**Git Status:** Two initial commits were pushed to `feat/w7d2-3m-vandana`. The comparison document was subsequently refined locally. Confirm final commits and PR status before marking the lesson complete.
+
+**CIA Review:** Code and comparison review performed . CIA review and the required two logged CIA interactions are confirmed.
