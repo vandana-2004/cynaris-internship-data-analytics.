@@ -1,4 +1,3 @@
-
 import os
 import sqlite3
 from pathlib import Path
@@ -60,6 +59,9 @@ class QueryRequest(BaseModel):
 class ReadOnlySqliteRunner(SqliteRunner):
     async def run_sql(self, args, context):
         sql = args.sql.strip()
+
+        # W7D4: Capture Vanna-generated SQL in the server terminal.
+        print(f"[VANNA GENERATED SQL] {sql}", flush=True)
 
         if not sql:
             raise ValueError("SQL query cannot be empty.")
