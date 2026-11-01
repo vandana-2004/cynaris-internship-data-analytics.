@@ -1,0 +1,6 @@
+region,category,sales,quantity
+North,Electronics,100,2
+South,Furniture,200,4
+East,Electronics,150,3
+West,Furniture,250,5
+North,Furniture,120,2

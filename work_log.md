@@ -1513,3 +1513,15 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 **Evidence:** `reports/w7d4/README.md`
 
 **Git Status:** W7D4 changes committed in two commits (`362eed6`, `a1cb58d`), pushed to `feat/w7d4-3m-vandana`, and merged into `main` through Pull Request #47 (merge commit `6c09f4e`).
+
+## Week 7 Day 5 ? CIA Data Analyst Mode
+
+- Implemented CSV upload and preview using FastAPI.
+- Integrated PandasAI with Groq through LiteLLM.
+- Added Plotly and Chart.js chart generation.
+- Built the CIA frontend.
+- Verified five AI queries successfully.
+- Verified homepage, health endpoint, and session cleanup.
+- Evidence: `reports/w7d5/README.md`.
+- CIA review and interactions: Two interactions completed; findings reviewed.
+- Git branch: `feat/w7d5-3m-vandana`.
