@@ -1480,3 +1480,36 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 - Both CIA interactions completed.
 
 **Git Status:** W7D3 completed with two commits (`b6b4e64`, `f307e8b`) pushed to `feat/w7d3-3m-vandana`. Pull Request #45 successfully merged into `main` (merge commit: `100c9e6`). W7D3 quiz passed.
+
+## Week 7 Day 4 — CIA SQL Mode: Vanna Integration
+
+**Topics Covered:** Vanna AI, natural-language-to-SQL, SQLite, FastAPI, read-only SQL execution, and API integration.
+
+**What did you work on today?**
+
+- Configured Vanna with Groq and connected it to the existing SQLite sales database.
+- Used five question-to-SQL training examples.
+- Tested 10 natural-language questions through `POST /cia/sql-analyst`.
+- Captured and manually reviewed all 10 AI-generated SQL statements.
+- Implemented read-only SQLite execution using database read-only mode and an SQLite authorizer.
+- Added generated SQL logging for review and debugging.
+- Documented results in `reports/w7d4/README.md`.
+
+**Tools / Technologies Used:** Python, Vanna 0.1.0, Groq, FastAPI, SQLite, Pandas, PowerShell, Git.
+
+**Validation:**
+
+- All 10 natural-language API requests returned HTTP 200.
+- All 10 generated SQL statements were captured and manually reviewed.
+- Existing W6D2 reference SQL validation passed 10/10.
+- Read-only SQL execution restrictions retained.
+
+**CIA Review:**
+
+- Interaction 1: Python code explanation using CIA Code — completed.
+- Interaction 2: Python Debug review using CIA Code — completed.
+- Reviewed CIA findings and retained the working implementation; no unverified suggested changes were applied.
+
+**Evidence:** `reports/w7d4/README.md`
+
+**Git Status:** W7D4 changes prepared on `feat/w7d4-3m-vandana`; commits and PR update pending.
