@@ -1512,4 +1512,4 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 
 **Evidence:** `reports/w7d4/README.md`
 
-**Git Status:** W7D4 changes prepared on `feat/w7d4-3m-vandana`; commits and PR update pending.
+**Git Status:** W7D4 changes committed in two commits (`362eed6`, `a1cb58d`), pushed to `feat/w7d4-3m-vandana`, and merged into `main` through Pull Request #47 (merge commit `6c09f4e`).
