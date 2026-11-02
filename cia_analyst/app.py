@@ -176,7 +176,19 @@ async def upload_csv(file: UploadFile = File(...)):
 
                 destination.write(chunk)
 
-        df = pd.read_csv(csv_path, nrows=5)
+        # Read UTF-8 first, then fall back to CP1252.
+        try:
+            df = pd.read_csv(
+                csv_path,
+                nrows=5,
+                encoding="utf-8",
+            )
+        except UnicodeDecodeError:
+            df = pd.read_csv(
+                csv_path,
+                nrows=5,
+                encoding="cp1252",
+            )
 
         if df.empty or len(df.columns) == 0:
             raise ValueError("CSV has no usable data.")
@@ -336,6 +348,9 @@ def executive_summary(request: ExecutiveSummaryRequest):
                 result.get("message", "Executive analysis failed.")
             )
 
+        # Preserve the original uploaded filename in the analysis and PPT.
+        result["filename"] = session["filename"]
+
         session["executive_result"] = result
 
         return result
@@ -379,6 +394,7 @@ def download_executive_presentation(session_id: str):
             filename=result["filename"],
             summary=result["summary"],
             insights=result["insights"],
+            recommendations=result["recommendations"],
         )
 
         return FileResponse(
