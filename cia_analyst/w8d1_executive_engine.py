@@ -9,6 +9,7 @@ from pathlib import Path
 import pandas as pd
 from litellm import completion
 
+
 MODEL = "groq/openai/gpt-oss-120b"
 
 
@@ -80,10 +81,22 @@ def generate_insights(df):
             "Numeric Analysis: No meaningful numeric columns were found."
         )
 
-    # 5. Category distribution
+    # 5. Category distribution - exclude identifiers and dates
     categorical = df.select_dtypes(
         include=["object", "category", "bool"]
     )
+
+    categorical = categorical[
+        [
+            col for col in categorical.columns
+            if "id" not in col.lower()
+            and not pd.api.types.is_datetime64_any_dtype(df[col])
+            and not any(
+                term in col.lower()
+                for term in ["date", "time"]
+            )
+        ]
+    ]
 
     if not categorical.empty:
         column = categorical.columns[0]
@@ -187,7 +200,7 @@ def generate_summary(insights):
 
     # Remove Markdown bold and italic markers.
     summary = re.sub(
-        r"\*\*(.*?)\*\*",
+        r"\*{2,3}(.*?)\*{2,3}",
         r"\1",
         summary,
         flags=re.DOTALL,
@@ -201,7 +214,7 @@ def generate_summary(insights):
     )
 
     summary = re.sub(
-        r"(?<!\*)\*([^*\n]+)\*(?!\*)",
+        r"(?<!\*)\*([^\*\n]+)\*(?!\*)",
         r"\1",
         summary,
     )
@@ -214,19 +227,94 @@ def generate_summary(insights):
     return summary.strip()
 
 
+def generate_recommendations(insights):
+    """Generate evidence-based follow-up recommendations from five insights."""
+
+    if len(insights) != 5:
+        raise ValueError("Exactly five verified insights are required.")
+
+    api_key = os.getenv("GROQ_API_KEY")
+
+    if not api_key:
+        raise RuntimeError("GROQ_API_KEY is not configured.")
+
+    response = completion(
+        model=MODEL,
+        api_key=api_key,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a careful senior business data analyst. "
+                    "Generate practical, evidence-based follow-up actions. "
+                    "Use only the five supplied insights. Never invent "
+                    "business causes, trends, revenue impacts, customer "
+                    "behaviour, or performance conclusions. "
+                    "Recommendations must be proposed analyses or "
+                    "validation steps, not claims about proven outcomes."
+                ),
+            },
+            {
+                "role": "user",
+                "content": (
+                    "Generate exactly five concise business recommendations "
+                    "based on these five verified dataset insights. "
+                    "Return only a JSON array containing exactly five "
+                    "plain-text strings. Do not include Markdown or any "
+                    "additional text.\n\n"
+                    "Verified insights:\n" + "\n".join(insights)
+                ),
+            },
+        ],
+        temperature=0.2,
+        max_tokens=500,
+    )
+
+    content = response.choices[0].message.content
+
+    if not content:
+        raise RuntimeError("Groq returned empty recommendations.")
+
+    try:
+        recommendations = json.loads(str(content).strip())
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(
+            "Groq returned recommendations in an invalid format."
+        ) from exc
+
+    if (
+        not isinstance(recommendations, list)
+        or len(recommendations) != 5
+        or not all(
+            isinstance(item, str) and item.strip()
+            for item in recommendations
+        )
+    ):
+        raise RuntimeError(
+            "Groq must return exactly five non-empty recommendations."
+        )
+
+    return [item.strip() for item in recommendations]
+
+
 def analyze(csv_path):
     path = Path(csv_path).resolve()
 
     if not path.is_file() or path.suffix.lower() != ".csv":
         raise ValueError("A valid CSV file path is required.")
 
-    df = pd.read_csv(path)
+    # Read UTF-8 first; fall back to Windows-compatible encoding.
+    try:
+        df = pd.read_csv(path, encoding="utf-8")
+    except UnicodeDecodeError:
+        df = pd.read_csv(path, encoding="cp1252")
 
     if df.empty:
         raise ValueError("The uploaded CSV file contains no rows.")
 
     insights = generate_insights(df)
     summary = generate_summary(insights)
+    recommendations = generate_recommendations(insights)
 
     return {
         "status": "success",
@@ -235,6 +323,7 @@ def analyze(csv_path):
         "column_count": len(df.columns),
         "insights": insights,
         "summary": summary,
+        "recommendations": recommendations,
     }
 
 

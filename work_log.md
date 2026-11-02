@@ -1562,3 +1562,55 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 **Evidence:** `reports/w8d1/README.md`
 
 **Git Branch:** `feat/w8d1-3m-vandana`.
+
+## Week 8 Day 2 — Business Recommendations
+
+**Topics Covered:** AI-generated business recommendations, verified data insights, Groq integration, executive summaries, PowerPoint export, FastAPI, and Python testing.
+
+**Hours Worked:** Enter actual hours worked.
+
+**What did you work on today?**
+
+- Extended the CIA Data Analyst executive analysis workflow.
+- Generated five data insights from uploaded CSV files.
+- Integrated Groq through LiteLLM for executive-summary generation.
+- Added AI-generated business recommendations based on the five verified insights.
+- Updated the FastAPI integration to preserve the original uploaded filename.
+- Updated PowerPoint export to include five insights and five business recommendations.
+
+**Tools / Technologies Used:** Python, Pandas, Groq, LiteLLM, FastAPI, python-pptx, PowerShell, Git.
+
+**Validation:**
+
+- Python compilation passed for all three modified Python files.
+- `git diff --check` passed.
+- Mocked executive-summary cleanup test passed without a Groq API call.
+- Verified the W8D2 PowerPoint evidence contains seven slides: one title slide, five insight slides, and one recommendations slide.
+- Verified that the presentation includes five numbered recommendations.
+- An earlier end-to-end upload, analysis, and PowerPoint download test succeeded. The original-filename correction was applied afterward and was not re-tested through the complete end-to-end flow.
+
+**Code Review:**
+
+- Manually reviewed `cia_analyst/app.py`, `cia_analyst/w8d1_executive_engine.py`, and `cia_analyst/w8d1_ppt_export.py`.
+- Checked CSV upload validation, session handling, five-insight generation, Groq integration, recommendation validation, and PowerPoint structure.
+- No confirmed blocking issues were found.
+
+**CIA Review:**
+
+- **Interaction 1:** CIA Code explanation of the executive engine, accepted as a review walkthrough.
+- **Interaction 2:** Completed CIA Full Stack/Role Mentor Mode code review.
+- **Review Status:** PASSED with minor observations.
+- CIA reported no blocking bugs across CSV upload, insight generation, Groq summary generation, business recommendations, PowerPoint export, and error handling.
+
+**Evidence:** `reports/w8d2/test_recommendations.pptx`
+
+**Git Branch:** `feat/w8d2-3m-vandana`
+
+**Git Commits:**
+
+- `2dc8860` — `feat(w8d2): add AI business recommendations and PPT export`
+- `5e2dd62` — `docs(w8d2): add work log and presentation evidence`
+
+**Pull Request:** #50 — W8D2: AI Business Recommendations and PowerPoint Export.
+
+**Git Status:** All W8D2 feature, evidence, work-log, and CIA review changes have been committed and pushed to GitHub on branch `feat/w8d2-3m-vandana`. Latest commit: `f8287c9`.
