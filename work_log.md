@@ -1562,3 +1562,47 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 **Evidence:** `reports/w8d1/README.md`
 
 **Git Branch:** `feat/w8d1-3m-vandana`.
+
+## Week 8 Day 2 — Business Recommendations
+
+**Topics Covered:** AI-generated business recommendations, verified data insights, Groq integration, executive summaries, PowerPoint export, FastAPI, and Python testing.
+
+**Hours Worked:** Enter actual hours worked.
+
+**What did you work on today?**
+
+- Extended the CIA Data Analyst executive analysis workflow.
+- Generated five data insights from uploaded CSV files.
+- Integrated Groq through LiteLLM for executive-summary generation.
+- Added AI-generated business recommendations based on the five verified insights.
+- Updated the FastAPI integration to preserve the original uploaded filename.
+- Updated PowerPoint export to include five insights and five recommendations.
+
+**Tools / Technologies Used:** Python, Pandas, Groq, LiteLLM, FastAPI, python-pptx, PowerShell, Git.
+
+**Validation:**
+
+- Python compilation passed for the three modified Python files.
+- `git diff --check` passed.
+- Mocked executive-summary cleanup test passed without a Groq API call.
+- Verified the W8D2 PowerPoint evidence contains seven slides: one title slide, five insight slides, and one recommendations slide.
+- Verified that the presentation includes five numbered recommendations.
+- Earlier end-to-end upload, analysis, and PowerPoint download test succeeded; the original-filename correction was applied afterward.
+
+**Code Review:**
+
+- Manually reviewed `cia_analyst/app.py`, `cia_analyst/w8d1_executive_engine.py`, and `cia_analyst/w8d1_ppt_export.py`.
+- Checked CSV upload validation, session handling, five-insight generation, Groq integration, recommendation validation, and PowerPoint structure.
+- Identified minor improvement opportunities; no confirmed blocking issue found.
+
+**CIA Review:**
+
+- Interaction 1: CIA Code explanation of the executive engine, accepted as a review walkthrough.
+- Further CIA review attempts through CIA Chat failed with `Request failed`.
+- Manual code review completed; a successful second CIA review was not confirmed.
+
+**Evidence:** `reports/w8d2/test_recommendations.pptx`
+
+**Git Branch:** `feat/w8d2-3m-vandana`.
+
+**Git Status:** Changes not yet committed or pushed.
