@@ -1562,3 +1562,80 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 **Evidence:** `reports/w8d1/README.md`
 
 **Git Branch:** `feat/w8d1-3m-vandana`.
+
+## W8D3 — Final Implementation and Review
+
+**Project:** Indian Business EDA PowerPoint Report  
+**Overall Status:** Completed — PASS WITH IMPROVEMENTS
+
+### 1. Implementation Completed
+
+- Analyzed the Indian Business / Amazon Sale Report dataset.
+- Implemented exploratory data analysis using Python and Pandas.
+- Added data-quality checks for missing values, duplicate rows, invalid dates, and Amount statistics.
+- Analyzed category amounts, order statuses, fulfilment methods, monthly trends, and top states.
+- Identified potential Amount outliers using the IQR method.
+- Generated six visualization charts.
+- Created a nine-slide PowerPoint business report using python-pptx.
+- Generated an EDA summary containing key metrics and analysis assumptions.
+
+### 2. Local Validation Results
+
+| Validation                | Result                |
+| ------------------------- | --------------------- |
+| Python compilation        | PASS                  |
+| Dataset dimensions        | 128,975 × 24          |
+| Date range                | 31 March–29 June 2022 |
+| Duplicate rows            | 0                     |
+| Missing Amount values     | 7,795                 |
+| Potential Amount outliers | 3,600                 |
+| Chart generation          | 6 charts generated    |
+| PowerPoint generation     | PASS                  |
+| PowerPoint slide count    | 9 slides verified     |
+| EDA summary generation    | PASS                  |
+
+### 3. Data Analysis Assumptions
+
+- Original source data was preserved.
+- No silent row deletion or missing-value imputation was performed.
+- Potential outliers were identified and retained.
+- `Unnamed: 22` was excluded because its meaning is undocumented.
+- Category Amount totals include all order statuses and are not presented as realized revenue.
+- Shipped-status analysis includes all statuses beginning with `Shipped`, including returned and rejected statuses.
+- Mean, median, and distribution statistics are reported to provide context for Amount analysis.
+
+### 4. CIA Review
+
+**Interaction 1:** Initial implementation review — completed.
+
+**Interaction 2:** EDA and PowerPoint report validation — completed.
+
+**CIA Overall Result:** PASS WITH IMPROVEMENTS.
+
+CIA findings:
+
+- Recommended documenting how missing Amount values affect calculations and visualizations.
+- Recommended presenting median alongside mean when discussing central tendency.
+- Highlighted the importance of avoiding misleading revenue claims.
+- Recommended retaining and transparently documenting potential outliers.
+
+**Review limitation:** CIA evaluated the metrics and assumptions supplied in the review prompt. It did not directly inspect the local Python script, summary file, or PowerPoint slides.
+
+The findings were reviewed. No unverified changes were applied solely on the basis of generic recommendations.
+
+### 5. Deliverables
+
+- `reports/w8d3/indian_business_eda_ppt.py`
+- `reports/w8d3/eda_summary.txt`
+- `reports/w8d3/indian_business_eda_report.pptx`
+- `reports/w8d3/charts/` — six PNG charts
+
+### 6. Final Git Status
+
+- Feature branch: `feat/w8d3-3m-vandana`
+- Work-log update: completed separately.
+- Two conventional commits: pending.
+- Push and Pull Request: pending.
+- Source dataset excluded from staging to avoid committing the large CSV unnecessarily.
+
+**Final Assessment:** W8D3 analysis, chart generation, PowerPoint generation, local validation, and both CIA interactions are completed. Git submission remains pending.
