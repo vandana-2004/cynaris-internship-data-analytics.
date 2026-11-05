@@ -1,9 +1,10 @@
-﻿
+
 import json
 import os
 import secrets
 import shutil
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
@@ -22,9 +23,7 @@ ENGINE_PATH = BASE_DIR / "w7d5_engine.py"
 W8D1_ENGINE_PATH = BASE_DIR / "w8d1_executive_engine.py"
 STATIC_DIR = BASE_DIR / "static"
 
-PANDASAI_PYTHON = (
-    BASE_DIR.parent / ".venv-pandasai" / "Scripts" / "python.exe"
-)
+PANDASAI_PYTHON = Path(os.environ.get("PANDASAI_PYTHON", str(BASE_DIR.parent / ".venv-pandasai" / "Scripts" / "python.exe" if os.name == "nt" else sys.executable)))
 
 MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 sessions = {}

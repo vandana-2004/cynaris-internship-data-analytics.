@@ -1,0 +1,10 @@
+﻿fastapi==0.161.1
+uvicorn==0.54.0
+pandas==2.3.3
+plotly==7.1.0
+python-pptx==1.0.2
+python-multipart==0.0.33
+pydantic==2.14.1
+pandasai==3.0.0
+pandasai-litellm==0.0.1
+litellm==1.106.2
