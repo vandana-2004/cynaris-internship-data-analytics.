@@ -1639,3 +1639,94 @@ The findings were reviewed. No unverified changes were applied solely on the bas
 - Source dataset excluded from staging to avoid committing the large CSV unnecessarily.
 
 **Final Assessment:** W8D3 analysis, chart generation, PowerPoint generation, local validation, and both CIA interactions are completed. Git submission remains pending.
+
+## W8D4 — Production Deployment and API Documentation
+
+**Project:** CIA Data Analyst — Production Deployment  
+**Date:** 5 November 2026  
+**Branch:** `feat/w8d4-3m-vandana`  
+**Overall Status:** Deployment LIVE — API validation passed
+
+### 1. Deployment
+
+- Deployed the FastAPI CIA Data Analyst application to Render.
+- Configured Python 3.10.14 for production compatibility.
+- Installed dependencies from `requirements.txt`.
+- Configured `GROQ_API_KEY` through Render environment settings.
+- Confirmed successful Render deployment.
+
+**Production URL:** https://cynaris-cia-data-analyst.onrender.com
+
+### 2. API Validation
+
+| Endpoint / Feature | Result |
+|---|---|
+| GET `/health` | HTTP 200 |
+| GET `/` | HTTP 200 |
+| GET `/docs` | Loaded successfully |
+| GET `/redoc` | Loaded successfully |
+| POST `/cia/upload` | HTTP 200 |
+| POST `/cia/query` | HTTP 200 |
+| POST `/cia/executive-summary` | HTTP 200 |
+| GET `/cia/executive-summary/ppt/{session_id}` | HTTP 200 |
+
+### 3. Dataset Test Results
+
+- Dataset: `sales_100k.csv`
+- Rows processed: 100,000
+- Columns: 5
+- Missing values: 0
+- Duplicate rows: 0
+- Total sales returned by AI query: 459,712,000
+- Average sales reported by executive summary: 4,597.12
+- Minimum sales: 100.00
+- Maximum sales: 9,099.00
+- Most common region: North (25,000 rows; 25%).
+
+The AI query returned a chart successfully. The requested total quantity was not confirmed in the returned response.
+
+### 4. Executive Summary and PowerPoint
+
+- Generated an executive summary successfully.
+- Verified dataset overview, data completeness, duplicate records, numeric analysis, and category distribution.
+- Generated business implications and recommendations.
+- Downloaded `CIA_Executive_Summary.pptx`.
+- Verified HTTP 200 and PowerPoint MIME type.
+- Download response size: 37,308 bytes.
+
+### 5. CIA Analysis Insights
+
+The analysis highlighted:
+
+- No missing values or duplicate records were detected.
+- Sales values vary substantially, so distribution analysis is useful.
+- North represents 25% of dataset records, but record frequency alone does not establish its revenue contribution.
+- Sales should be analyzed by region before making regional performance claims.
+- Further segmentation can help identify factors associated with higher sales.
+
+### 6. Known Limitations
+
+- CSV upload limit: 10 MB.
+- Sessions are stored in memory and may be lost when the service restarts.
+- One application instance is recommended because sessions are not shared between instances.
+- AI features require a valid Groq API key.
+- Chart.js is loaded from a CDN.
+
+### 7. Deliverables
+
+- `render.yaml`
+- `.python-version`
+- `requirements.txt`
+- `README.md`
+- `work_log.md`
+- Production API: https://cynaris-cia-data-analyst.onrender.com
+- Swagger documentation: https://cynaris-cia-data-analyst.onrender.com/docs
+
+### 8. Git Status
+
+- Feature branch: `feat/w8d4-3m-vandana`
+- Deployment configuration and compatibility fixes committed and pushed.
+- README and work-log deployment documentation updated.
+- Pull Request and final submission status to be verified.
+
+**Final Assessment:** Production deployment, CSV upload, AI query, executive summary generation, and PowerPoint export were successfully tested.
