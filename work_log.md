@@ -1727,7 +1727,7 @@ The analysis highlighted:
 - Feature branch: `feat/w8d4-3m-vandana`
 - Deployment configuration and compatibility fixes committed and pushed.
 - README and work-log deployment documentation updated.
-- Pull Request and final submission status to be verified.
+- PR #52 and PR #53 successfully merged into main.
 
 **Final Assessment:** Production deployment, CSV upload, AI query, executive summary generation, and PowerPoint export were successfully tested.
 
@@ -1770,4 +1770,16 @@ Completed two CIA mentor interactions:
 - Sharing permission: Anyone with the link — Viewer.
 - Final demo link: https://drive.google.com/file/d/1g7PsHK-MVPO_Q0cfj2jtOQRHDRe8yrwz/view?usp=sharing
 - Updated the final demo link in GitHub PR #52.
+
+### 12. Final W8D4 Evidence and Viva Preparation
+
+- Saved `reports/w8d4/production_health_check.png` as production deployment evidence.
+- Saved `reports/w8d4/kpi_dashboard.png` as KPI dashboard evidence.
+- Prepared and saved three viva questions and answers in `reports/w8d4/viva_answers.md`.
+- Committed all three files in commit `39b4fd5` (`docs: add W8D4 evidence and viva preparation`).
+- Successfully pushed the commit to `origin/main`.
+- Verified local `main` and `origin/main` are synchronized.
+- Left unrelated untracked files and folders untouched.
+
+**Final status:** W8D4 implementation, documentation, evidence and viva preparation completed. No separate project submission button was identified on the lesson page reviewed.
 
