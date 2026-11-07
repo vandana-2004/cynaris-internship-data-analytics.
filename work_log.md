@@ -1659,16 +1659,16 @@ The findings were reviewed. No unverified changes were applied solely on the bas
 
 ### 2. API Validation
 
-| Endpoint / Feature | Result |
-|---|---|
-| GET `/health` | HTTP 200 |
-| GET `/` | HTTP 200 |
-| GET `/docs` | Loaded successfully |
-| GET `/redoc` | Loaded successfully |
-| POST `/cia/upload` | HTTP 200 |
-| POST `/cia/query` | HTTP 200 |
-| POST `/cia/executive-summary` | HTTP 200 |
-| GET `/cia/executive-summary/ppt/{session_id}` | HTTP 200 |
+| Endpoint / Feature                            | Result              |
+| --------------------------------------------- | ------------------- |
+| GET `/health`                                 | HTTP 200            |
+| GET `/`                                       | HTTP 200            |
+| GET `/docs`                                   | Loaded successfully |
+| GET `/redoc`                                  | Loaded successfully |
+| POST `/cia/upload`                            | HTTP 200            |
+| POST `/cia/query`                             | HTTP 200            |
+| POST `/cia/executive-summary`                 | HTTP 200            |
+| GET `/cia/executive-summary/ppt/{session_id}` | HTTP 200            |
 
 ### 3. Dataset Test Results
 
@@ -1742,3 +1742,23 @@ The analysis highlighted:
 - Preserved the original dataset and did not automatically remove outliers or impute missing values.
 - Executed the analysis successfully.
 
+### 10. CIA Interactions — W8D4
+
+Completed two CIA mentor interactions:
+
+**Interaction 1 — Data Quality Interpretation**
+
+- Discussed the 14.21% cancelled-record share.
+- Evaluated 7,795 missing Amount values (approximately 6.04%).
+- Discussed 3,600 potential high-value outliers.
+- Reviewed business implications, practical investigation steps and analytical limitations.
+- Distinguished possible revenue impact from confirmed financial loss.
+
+**Interaction 2 — Business Recommendations**
+
+- Discussed the Set category's highest recorded amount.
+- Reviewed Maharashtra's highest record count.
+- Explored data validation, regional segmentation and measurable business KPIs.
+- Emphasized the distinction between record counts, unique orders and net realised revenue.
+
+**Evidence:** Two CIA interactions completed. The second response was partially returned by CIA.
