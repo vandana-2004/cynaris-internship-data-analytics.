@@ -1730,3 +1730,15 @@ The analysis highlighted:
 - Pull Request and final submission status to be verified.
 
 **Final Assessment:** Production deployment, CSV upload, AI query, executive summary generation, and PowerPoint export were successfully tested.
+
+### 9. Indian Business Dataset Analysis
+
+- Reused the existing 128,975-row Indian Business Dataset from W8D3.
+- Created `reports/w8d4/indian_business_analysis.py`.
+- Generated `reports/w8d4/business_insights.txt`.
+- Analysed recorded amounts, quantities, categories, order statuses, states, fulfilment and potential outliers.
+- Identified a 14.21% cancellation rate and 7,795 missing Amount values.
+- Added five business recommendations and documented analysis limitations.
+- Preserved the original dataset and did not automatically remove outliers or impute missing values.
+- Executed the analysis successfully.
+
