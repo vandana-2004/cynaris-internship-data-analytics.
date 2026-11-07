@@ -1,0 +1,69 @@
+W8D4 INDIAN BUSINESS ANALYSIS
+=============================================
+Dataset records: 128,975
+Dataset columns: 24
+Unique order IDs: 120,378
+Valid amount records: 121,180
+Missing amount records: 7,795
+Missing quantity records: 0
+Date range: 2022-03-31 00:00:00 to 2022-06-29 00:00:00
+
+FINANCIAL OVERVIEW
+---------------------------------------------
+Recorded amount across all statuses: 78,592,678.30
+Average recorded amount: 648.56
+Median recorded amount: 605.00
+Total recorded quantity: 116,649
+
+TOP CATEGORIES BY RECORDED AMOUNT
+---------------------------------------------
+Set: 39,204,124.03
+kurta: 21,299,546.70
+Western Dress: 11,216,072.69
+Top: 5,347,792.30
+Ethnic Dress: 791,217.66
+
+ORDER STATUS
+---------------------------------------------
+Shipped: 77,804 (60.32%)
+Shipped - Delivered to Buyer: 28,769 (22.31%)
+Cancelled: 18,332 (14.21%)
+Shipped - Returned to Seller: 1,953 (1.51%)
+Shipped - Picked Up: 973 (0.75%)
+Pending: 658 (0.51%)
+Pending - Waiting for Pick Up: 281 (0.22%)
+Shipped - Returning to Seller: 145 (0.11%)
+
+TOP STATES BY RECORD COUNT
+---------------------------------------------
+MAHARASHTRA: 22,260 records
+KARNATAKA: 17,326 records
+TAMIL NADU: 11,483 records
+TELANGANA: 11,330 records
+UTTAR PRADESH: 10,638 records
+
+FULFILMENT
+---------------------------------------------
+Amazon: 89,698 records
+Merchant: 39,277 records
+
+OUTLIER ANALYSIS
+---------------------------------------------
+Upper IQR boundary: 1,296.50
+Potential high-value outliers: 3,600
+
+BUSINESS RECOMMENDATIONS
+---------------------------------------------
+1. Review the Set category, which has the highest recorded amount.
+2. Examine operations in MAHARASHTRA, which has the highest record count.
+3. Investigate cancellation drivers; 14.21% of records have cancelled status.
+4. Validate missing Amount values in 7,795 records before financial reporting.
+5. Review high-value outliers before drawing conclusions; do not remove them without business justification.
+
+ANALYSIS LIMITATIONS
+---------------------------------------------
+- Recorded amounts include all order statuses.
+- They should not be interpreted as net realized revenue.
+- State counts represent records, not unique customers.
+- Potential outliers require business validation.
+- Missing values were not silently imputed.
