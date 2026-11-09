@@ -46,3 +46,14 @@ FastAPI interactive documentation: `/docs`. Alternative documentation: `/redoc`.
 - AI features require a valid Groq API key.
 - Chart.js is loaded from a CDN.
 
+
+## W8D5 — AI Data Platform: Final Demo
+
+- Project documentation: `reports/w8d5/README.md`
+- Production app: https://cynaris-cia-data-analyst.onrender.com
+- API documentation: https://cynaris-cia-data-analyst.onrender.com/docs
+- ReDoc: https://cynaris-cia-data-analyst.onrender.com/redoc
+- Production homepage, Swagger, and ReDoc returned HTTP 200 on 9 November 2026.
+- Indian Business EDA findings and business recommendations are documented in the W8D5 report.
+- Demo recording and CIA mentor review: pending.
+
