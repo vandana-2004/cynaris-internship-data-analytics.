@@ -1886,4 +1886,80 @@ Completed two CIA mentor interactions:
 ### Git
 
 - Working branch: `feat/w9d2-mlflow-model-registry-vandana`.
-- Final commits and PR: Pending.
+- Implementation commit: `cd5b02a`.
+- CIA review documentation commit: `fd8fe79`.
+- Pull request: #56 — merged successfully into `main`.
+- Merge commit: `abc8056`.
+- Local `main` synchronized with `origin/main`.
+- Status: W9D2 implementation and documentation completed.
+
+## W9D3 — A/B Test Tracking with MLflow
+
+### Implementation and Results
+
+- Compared Amazon and Merchant fulfilment groups using the Indian Business Sales dataset.
+- Original dataset: 128,975 rows and 24 columns.
+- Filtered valid shipped-status records and retained required analysis columns.
+- Aggregated line-item Amount by unique Order ID before statistical testing.
+- Observation unit: unique order.
+- Valid shipped line records: 107,160.
+- Total unique orders: 99,907.
+- Amazon sample: 71,193 orders.
+- Merchant sample: 28,714 orders.
+- Amazon average order amount: INR 706.87.
+- Merchant average order amount: INR 721.83.
+- Mean difference (Merchant minus Amazon): INR 14.96 (approximately 2.12%).
+- Statistical method: Welch's independent two-sample t-test.
+- P-value: 3.3876344e-09.
+- 95% confidence interval: INR 10.00 to INR 19.92.
+- Cohen's d: 0.0419, indicating a very small standardized effect.
+- Statistical significance: significant at alpha = 0.05.
+- Interpretation: statistical significance does not establish practical business importance or causation. This is an observational comparison, not a randomized experiment.
+
+### MLflow Tracking
+
+- Experiment: `W9D3 - Indian Business A/B Testing`.
+- Run name: `order-level-amazon-vs-merchant`.
+- Successful run ID: `f58016f8861242718a327c8b61eddc48`.
+- Run status: FINISHED.
+- Logged artifacts: `ab_test_report.md` and `group_summary.csv`.
+- Tracking database: repository-root `mlflow.db`.
+
+### Deliverables
+
+- `reports/w9d3/ab_test_tracking.py`
+- `reports/w9d3/README.md`
+- `reports/w9d3/results/ab_test_report.md`
+- `reports/w9d3/results/group_summary.csv`
+
+- Optimized CSV loading to read only the five required columns.
+- Python syntax verification passed using `py_compile`.
+- Existing successful MLflow run was preserved; the full analysis was not rerun after the CSV-loading optimization.
+
+### CIA Mentor Interactions
+
+**Interaction 1 — Technical Checklist Review**
+
+- Requested review of data validation, filtering, order-level aggregation and Welch's t-test.
+- Mentor provided general recommendations because the source code had not been supplied.
+- Recommendations included excluding missing grouping/outcome values, filtering invalid statuses, aggregating line items before testing and using Welch's test without assuming equal variances.
+- The mentor did not perform a direct source-code audit or verify execution.
+
+**Interaction 2 — Statistical Interpretation Review**
+
+- Supplied the actual sample sizes, group means, p-value, confidence interval and Cohen's d.
+- Mentor confirmed the arithmetic for the mean difference and agreed that the p-value and confidence interval support a statistically significant difference.
+- Mentor confirmed that Cohen's d = 0.0419 represents a negligible standardized effect.
+- Mentor emphasized the distinction between statistical and practical significance.
+- Business importance requires additional context such as margins, costs and operational impact.
+- The comparison remains observational and cannot establish causation.
+- Note: the mentor reviewed the supplied figures; it did not independently execute the analysis code.
+
+**Status:** Two CIA mentor interactions completed. Feedback and limitations documented.
+
+### Git
+- Working branch: `feat/w9d3-ab-test-vandana`.
+- First implementation commit: `25343dd`.
+- Second CIA documentation commit: pending.
+- Pull request: pending.
+
