@@ -1816,3 +1816,14 @@ Completed two CIA mentor interactions:
 **Remaining**
 - Commit and push this work-log update.
 - Perform final PR verification.
+
+
+## W9D1 — MLflow Experiment Tracking
+- Reused the Indian Business Sales dataset (128,975 rows, 24 columns).
+- Created a reproducible Python EDA experiment with MLflow 3.18.0.
+- Logged dataset metrics, parameters, interpretation tag and EDA artifacts.
+- Tracking backend: local SQLite (mlflow.db).
+- Successful MLflow run ID: 8c1513f0e3694497a367667f2666682b.
+- Added experiment instructions in reports/w9d1/README.md.
+- CIA mentor interactions: pending.
+- Git commit 1: e13b01e.
