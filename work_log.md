@@ -1958,8 +1958,79 @@ Completed two CIA mentor interactions:
 **Status:** Two CIA mentor interactions completed. Feedback and limitations documented.
 
 ### Git
+
 - Working branch: `feat/w9d3-ab-test-vandana`.
 - First implementation commit: `25343dd`.
+- Second CIA documentation commit: `28beb53`.
+- Pull request: #57 — merged successfully into `main`.
+- Merge commit: `e463b10`.
+- Local `main` synchronized with `origin/main`.
+- W9D3 quiz: completed.
+- Status: W9D3 implementation, documentation, review and coursework completed.
+
+## W9D4 — MLflow Dashboard: Compare Model Versions
+
+### Implementation
+
+- Compared two Random Forest regression model versions using the Indian Business Sales dataset.
+- Valid records: 121,180; training rows: 96,944; test rows: 24,236.
+- Used the same 80/20 split and `random_state=42` for a fair comparison.
+- Target: `Amount` (recorded order amount, not net revenue).
+- Features: Qty, Category, Fulfilment, Sales Channel, ship-service-level and B2B.
+- Used a scikit-learn Pipeline with median numeric imputation, most-frequent categorical imputation and OneHotEncoder.
+- Split the data before fitting preprocessing; the pipeline was fitted on training data and evaluated on held-out test data.
+
+### Model Comparison
+
+| Metric | Version 1 | Version 2 |
+|---|---:|---:|
+| MAE | 148.9428 | 148.9365 |
+| RMSE | 208.4967 | 208.4935 |
+| R2 | 0.450080 | 0.450097 |
+
+- Version 1: 150 trees, max depth 12.
+- Version 2: 250 trees, max depth 16.
+- Version 2 showed only marginal improvements across all three metrics.
+- Registered Version 2 successfully as a candidate.
+- Preserved Version 1 as the `champion` alias because the improvements were negligible and did not justify promotion.
+- Evaluation limitation: comparison used one hold-out split; cross-validation has not been performed.
+
+### MLflow Tracking and Registry
+
+- Experiment: `W9D4 - MLflow Model Version Comparison`.
+- Registered model: `IndianBusinessOrderAmountRegressor`.
+- Version 1 run ID: `86e4765896664473b206016adc2d8f57`.
+- Version 2 run ID: `5f3a536264564010a507a99518e88b0e`.
+- Champion alias: Version 1.
+- Tracking and registry database: repository-root `mlflow.db`.
+- MLflow UI verified locally at `http://127.0.0.1:5000`.
+
+### Deliverables
+
+- `reports/w9d4/model_version_comparison.py`
+- `reports/w9d4/model_comparison.csv`
+- `reports/w9d4/model_comparison.md`
+- `reports/w9d4/README.md`
+
+### CIA Mentor Interactions
+
+**Interaction 1 — Technical and Validation Review**
+
+- Requested an audit of metrics, dataset split, model parameters and validation consistency.
+- Reviewed the fixed split, dataset fingerprint and model comparison methodology.
+
+**Interaction 2 — Model Promotion Decision**
+
+- Reviewed the marginal metric improvements and the decision to retain Version 1 as champion.
+- Feedback highlighted the increased complexity of Version 2 and the limitation of relying on a single hold-out evaluation.
+- Recommendation: retain Version 1 pending further validation.
+
+**Status:** Two CIA mentor interactions completed. The review and validation limitations are documented.
+
+### Git
+
+- Working branch: `feat/w9d4-mlflow-dashboard-vandana`.
+- First implementation commit: `cb766e1` — `Add W9D4 MLflow model version comparison`.
 - Second CIA documentation commit: pending.
 - Pull request: pending.
-
+- W9D4 quiz: pending.
