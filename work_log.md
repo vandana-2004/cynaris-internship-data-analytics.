@@ -2109,3 +2109,93 @@ Completed two CIA mentor interactions:
 - Merge commit: `044f035`.
 - Final local branch: `main`, synchronized with `origin/main`.
 - Status: **W9D5 completed and merged.**
+
+## W10D1 — Time Series Analysis: Trends, Seasonality and ARIMA
+
+### Implementation
+
+- Analyzed the Indian Business Sales dataset using daily recorded Amount values.
+- Included all order statuses and retained records with valid dates and non-null Amount values.
+- Aggregated recorded amounts and transaction counts by calendar day.
+- Retained all 91 dates; did not exclude dates based only on low transaction counts.
+- Calculated 7-day and 14-day rolling averages to examine trends.
+- Compared average recorded amounts across weekdays as a descriptive weekly pattern.
+- Applied the Augmented Dickey-Fuller (ADF) test for unit-root analysis.
+- Evaluated Naive, 7-day Seasonal Naive and ARIMA(1,1,1) models using a chronological 14-day holdout.
+- Generated a 14-day ARIMA forecast with model-based prediction intervals.
+
+### Verified Results
+
+- Dataset period: 31 March 2022 to 29 June 2022.
+- Daily observations retained: 91.
+- Missing calendar dates: 0.
+- Average daily recorded amount: INR 863,655.81.
+- Median daily recorded amount: INR 882,059.17.
+- Minimum daily recorded amount: INR 101,683.85.
+- Maximum daily recorded amount: INR 1,209,364.17.
+- First 7-day average: INR 801,659.41.
+- Latest 7-day rolling average: INR 658,666.33.
+- Latest 14-day rolling average: INR 710,615.76.
+- Change between first and latest 7-day averages: -17.84%.
+- Descriptive trend: Downward.
+- Highest weekday average: Sunday.
+- Lowest weekday average: Thursday.
+- ADF statistic: -5.7151.
+- ADF p-value: 0.000001; reject the unit-root null at the 5% significance level.
+
+### Model Evaluation
+
+- Training observations: 77.
+- Holdout observations: 14 (16 June to 29 June 2022).
+- Naive MAE: INR 77,242.30; RMSE: INR 122,634.73.
+- Seasonal Naive MAE: INR 166,387.24; RMSE: INR 189,914.24.
+- ARIMA(1,1,1) MAE: INR 71,656.24; RMSE: INR 118,706.45.
+- ARIMA(1,1,1) performed best on this particular holdout for both metrics.
+- Generated a 14-day forecast for 30 June to 13 July 2022.
+- Mean forecast amount: INR 398,121.53.
+
+### Interpretation and Limitations
+
+- Amount represents recorded order value, not verified net revenue.
+- All order statuses are included; recorded amounts must not be interpreted as completed sales or realized revenue.
+- No dates were excluded based solely on low transaction counts.
+- Weekday comparisons are descriptive and do not establish stable seasonality.
+- The dataset covers approximately three months and cannot establish annual seasonality.
+- The ARIMA model is non-seasonal and does not explicitly model a seven-day seasonal component.
+- The holdout is short, so model rankings may differ across other periods.
+- The forecast is experimental, and its prediction interval widens substantially.
+- The final ARIMA fit emitted non-fatal starting-parameter estimation warnings; fitting and forecast generation completed successfully.
+
+### CIA Mentor Interactions
+
+**Interaction 1 — Data Cleaning and Trend Review**
+
+- Mentor feedback questioned the earlier exclusion of dates based only on low transaction counts.
+- Recommended stronger evidence for excluding dates, such as a defined threshold or source-integrity checks.
+- Emphasized that low activity alone does not prove incomplete data.
+- The analysis was revised to retain all dates with valid recorded amounts.
+
+**Interaction 2 — Forecasting and Validation Review**
+
+- Reviewed the chronological 14-day holdout and the use of Naive and Seasonal Naive baselines.
+- Highlighted the need to avoid preprocessing leakage across training and holdout data.
+- Noted that ARIMA(1,1,1) does not explicitly model a seven-day seasonal component.
+- Recommended supporting weekly interpretation with raw daily and rolling-average plots.
+
+**Review limitation:** The available CIA responses were partial; complete final verdicts were not provided. No overall CIA PASS/FAIL verdict is claimed.
+
+### Deliverables
+
+- `reports/w10d1/time_series_analysis.py`
+- `reports/w10d1/analysis_summary.md`
+- `reports/w10d1/daily_sales.csv`
+- `reports/w10d1/weekly_seasonality.csv`
+- `reports/w10d1/weekly_seasonality.png`
+- `reports/w10d1/time_series_trend.png`
+- `reports/w10d1/model_comparison.csv`
+- `reports/w10d1/holdout_predictions.csv`
+- `reports/w10d1/arima_evaluation.png`
+- `reports/w10d1/forecast.csv`
+- `reports/w10d1/arima_forecast.png`
+
+**Status:** Analysis executed successfully, generated outputs verified, and two CIA interactions completed with partial feedback documented. Git commits and push pending.
