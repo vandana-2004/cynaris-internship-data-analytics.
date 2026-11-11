@@ -2036,3 +2036,65 @@ Completed two CIA mentor interactions:
 - Local `main` synchronized with `origin/main`.
 - W9D4 quiz: completed.
 - Status: W9D4 implementation, documentation, CIA review, Git workflow and quiz completed.
+
+## W9D5 — Tracked Data Analyst Experiment Pipeline
+
+### Implementation
+- Built a reproducible EDA pipeline for the Indian Business Sales dataset.
+- Excluded one unnamed export column from analytical summaries.
+- Calculated duplicate counts and raw/analytical missing-cell counts.
+- Distinguished originally missing Amount values from numeric parsing errors.
+- Generated category and order-status summaries and two visualizations.
+- Calculated Amount descriptive statistics and 1.5 × IQR outliers.
+- Documented Amount as recorded order amounts, not net revenue.
+
+### Verified Results
+- Dataset: 128,975 rows and 24 original columns.
+- Analytical columns: 23.
+- Duplicate rows: 0.
+- Raw missing cells: 210,495.
+- Analytical missing cells: 161,445.
+- Missing Amount values: 7,795.
+- Amount parsing errors: 0.
+- Valid Amount values: 121,180.
+- Mean Amount: INR 648.56.
+- Median Amount: INR 605.00.
+- Skewness: 0.8855.
+- IQR outliers: 3,600.
+
+### MLflow Tracking
+- Experiment: `W9D5 - Tracked DA Experiment Pipeline`.
+- Original run: `dc9b4abb58cf4d7bab197c312f070ce5`.
+- Updated run: `20810144df7042e4ab2993b0bd5b8d4f`.
+- Updated run status: FINISHED.
+- Verified all logged metrics, tags and five EDA artifacts.
+- Preserved the original run.
+
+### CIA Mentor Interactions
+
+**Interaction 1 — Technical Checklist Review**
+- Recommended separating raw and analytical missing-cell metrics.
+- Recommended distinguishing missing Amount values from parsing errors.
+- Reinforced that IQR outliers require review rather than automatic exclusion.
+
+**Interaction 2 — Interpretation and Tracking Review**
+- Recommended explaining positive skewness in business language.
+- Emphasized responsible interpretation of statistical outliers.
+- Recommended documenting missing-value handling and possible bias.
+- Reinforced the distinction between recorded Amount and net revenue.
+
+**Review limitation:** The mentor reviewed the supplied descriptions and metrics, not the Python source code directly. Pipeline execution and MLflow artifacts were independently verified.
+
+**Status:** Two CIA interactions completed and recommendations incorporated into the updated pipeline.
+
+### Deliverables
+- `reports/w9d5/tracked_eda_pipeline.py`
+- `reports/w9d5/README.md`
+- `reports/w9d5/outputs/`
+- MLflow experiment and verified updated run.
+
+### Git
+- Working branch: `feat/w9d5-tracked-da-experiment-vandana`.
+- Implementation commit: pending.
+- CIA documentation commit: pending.
+- Pull request: pending.
