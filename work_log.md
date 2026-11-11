@@ -1782,3 +1782,37 @@ Completed two CIA mentor interactions:
 - Left unrelated untracked files and folders untouched.
 
 **Final status:** W8D4 implementation, documentation, evidence and viva preparation completed. CIA Code Review completion remains verified.
+
+## W8D5 — AI Data Platform: Final Demo and Documentation
+
+- Created `reports/w8d5/README.md` documenting the AI Data Analyst platform, API endpoints, deployment, setup, EDA findings, recommendations, and known limitations.
+- Verified the production homepage (`/`), Swagger documentation (`/docs`), and ReDoc (`/redoc`) returned HTTP 200 on 9 November 2026.
+- Confirmed the W8D4 production health endpoint had returned HTTP 200 with the application engines available.
+- Re-ran the Indian Business EDA analysis and confirmed the report generation completed successfully.
+- Documented the API workflow, deployment URL, business findings, and data-quality caveats.
+- Demo recording and shareable link: Pending.
+- CIA mentor review and interaction log: Pending.
+- Final W8D5 PR: Pending.
+
+### W8D5 Status Update - 11 November 2026
+
+**Final Demo**
+- Recorded the 3-minute W8D5 AI Data Platform demonstration.
+- Uploaded the demo to Google Drive.
+- Confirmed sharing permission: Anyone with the link - Viewer.
+- Demo: https://drive.google.com/file/d/151d9zyII5Q_bzwtwkLwX3bPXpVuUh154/view?usp=sharing
+
+**CIA Mentor Interactions**
+- Interaction 1: Requested practical improvements for the integrated AI Data Platform, covering CSV upload validation, file security, session management, AI query reliability, and production readiness.
+- Interaction 2: Requested production-readiness guidance covering Render resource limits, session storage, Groq API key security and rate limits, CSV validation, and API error handling.
+- CIA clarified that it could not access the local repository, source code, or live deployment.
+- Both responses provided general architecture-based recommendations, not verified code-review findings or test results.
+- The second response was incomplete, so only the recommendations actually received are recorded.
+
+**PR Evidence**
+- Updated GitHub PR #54 with the demo video link and summaries of both CIA interactions.
+- PR #54 remains open pending final work-log commit and verification.
+
+**Remaining**
+- Commit and push this work-log update.
+- Perform final PR verification.
