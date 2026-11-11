@@ -1797,12 +1797,14 @@ Completed two CIA mentor interactions:
 ### W8D5 Status Update - 11 November 2026
 
 **Final Demo**
+
 - Recorded the 3-minute W8D5 AI Data Platform demonstration.
 - Uploaded the demo to Google Drive.
 - Confirmed sharing permission: Anyone with the link - Viewer.
 - Demo: https://drive.google.com/file/d/151d9zyII5Q_bzwtwkLwX3bPXpVuUh154/view?usp=sharing
 
 **CIA Mentor Interactions**
+
 - Interaction 1: Requested practical improvements for the integrated AI Data Platform, covering CSV upload validation, file security, session management, AI query reliability, and production readiness.
 - Interaction 2: Requested production-readiness guidance covering Render resource limits, session storage, Groq API key security and rate limits, CSV validation, and API error handling.
 - CIA clarified that it could not access the local repository, source code, or live deployment.
@@ -1810,15 +1812,17 @@ Completed two CIA mentor interactions:
 - The second response was incomplete, so only the recommendations actually received are recorded.
 
 **PR Evidence**
+
 - Updated GitHub PR #54 with the demo video link and summaries of both CIA interactions.
 - PR #54 remains open pending final work-log commit and verification.
 
 **Remaining**
+
 - Commit and push this work-log update.
 - Perform final PR verification.
 
-
 ## W9D1 — MLflow Experiment Tracking
+
 - Reused the Indian Business Sales dataset (128,975 rows, 24 columns).
 - Created a reproducible Python EDA experiment with MLflow 3.18.0.
 - Logged dataset metrics, parameters, interpretation tag and EDA artifacts.
@@ -1829,6 +1833,7 @@ Completed two CIA mentor interactions:
 - Git commit 1: e13b01e.
 
 ### CIA Interaction 1 — Reproducibility Audit
+
 - Reviewed MLflow parameters, metrics, tags and artifacts.
 - Mentor emphasized dataset versioning, cleaning thresholds, baseline data-quality metrics and business context.
 - Improvement opportunities identified: dataset hash, column-level missing-value metrics, environment versions and explicit cleaning decisions.
@@ -1836,8 +1841,34 @@ Completed two CIA mentor interactions:
 - Status: Interaction 1 completed; interaction 2 pending.
 
 ### CIA Interaction 2 — EDA Methodology Review
+
 - Mentor assessed missing-value analysis, amount distribution, IQR outliers and category summaries.
 - Finding: these provide a good foundation but do not fully explain the business story.
 - Recommendations: analyze missingness by category/date, document cleaning assumptions, add bivariate analysis and temporal trends.
 - Mentor noted that actual numerical correctness requires reviewing the code and outputs.
 - Status: Two CIA interactions completed.
+
+## W9D2 — MLflow Model Registry for Analyst Models
+
+### Implementation and Verification
+
+- Trained a RandomForestRegressor using the Indian Business Sales dataset.
+- Used 121,180 valid records, with 96,944 training rows and 24,236 testing rows.
+- Features: Qty, Category, Fulfilment, Sales Channel, ship-service-level and B2B.
+- Target: Amount (recorded order amount, not net realised revenue).
+- Logged the model and evaluation metrics with MLflow 3.18.0.
+- MAE: 148.9428; RMSE: 208.4967; R²: 0.4501.
+- Registered `IndianBusinessOrderAmountRegressor`, version 1.
+- Assigned and verified the `champion` alias.
+- Verified model loading through the registry alias and generated three predictions successfully.
+- Successful MLflow run ID: `86e4765896664473b206016adc2d8f57`.
+- Added implementation and reproduction documentation in `reports/w9d2/README.md`.
+
+### CIA Mentor Interactions
+
+- Pending two W9D2 mentor interactions and documentation.
+
+### Git
+
+- Working branch: `feat/w9d2-mlflow-model-registry-vandana`.
+- Final commits and PR: Pending.
