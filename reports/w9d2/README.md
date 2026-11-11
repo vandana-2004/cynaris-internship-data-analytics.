@@ -73,4 +73,14 @@ Re-running the script may create another MLflow run and registered model version
 
 ## CIA Mentor Review
 
-Status: Pending two W9D2 mentor interactions.
+Two mentor interactions completed; responses partially received.
+
+Key feedback:
+
+- Document dataset versioning and checksum for reproducibility.
+- Explain the rationale for the `champion` alias.
+- Add automated model-loading and prediction tests.
+- Interpret R² alongside MAE and RMSE.
+- Investigate potential target-encoding leakage and additional predictive features.
+
+The mentor feedback is advisory and does not constitute independent verification of the implementation.

@@ -1866,7 +1866,22 @@ Completed two CIA mentor interactions:
 
 ### CIA Mentor Interactions
 
-- Pending two W9D2 mentor interactions and documentation.
+**Interaction 1 — MLflow Model Registry Review**
+
+- Reviewed experiment tracking, reproducibility, model registration, alias management and verification.
+- Mentor recommended documenting the dataset version/hash, explaining the rationale for the `champion` alias and adding automated model-loading and prediction tests.
+- The implementation calculates the dataset SHA256 hash; the successful run output confirms the hash.
+- The response was partially received, so only the available recommendations are recorded.
+
+**Interaction 2 — Model Quality and Business Interpretation**
+
+- Reviewed regression metrics and interpretation of R² = 0.4501.
+- Discussed the business meaning of MAE and RMSE and the unexplained variation in order amounts.
+- Mentor identified possible missing explanatory factors, including product pricing, discounts, promotions and seasonality.
+- Mentor highlighted target-encoding leakage as a risk to check.
+- The response was partially received, so only the available feedback is recorded.
+
+**Status:** Two CIA mentor interactions completed; both responses partially received.
 
 ### Git
 
