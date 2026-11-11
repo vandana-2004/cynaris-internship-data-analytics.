@@ -1816,3 +1816,28 @@ Completed two CIA mentor interactions:
 **Remaining**
 - Commit and push this work-log update.
 - Perform final PR verification.
+
+
+## W9D1 — MLflow Experiment Tracking
+- Reused the Indian Business Sales dataset (128,975 rows, 24 columns).
+- Created a reproducible Python EDA experiment with MLflow 3.18.0.
+- Logged dataset metrics, parameters, interpretation tag and EDA artifacts.
+- Tracking backend: local SQLite (mlflow.db).
+- Successful MLflow run ID: 8c1513f0e3694497a367667f2666682b.
+- Added experiment instructions in reports/w9d1/README.md.
+- CIA mentor interactions: pending.
+- Git commit 1: e13b01e.
+
+### CIA Interaction 1 — Reproducibility Audit
+- Reviewed MLflow parameters, metrics, tags and artifacts.
+- Mentor emphasized dataset versioning, cleaning thresholds, baseline data-quality metrics and business context.
+- Improvement opportunities identified: dataset hash, column-level missing-value metrics, environment versions and explicit cleaning decisions.
+- Existing MLflow run provides a good baseline; further reproducibility improvements are recommended.
+- Status: Interaction 1 completed; interaction 2 pending.
+
+### CIA Interaction 2 — EDA Methodology Review
+- Mentor assessed missing-value analysis, amount distribution, IQR outliers and category summaries.
+- Finding: these provide a good foundation but do not fully explain the business story.
+- Recommendations: analyze missingness by category/date, document cleaning assumptions, add bivariate analysis and temporal trends.
+- Mentor noted that actual numerical correctness requires reviewing the code and outputs.
+- Status: Two CIA interactions completed.
