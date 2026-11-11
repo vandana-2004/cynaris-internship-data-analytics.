@@ -1983,10 +1983,10 @@ Completed two CIA mentor interactions:
 ### Model Comparison
 
 | Metric | Version 1 | Version 2 |
-|---|---:|---:|
-| MAE | 148.9428 | 148.9365 |
-| RMSE | 208.4967 | 208.4935 |
-| R2 | 0.450080 | 0.450097 |
+| ------ | --------: | --------: |
+| MAE    |  148.9428 |  148.9365 |
+| RMSE   |  208.4967 |  208.4935 |
+| R2     |  0.450080 |  0.450097 |
 
 - Version 1: 150 trees, max depth 12.
 - Version 2: 250 trees, max depth 16.
@@ -2026,6 +2026,7 @@ Completed two CIA mentor interactions:
 - Recommendation: retain Version 1 pending further validation.
 
 **Status:** Two CIA mentor interactions completed. The review and validation limitations are documented.
+
 ### Git
 
 - Working branch: `feat/w9d4-mlflow-dashboard-vandana`.
@@ -2040,6 +2041,7 @@ Completed two CIA mentor interactions:
 ## W9D5 — Tracked Data Analyst Experiment Pipeline
 
 ### Implementation
+
 - Built a reproducible EDA pipeline for the Indian Business Sales dataset.
 - Excluded one unnamed export column from analytical summaries.
 - Calculated duplicate counts and raw/analytical missing-cell counts.
@@ -2049,6 +2051,7 @@ Completed two CIA mentor interactions:
 - Documented Amount as recorded order amounts, not net revenue.
 
 ### Verified Results
+
 - Dataset: 128,975 rows and 24 original columns.
 - Analytical columns: 23.
 - Duplicate rows: 0.
@@ -2063,6 +2066,7 @@ Completed two CIA mentor interactions:
 - IQR outliers: 3,600.
 
 ### MLflow Tracking
+
 - Experiment: `W9D5 - Tracked DA Experiment Pipeline`.
 - Original run: `dc9b4abb58cf4d7bab197c312f070ce5`.
 - Updated run: `20810144df7042e4ab2993b0bd5b8d4f`.
@@ -2073,11 +2077,13 @@ Completed two CIA mentor interactions:
 ### CIA Mentor Interactions
 
 **Interaction 1 — Technical Checklist Review**
+
 - Recommended separating raw and analytical missing-cell metrics.
 - Recommended distinguishing missing Amount values from parsing errors.
 - Reinforced that IQR outliers require review rather than automatic exclusion.
 
 **Interaction 2 — Interpretation and Tracking Review**
+
 - Recommended explaining positive skewness in business language.
 - Emphasized responsible interpretation of statistical outliers.
 - Recommended documenting missing-value handling and possible bias.
@@ -2088,13 +2094,18 @@ Completed two CIA mentor interactions:
 **Status:** Two CIA interactions completed and recommendations incorporated into the updated pipeline.
 
 ### Deliverables
+
 - `reports/w9d5/tracked_eda_pipeline.py`
 - `reports/w9d5/README.md`
 - `reports/w9d5/outputs/`
 - MLflow experiment and verified updated run.
 
 ### Git
+
 - Working branch: `feat/w9d5-tracked-da-experiment-vandana`.
-- Implementation commit: pending.
-- CIA documentation commit: pending.
-- Pull request: pending.
+- Implementation commit: `86fa099` — Add W9D5 tracked EDA pipeline and findings.
+- CIA documentation commit: `79e94a9` — Document W9D5 CIA review and completion.
+- Pull request: [#60](https://github.com/vandana-2004/cynaris-internship-data-analytics./pull/60) — Merged successfully into `main`.
+- Merge commit: `044f035`.
+- Final local branch: `main`, synchronized with `origin/main`.
+- Status: **W9D5 completed and merged.**
