@@ -1,0 +1,14 @@
+status,row_count,row_share_pct
+Shipped,77804,60.324869160690056
+Shipped - Delivered to Buyer,28769,22.305873231246366
+Cancelled,18332,14.213607288234154
+Shipped - Returned to Seller,1953,1.514246947082768
+Shipped - Picked Up,973,0.7544097693351425
+Pending,658,0.5101763907734057
+Pending - Waiting for Pick Up,281,0.21787168055824774
+Shipped - Returning to Seller,145,0.11242488854429154
+Shipped - Out for Delivery,35,0.027137042062415198
+Shipped - Rejected by Buyer,11,0.008528784648187633
+Shipping,8,0.0062027524714091875
+Shipped - Lost in Transit,5,0.0038767202946307427
+Shipped - Damaged,1,0.0007753440589261484
