@@ -43,6 +43,22 @@ Prophet (weekly seasonality) 122636.499199 157308.05191
 - Prediction intervals represent model uncertainty, not guaranteed ranges.
 - Forecasts are experimental and are not guaranteed business outcomes.
 
+## Additional validation considerations
+
+- ARIMA achieved lower MAE and RMSE than Prophet on this single 14-day holdout. This does not establish universal business-model superiority.
+- Only 91 observations are available, so longer-term seasonal components cannot be reliably established.
+- The prediction intervals should be interpreted cautiously; they are model-based uncertainty estimates, not guaranteed ranges.
+- Indian holidays were not explicitly modelled.
+- Prophet's default changepoint settings were retained; changepoint tuning is future work.
+- ARIMA residual diagnostics, including a Ljung-Box test, and further Prophet residual analysis were not performed.
+- Future work could evaluate additional chronological holdout windows, holiday effects and residual diagnostics before making a production model recommendation.
+
+## CIA mentor review
+
+- Interaction 1 reviewed chronological splitting, missing dates, scaling, seasonality, changepoints and holiday effects. The mentor supplied an evaluation framework, not a line-by-line code review.
+- Interaction 2 reviewed business interpretation, short-series limitations, residual diagnostics and holiday effects. It cautioned against treating one holdout comparison as proof of universal model superiority.
+- Both interactions were completed. No formal overall PASS/FAIL verdict was supplied.
+
 ## Evidence
 - `holdout_predictions.csv`
 - `model_comparison.csv`
