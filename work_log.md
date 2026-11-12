@@ -2437,3 +2437,13 @@ Completed two CIA mentor interactions:
 - `reports/w10d5/missing_amount_by_fulfilment.csv`
 
 **Status:** W10D5 EDA, dashboard implementation, validation and two CIA mentor interactions completed. Both commits pushed to GitHub. PR #65 successfully merged into `main`. Local `main` synchronized with `origin/main` at merge commit `572ee06`. All 14 W10D5 files verified on `main`. Completion date: 13 Nov 2026.
+
+## W11D1 – Data Storytelling Principles
+
+- Created and executed `reports/w11d1/storytelling_analysis.py`.
+- Generated three visualizations and supporting CSV outputs.
+- Created `reports/w11d1/outputs/story_report.md` and `reports/w11d1/README.md`.
+- Completed two CIA mentor interactions and documented feedback in `reports/w11d1/cia_review.md`.
+- Applied the What → So What → Now What storytelling framework.
+- Documented category concentration, cancellation share and Amount limitations.
+- Git commits, push, PR and lesson quiz pending.
