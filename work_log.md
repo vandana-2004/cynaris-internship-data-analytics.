@@ -2209,7 +2209,6 @@ Completed two CIA mentor interactions:
 - Merge commit: `0b02679`.
 - Local `main`: synchronized with `origin/main`.
 
-
 ## W10D2 ? Prophet Forecasting on Indian Business Data
 
 ### Implementation
@@ -2354,17 +2353,19 @@ Completed two CIA mentor interactions:
 - `reports/w10d3/anomaly_scatter.png`
 - `reports/w10d3/method_comparison.png`
 
-**Status:** W10D3 implementation, evidence generation, validation and CIA feedback documentation completed. Git commits and push pending.
+**Status:** W10D3 implementation, evidence generation, validation, and CIA feedback documentation completed. Git commits completed, changes pushed to GitHub, and PR #63 successfully merged into `main`. Local `main` synchronized with `origin/main`. Work log updated with completion date (12 Nov 2026). All tracked changes verified clean.
 
 ## W10D4 - Forecasting Dashboard
 
 ### Implementation
+
 - Built a Holt-Winters forecasting engine using additive trend and additive weekly seasonality.
 - Aggregated the Indian Business Sales dataset into 91 daily recorded order amount observations.
 - Held out the final 14 days for chronological validation and generated a 14-day future forecast.
 - Built an interactive Streamlit and Plotly dashboard with a historical date filter, adjustable forecast horizon, validation metrics, forecast tables and CSV downloads.
 
 ### Validation
+
 - MAE: 121,237.81
 - RMSE: 155,727.07
 - MAPE: 20.11%
@@ -2374,11 +2375,13 @@ Completed two CIA mentor interactions:
 - Manually tested dashboard chart, date filter, forecast horizon slider, metrics and CSV downloads.
 
 ### CIA mentor reviews
+
 - Completed two CIA interactions: forecasting methodology review and dashboard architecture review.
 - Recorded actual feedback and review limitations in `reports/w10d4/cia_review.md`.
 - Potential improvements identified: further seasonal-pattern diagnostics and prediction intervals.
 
 ### Evidence
+
 - `reports/w10d4/daily_recorded_amount.csv`
 - `reports/w10d4/validation_forecast.csv`
 - `reports/w10d4/future_forecast.csv`
@@ -2386,4 +2389,51 @@ Completed two CIA mentor interactions:
 - `reports/w10d4/analysis_summary.md`
 - `reports/w10d4/cia_review.md`
 
-**Status:** W10D4 implementation, dashboard testing, forecast validation and two CIA mentor interactions completed. Git commits and push pending.
+**Status:** W10D4 implementation, dashboard testing, forecast validation, and two CIA mentor interactions completed. Both Git commits successfully created and pushed to GitHub. PR #64 successfully merged into `main`. Local `main` synchronized with `origin/main` at merge commit `2605b6b`. All 9 W10D4 files verified on `main`.
+
+## W10D5 - Sales Intelligence Dashboard
+
+### Implementation
+
+- Built `w10d5_eda.py` to analyze the Indian Business Sales dataset (128,975 rows and 24 original columns).
+- Generated daily and monthly summaries, category, state, fulfilment and status performance reports.
+- Investigated missing Amount values by order status and fulfilment without imputing missing financial values.
+- Built `w10d5_dashboard.py`, integrating EDA and the W10D4 Holt-Winters forecasting engine.
+- Added date-range, multi-select category and state filters, interactive charts, adjustable forecast horizon and CSV report downloads.
+- Kept forecasting independent of the EDA filters.
+
+### Validation
+
+- Exact duplicate rows: 0; invalid dates: 0.
+- Missing Amount values: 7,795; valid Amount rows: 121,180; Amount coverage: 93.96%.
+- Recorded Amount total: 78,592,678.30; average recorded Amount per valid row: 648.56.
+- Total quantity: 116,649; daily observations: 91.
+- Confirmed that missing Amount values remain included in row counts but are excluded from financial totals and averages.
+- Confirmed that 7,566 missing Amount values are associated with Cancelled rows (descriptive association, not a causal conclusion).
+- Forecast validation: MAE 121,237.81; RMSE 155,727.07; MAPE 20.11%; WAPE 17.06%.
+- Python syntax checks passed for the EDA, dashboard and forecasting engine.
+- Manually tested dashboard sections, filters, forecast horizon and report downloads.
+
+### CIA mentor reviews
+
+- Completed two CIA mentor interactions.
+- Interaction 1 reviewed EDA data quality, missing Amount handling, row-count versus financial aggregation, and average recorded Amount per valid row.
+- Interaction 2 gave a Strong Pass with High Potential verdict (8.5/10) and reviewed dashboard architecture, time-series continuity, caching, filters and responsiveness.
+- The second review was based on the implementation description supplied to CIA, not direct inspection of the local source code or runtime.
+- Implemented the relevant missing-value breakdowns, multi-select filters and caching improvements.
+
+### Evidence
+
+- `reports/w10d5/README.md`
+- `reports/w10d5/eda_summary.md`
+- `reports/w10d5/data_quality.json`
+- `reports/w10d5/daily_business_summary.csv`
+- `reports/w10d5/monthly_business_summary.csv`
+- `reports/w10d5/category_performance.csv`
+- `reports/w10d5/state_performance.csv`
+- `reports/w10d5/fulfilment_summary.csv`
+- `reports/w10d5/status_summary.csv`
+- `reports/w10d5/missing_amount_by_status.csv`
+- `reports/w10d5/missing_amount_by_fulfilment.csv`
+
+**Status:** W10D5 EDA, dashboard implementation, validation and two CIA mentor interactions completed. Git commits and push pending.

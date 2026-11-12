@@ -1,0 +1,14 @@
+Status,order_rows,recorded_amount,quantity,rows_with_amount,average_recorded_amount_per_valid_row
+Shipped,77804,50324255.0,78009,77596,648.5418707149853
+Shipped - Delivered to Buyer,28769,18650815.0,28886,28761,648.4758874865269
+Cancelled,18332,6919284.3,5657,10766,642.6977800483002
+Shipped - Returned to Seller,1953,1269644.0,1970,1950,651.0994871794871
+Shipped - Picked Up,973,661252.0,977,973,679.601233299075
+Pending,658,430271.0,657,656,655.9009146341464
+Pending - Waiting for Pick Up,281,192138.0,283,281,683.7651245551601
+Shipped - Returning to Seller,145,107620.0,150,145,742.2068965517242
+Shipped - Out for Delivery,35,26971.0,35,35,770.6
+Shipped - Rejected by Buyer,11,7295.0,11,11,663.1818181818181
+Shipped - Lost in Transit,5,1997.0,5,5,399.4
+Shipped - Damaged,1,1136.0,1,1,1136.0
+Shipping,8,0.0,8,0,
