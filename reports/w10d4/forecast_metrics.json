@@ -1,0 +1,24 @@
+{
+  "model": "Holt-Winters additive trend + additive weekly seasonality",
+  "seasonal_periods": 7,
+  "holdout_days": 14,
+  "future_horizon_days": 14,
+  "target": "Daily sum of non-missing Amount values (recorded order amount)",
+  "metrics": {
+    "mae": 121237.80811030803,
+    "rmse": 155727.07273199092,
+    "mape_percent": 20.111267491163545,
+    "wape_percent": 17.0609513309071,
+    "mape_observations": 14,
+    "validation_observations": 14
+  },
+  "data_quality": {
+    "source_rows": 128975,
+    "invalid_dates": 0,
+    "missing_amounts": 7795,
+    "daily_observations": 91,
+    "start_date": "2022-03-31",
+    "end_date": "2022-06-29",
+    "zero_amount_days": 0
+  }
+}
