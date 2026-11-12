@@ -2208,3 +2208,88 @@ Completed two CIA mentor interactions:
 - Pull request: #61 — successfully merged into `main`.
 - Merge commit: `0b02679`.
 - Local `main`: synchronized with `origin/main`.
+
+
+## W10D2 ? Prophet Forecasting on Indian Business Data
+
+### Implementation
+
+- Reused the verified 91-day daily recorded-amount aggregation from W10D1.
+- Used Prophet 1.5.0 in the existing `.venv-pandasai` environment.
+- Prepared Prophet inputs using `ds` and `y` columns.
+- Used a chronological split: 77 training observations and 14 holdout observations.
+- Enabled weekly seasonality; disabled daily and yearly seasonality.
+- Used Prophet's default automatic changepoint configuration.
+- Set uncertainty samples to 300.
+- Evaluated Prophet against the W10D1 Naive, Seasonal Naive and ARIMA results on the same holdout dates.
+- Refit Prophet on all 91 observations and generated a 14-day forecast.
+
+### Verified Results
+
+- Dataset period: 31 March 2022 to 29 June 2022.
+- Historical observations: 91.
+- Training observations: 77.
+- Holdout observations: 14 (16 June to 29 June 2022).
+- Prophet holdout MAE: INR 122,636.50.
+- Prophet holdout RMSE: INR 157,308.05.
+- Naive MAE: INR 77,242.30; RMSE: INR 122,634.73.
+- Seasonal Naive MAE: INR 166,387.24; RMSE: INR 189,914.24.
+- ARIMA(1,1,1) MAE: INR 71,656.24; RMSE: INR 118,706.45.
+- ARIMA achieved the lowest MAE and RMSE on this particular holdout.
+- Prophet forecast period: 30 June to 13 July 2022.
+- Mean predicted daily recorded amount: INR 736,636.79.
+- Forecast output contains 14 rows, no missing values, and valid lower and upper prediction bounds.
+
+### Interpretation and Limitations
+
+- Amount represents recorded order value, not verified net revenue.
+- All order statuses are included in the source aggregation.
+- The dataset contains only 91 daily observations, limiting the ability to estimate longer-term patterns.
+- Annual seasonality was disabled because the available period does not establish an annual pattern.
+- Indian holidays were not explicitly modelled.
+- Prophet's default changepoint settings were used; tuning remains future work.
+- The prediction intervals express model uncertainty and are not guaranteed business ranges. Their width should be interpreted cautiously given the short dataset.
+- The model comparison uses one 14-day holdout. It does not establish that ARIMA is universally superior for the business.
+- Residual diagnostics, including ARIMA Ljung-Box testing and further Prophet residual analysis, were not performed and remain future work.
+- Forecasts are experimental and should not be treated as guaranteed business outcomes.
+
+### CIA Mentor Interactions
+
+**Interaction 1 ? Technical Review**
+
+- Completed a CIA mentor review of the W10D2 Prophet implementation requirements.
+- The mentor provided a critical evaluation framework rather than a line-by-line review because the actual files were not supplied in the CIA conversation.
+- Reviewed chronological splitting, missing-date handling, scaling, seasonality, changepoints and Indian holiday effects.
+- Confirmed that the implementation uses a chronological 77/14 split, INR-scale target values and weekly seasonality.
+- Identified holiday modelling and changepoint tuning as possible improvements.
+- Retained yearly seasonality as disabled because the dataset covers only approximately three months.
+
+**Interaction 2 ? Business and Statistical Review**
+
+- Completed a separate CIA mentor review of model comparison and business interpretation.
+- The mentor cautioned against treating ARIMA's lower holdout errors as proof that it is universally better for the business.
+- Identified the short 91-day history as a major limitation.
+- Recommended residual diagnostics, including Ljung-Box testing for ARIMA and residual analysis for Prophet.
+- Highlighted holiday modelling and the need to interpret uncertainty cautiously.
+- Residual diagnostics and holiday effects were not implemented in this task and are recorded as future improvements.
+- The available response ended during its class/status discussion; no additional feedback or formal overall verdict is claimed.
+
+**Review outcome:** Both required CIA interactions completed. Feedback reviewed and improvement areas documented. No formal overall PASS/FAIL verdict was supplied by CIA.
+
+### Deliverables
+
+- `reports/w10d2/prophet_forecasting.py`
+- `reports/w10d2/analysis_summary.md`
+- `reports/w10d2/forecast.csv`
+- `reports/w10d2/holdout_predictions.csv`
+- `reports/w10d2/model_comparison.csv`
+- `reports/w10d2/prophet_holdout.png`
+- `reports/w10d2/prophet_forecast.png`
+
+### Git Details
+
+- Feature branch: `feat/w10d2-vandana`
+- Implementation and evidence commit: `0b4a32b` ? Add W10D2 Prophet sales forecasting pipeline.
+- Documentation commit: recorded after successful commit.
+
+**Status:** W10D2 implementation, evaluation, evidence and CIA documentation completed.
