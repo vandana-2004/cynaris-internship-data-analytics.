@@ -2293,3 +2293,65 @@ Completed two CIA mentor interactions:
 - Documentation commit: recorded after successful commit.
 
 **Status:** W10D2 implementation, evaluation, evidence and CIA documentation completed.
+
+---
+
+## W10D3 - Anomaly Detection (Day 72, 12 Nov 2026)
+
+### Objective and implementation
+
+- Applied IQR, Z-score and Isolation Forest anomaly detection to the Indian Business Sales dataset.
+- Created `reports/w10d3/anomaly_detection.py`.
+- Analysed 128,975 transaction-line records; the Isolation Forest model used 113,701 valid positive Amount and Qty records.
+- Generated method comparison, flagged-record and status-level CSV outputs, along with three PNG charts and an analysis summary.
+
+### Results
+
+- IQR: 3,600 flagged records (2.791% of the full dataset).
+- Z-score: 784 flagged records (0.608% of the full dataset).
+- Isolation Forest: 2,269 flagged records (1.759% of the full dataset; approximately 1.995% of its 113,701-record model population).
+- Union of methods: 3,770 flagged transaction rows.
+- All three methods agreed on 774 records.
+- The Isolation Forest contamination value of 2% is a modelling assumption, not a fraud rate.
+
+### Validation and interpretation
+
+- CSV validation passed: method counts, flagged rows and status-summary totals reconciled.
+- All flagged rows had `any_anomaly = True` and non-null Order IDs.
+- All three PNG evidence files were present.
+- The 3,770 flagged rows correspond to 3,701 distinct Order IDs.
+- Checked the original source rows for flagged orders: 4,247 source rows, zero exact duplicate rows, and zero duplicates by Order ID + SKU + Amount.
+- Repeated Order IDs represent multiple transaction lines and are not treated as duplicate orders.
+- Anomaly flags are candidates for review, not proof of fraud, data corruption or business error.
+- The methods have different assumptions and input populations; their counts should be interpreted accordingly.
+
+### CIA mentor interactions
+
+**Interaction 1 - Technical assessment**
+
+- CIA could not inspect the local Python file because its contents were not supplied in that chat.
+- It provided an intermediate assessment based on the reported metrics, not a line-by-line code review.
+- Its initial Isolation Forest comparison used 2% of the full dataset. The correct model population is 113,701 valid records; 2,269 flags are approximately 1.995%.
+- It also highlighted the need to interpret Z-score results cautiously for skewed sales data.
+- No formal overall verdict was supplied.
+
+**Interaction 2 - Business and statistical assessment**
+
+- CIA discussed why IQR, Z-score and Isolation Forest produce different results, including skewness and standard-deviation sensitivity.
+- CIA described Isolation Forest as a multivariate method. The implementation uses Amount and Qty; time was not a model feature.
+- The response was partial and no formal overall verdict was supplied.
+
+**Review outcome:** Both required CIA interactions completed; their available feedback and limitations documented. No formal PASS/FAIL verdict was provided.
+
+### Deliverables
+
+- `reports/w10d3/anomaly_detection.py`
+- `reports/w10d3/analysis_summary.md`
+- `reports/w10d3/anomaly_records.csv`
+- `reports/w10d3/method_comparison.csv`
+- `reports/w10d3/status_anomaly_summary.csv`
+- `reports/w10d3/amount_distribution.png`
+- `reports/w10d3/anomaly_scatter.png`
+- `reports/w10d3/method_comparison.png`
+
+**Status:** W10D3 implementation, evidence generation, validation and CIA feedback documentation completed. Git commits and push pending.
