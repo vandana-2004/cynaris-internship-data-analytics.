@@ -2447,3 +2447,54 @@ Completed two CIA mentor interactions:
 - Applied the What → So What → Now What storytelling framework.
 - Documented category concentration, cancellation share and Amount limitations.
 - **Status:** W11D1 storytelling analysis, three visualizations, supporting CSV outputs, story report, README and two CIA mentor interactions completed. Two commits created and pushed. PR #67 successfully merged into `main` (merge commit `c040c73`). Four-question lesson quiz completed. Completion date: 13 Nov 2026.
+
+## W11D2 ? Building Executive Reports
+
+### Implementation
+
+- Created and executed `reports/w11d2/executive_report.py` using the Indian Business Sales dataset.
+- Generated five interactive Plotly HTML charts, including a category Pareto chart.
+- Generated five static chart images and four supporting analytical CSV files.
+- Created `reports/w11d2/outputs/executive_summary.md` and an eight-slide executive PowerPoint report.
+- Documented execution instructions, metrics, outputs and limitations in `reports/w11d2/README.md`.
+
+### Verified Results
+
+- Dataset: 128,975 rows.
+- Total valid Recorded Amount: INR 78,592,678.30.
+- Mean Recorded Amount: INR 648.56; median: INR 605.00.
+- Amount coverage: 93.96%; missing Amount values: 7,795.
+- Cancelled rows: 18,332 (14.21%).
+- The top two categories account for 76.98% of valid recorded Amount.
+- Pareto cumulative category share reaches 100.00%.
+- Python compilation and report generation completed successfully.
+- The script validated 16 generated outputs and confirmed the PowerPoint contains eight slides.
+
+### Data Interpretation and Limitations
+
+- Recorded Amount is not verified net revenue or profit.
+- The source category label `Set` has no confirmed business definition.
+- Category concentration is described as a share of valid recorded Amount, not revenue.
+- Missing Amount values were not treated as zero or imputed.
+- Dataset rows are not assumed to represent unique orders or customers.
+
+### CIA Mentor Interactions
+
+- Completed two CIA mentor interactions: a technical review and a business stakeholder review.
+- Technical feedback covered interactive chart access, KPI validation, formatting and calculation safeguards.
+- Business feedback covered financial metric caveats, the undefined `Set` category and category concentration.
+- Added the Pareto chart and documented the concentration finding and business-definition caveat.
+- Recorded both interactions and their scope limitations in `reports/w11d2/cia_review.md`. CIA reviewed the information supplied during the conversations; it did not directly inspect or execute the local repository.
+
+### Evidence
+
+- `reports/w11d2/executive_report.py`
+- `reports/w11d2/README.md`
+- `reports/w11d2/cia_review.md`
+- `reports/w11d2/outputs/executive_summary.md`
+- `reports/w11d2/outputs/executive_report.pptx`
+- `reports/w11d2/outputs/charts/`
+- `reports/w11d2/outputs/images/`
+- `reports/w11d2/outputs/*.csv`
+
+**Status:** W11D2 report generation, 16-output validation, eight-slide presentation and two CIA mentor interactions completed. Git commit, push and pull request status are pending.
