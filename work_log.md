@@ -2570,3 +2570,53 @@ Completed two CIA mentor interactions:
 - Stakeholder access depends on Preset workspace permissions and service availability.
 
 **Status:** W11D3 Python dashboard preparation, generated-output validation, two CIA mentor interactions, hosted Preset dashboard creation and publication, and screenshot capture completed. CIA did not independently review the hosted dashboard.
+
+## W6D3 - Apache Superset BI Dashboard from SQL Results
+
+### Implementation
+
+- Created `reports/w6d3/sql_dashboard.py` to execute SQL queries, export dashboard datasets and validate results.
+- Created `reports/w6d3/dashboard_queries.sql` containing the SQL aggregation queries.
+- Generated five CSV datasets for category, monthly, order-status, KPI and state-level analysis.
+- Reused the hosted Preset workspace and its existing `File Uploads` database and `main` schema.
+- Uploaded five separate W6D3 datasets using unique dataset names to avoid conflicts with W11D3.
+- Created five Superset charts: category bar chart, monthly line chart, order-status pie chart, recorded-amount Big Number KPI and state-wise table.
+- Added all five charts to the `W6D3 – Indian Business SQL Dashboard`.
+
+### Verified Results
+
+- Source dataset: 128,975 rows and 24 columns.
+- SQL processed rows: 128,975.
+- Recorded Amount total: INR 78,592,678.30.
+- Amount coverage: 93.96%.
+- Missing Amount rows: 7,795.
+- Cancelled-status rows: 18,332.
+- Distinct order statuses: 13.
+- Distinct categories: 9.
+- Distinct states: 70.
+- SQL output row counts: category 9, monthly 4, order status 13, state 69 and KPI 1.
+- SQL validation completed successfully.
+
+### Hosted Preset Dashboard
+
+- Dashboard: W6D3 – Indian Business SQL Dashboard.
+- Dashboard URL: https://de37bc60.us1a.app.preset.io/superset/dashboard/10/?native_filters_key=M9Z7S8s0yYL2WbQctWa07g
+- Captured a dashboard screenshot using Windows Snipping Tool.
+- Screenshot evidence: `reports/w6d3/outputs/W6D3_Preset_Indian_Business_SQL_Dashboard.png`.
+
+### Data Interpretation and Limitations
+
+- Recorded Amount is not verified net revenue or profit.
+- Missing Amount values were excluded from amount-based aggregations.
+- Order-status counts include all source rows, including cancelled orders.
+- The state aggregation contains 69 rows because one state has no non-null Amount available for the amount-based aggregation.
+- Dashboard access depends on Preset workspace permissions and service availability.
+
+### Review and Improvement Status
+
+- CIA mentor review: pending.
+- Peer review: pending.
+- Feedback-based improvement: pending.
+- These activities will be recorded after they are actually completed.
+
+**Status:** SQL processing, output validation, five hosted Preset datasets, five dashboard charts and screenshot evidence completed. Review activities remain pending.
