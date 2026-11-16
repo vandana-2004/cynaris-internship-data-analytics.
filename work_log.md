@@ -1,4 +1,4 @@
-﻿# Week 1 Day 1 â€” SQL Fundamentals
+# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -2502,3 +2502,71 @@ Completed two CIA mentor interactions:
 **Git:** Commit `1db795a` pushed successfully. Pull request #68 merged into `main` with merge commit `1acc05a`. Local `main` synchronized with `origin/main`.
 
 **Final result:** W11D2 fully completed.
+
+## W11D3 - Apache Superset BI Dashboard Preparation
+
+### Implementation
+
+- Created `reports/w11d3/dashboard.py` with separate functions for directory creation, data loading, validation, cleaning, aggregation, CSV exports, chart generation, summary documentation and output validation.
+- Used vectorized Pandas aggregations and project-relative paths.
+- Generated a five-component interactive Plotly dashboard using the Indian Business Sales dataset.
+- Included a category bar chart, monthly trend line chart, order-status horizontal bar chart, state summary table and metric card.
+- Retained all 13 order statuses instead of limiting the chart to the top eight.
+- Added the dataset date range to the category chart title.
+- Generated a static PNG dashboard preview and four supporting CSV summaries.
+- Created `reports/w11d3/README.md` with reproduction instructions, deliverables, validation details and interpretation limitations.
+
+### Verified Results
+
+- Dataset: 128,975 source rows and 22 analytical columns after removing index-only fields.
+- Data period: 31 March 2022 to 29 June 2022.
+- Recorded Amount: INR 78,592,678.30.
+- Amount coverage: 93.96%; missing Amount values: 7,795.
+- Cancelled rows: 18,332 (14.21%).
+- All 13 order statuses are present in the exported summary; their counts sum to 128,975.
+- Python compilation completed successfully.
+- Dashboard generation completed successfully.
+- All 11 expected updated deliverables were checked for existence and non-zero size.
+
+### Data Interpretation and Limitations
+
+- Recorded Amount is not verified net revenue or profit.
+- Missing Amount values are excluded from amount aggregations.
+- Cancelled rows represent recorded statuses, not completed sales.
+- The source data does not establish why orders were cancelled.
+- The `Set` category is retained as a source label; its business meaning is not assumed.
+- The dataset covers approximately three months, not a full year.
+- Dataset rows are not assumed to represent unique orders or customers.
+
+### CIA Mentor Interactions
+
+- Completed two CIA mentor interactions: a technical review and a business stakeholder review.
+- Technical feedback covered modular code, validation, data types, KPI definitions and chart readability.
+- Business feedback covered time-period context, state comparisons, order-status chart selection and accurate financial terminology.
+- Applied relevant recommendations by modularizing the script, adding validation, retaining all statuses, replacing the pie chart with a horizontal bar chart and clarifying the category chart period.
+- Recorded both interactions and their scope limitations in `reports/w11d3/cia_review.md`.
+- CIA reviewed the information supplied during the conversations; it did not directly execute the local script or inspect the generated dashboard.
+
+### Evidence
+
+- `reports/w11d3/dashboard.py`
+- `reports/w11d3/README.md`
+- `reports/w11d3/cia_review.md`
+- `reports/w11d3/outputs/dashboard.html`
+- `reports/w11d3/outputs/dashboard_summary.md`
+- `reports/w11d3/outputs/images/dashboard_preview.png`
+- `reports/w11d3/outputs/charts/`
+- `reports/w11d3/outputs/*.csv`
+
+### Superset Deployment Status
+
+- Uploaded the four prepared CSV datasets to the hosted Preset workspace.
+- Created and saved five Superset charts: category bar, monthly line, order-status pie, state summary table and Big Number KPI.
+- Added all five charts to `W11D3 Stakeholder Dashboard` and published the dashboard.
+- Published dashboard: https://de37bc60.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=XVAbs_qn33MclWhO94eqZw
+- Captured the published dashboard using Windows Snipping Tool and saved `W11D3_dashboard.png` in the repository root.
+- The screenshot is a static capture, not a native Superset PNG export.
+- The hosted Preset dashboard's order-status pie chart differs from the local Python dashboard's horizontal bar chart.
+- Stakeholder access depends on Preset workspace permissions and service availability.
+
+**Status:** W11D3 Python dashboard preparation, generated-output validation, two CIA mentor interactions, hosted Preset dashboard creation and publication, and screenshot capture completed. CIA did not independently review the hosted dashboard.
