@@ -1,4 +1,4 @@
-# Week 1 Day 1 â€” SQL Fundamentals
+﻿# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -2576,12 +2576,13 @@ Completed two CIA mentor interactions:
 ### Implementation
 
 - Created `reports/w6d3/sql_dashboard.py` to execute SQL queries, export dashboard datasets and validate results.
-- Created `reports/w6d3/dashboard_queries.sql` containing the SQL aggregation queries.
-- Generated five CSV datasets for category, monthly, order-status, KPI and state-level analysis.
+- Created `reports/w6d3/dashboard_queries.sql` containing the original SQL aggregation queries.
+- Generated five original CSV datasets for category, monthly, order-status, KPI and state-level analysis.
 - Reused the hosted Preset workspace and its existing `File Uploads` database and `main` schema.
-- Uploaded five separate W6D3 datasets using unique dataset names to avoid conflicts with W11D3.
-- Created five Superset charts: category bar chart, monthly line chart, order-status pie chart, recorded-amount Big Number KPI and state-wise table.
-- Added all five charts to the `W6D3 – Indian Business SQL Dashboard`.
+- Uploaded six W6D3 datasets using unique dataset names to avoid conflicts with W11D3.
+- Created six Superset charts: category bar chart, monthly line chart, order-status pie chart, recorded-amount Big Number KPI, state-wise table and cancellation-status bar chart.
+- Added all six charts to the existing `W6D3 – Indian Business SQL Dashboard`.
+- Added supplementary cancellation analysis in `reports/w6d3/cancellation_analysis.sql` and `reports/w6d3/outputs/cancellation_analysis.csv`. The original Python pipeline was not modified.
 
 ### Verified Results
 
@@ -2594,29 +2595,42 @@ Completed two CIA mentor interactions:
 - Distinct order statuses: 13.
 - Distinct categories: 9.
 - Distinct states: 70.
-- SQL output row counts: category 9, monthly 4, order status 13, state 69 and KPI 1.
-- SQL validation completed successfully.
+- Original SQL output row counts: category 9, monthly 4, order status 13, state 69 and KPI 1.
+- Original SQL validation completed successfully.
+
+### Supplementary Cancellation Analysis
+
+| Order group   |    Rows | Recorded Amount (INR) | Missing Amount rows |
+| ------------- | ------: | --------------------: | ------------------: |
+| Cancelled     |  18,332 |          6,919,284.30 |               7,566 |
+| Non-Cancelled | 110,643 |         71,673,394.00 |                 229 |
+
+These figures group source records by order status. Non-cancelled Recorded Amount is not verified revenue.
 
 ### Hosted Preset Dashboard
 
 - Dashboard: W6D3 – Indian Business SQL Dashboard.
 - Dashboard URL: https://de37bc60.us1a.app.preset.io/superset/dashboard/10/?native_filters_key=M9Z7S8s0yYL2WbQctWa07g
-- Captured a dashboard screenshot using Windows Snipping Tool.
+- Captured an updated dashboard screenshot using Windows Snipping Tool.
 - Screenshot evidence: `reports/w6d3/outputs/W6D3_Preset_Indian_Business_SQL_Dashboard.png`.
 
 ### Data Interpretation and Limitations
 
 - Recorded Amount is not verified net revenue or profit.
-- Missing Amount values were excluded from amount-based aggregations.
+- The overall KPI includes amounts from cancelled-status rows.
+- Missing Amount values are excluded from amount-based aggregations.
 - Order-status counts include all source rows, including cancelled orders.
+- Non-cancelled Recorded Amount does not establish realized revenue.
 - The state aggregation contains 69 rows because one state has no non-null Amount available for the amount-based aggregation.
 - Dashboard access depends on Preset workspace permissions and service availability.
 
 ### Review and Improvement Status
 
-- CIA mentor review: pending.
-- Peer review: pending.
-- Feedback-based improvement: pending.
-- These activities will be recorded after they are actually completed.
+- CIA mentor review: completed once, based on supplied summaries and metadata.
+- The CIA review did not visually inspect or interact with the hosted Preset dashboard.
+- No explicit PASS, PASS WITH IMPROVEMENTS or FAIL verdict was provided.
+- Feedback highlighted the need to distinguish total Recorded Amount from non-cancelled Recorded Amount.
+- Supplementary cancellation analysis was added and a sixth chart was added to the existing W6D3 dashboard.
+- Human peer review: pending; no peer approval is claimed.
 
-**Status:** SQL processing, output validation, five hosted Preset datasets, five dashboard charts and screenshot evidence completed. Review activities remain pending.
+**Status:** SQL processing, output validation, six hosted Preset datasets, six dashboard charts, supplementary cancellation analysis and screenshot evidence completed. Human peer review remains pending.
