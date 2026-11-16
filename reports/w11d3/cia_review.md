@@ -92,16 +92,15 @@ Both provided improvement recommendations covering maintainability, data validat
 
 ## Deliverable Status
 
-
-
 - Python-generated dashboard preparation: completed.
-
-- Interactive HTML dashboard: opened and all five components visually verified.
-
-- Static PNG preview: generated and opened.
-
-- README: created.
-
-- Apache Superset installation and deployment: pending.
-
-- Actual Superset database connection, dashboard creation, export, and stakeholder access configuration: pending.
+- Interactive local HTML dashboard and five local components: generated and validated.
+- Two CIA mentor interactions: recorded, with review limitations described above.
+- README and supporting analytical outputs: created.
+- Hosted Preset workspace: database uploads completed.
+- Hosted Superset charts: five charts saved and added to the dashboard.
+- `W11D3 Stakeholder Dashboard`: published.
+- Published dashboard URL: https://de37bc60.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=XVAbs_qn33MclWhO94eqZw
+- Local screenshot: `W11D3_dashboard.png` saved in the repository root using Windows Snipping Tool.
+- The hosted dashboard uses an order-status pie chart; the local Python dashboard retains its horizontal bar chart.
+- CIA reviews took place before the hosted dashboard was published. CIA did not independently inspect or execute the hosted dashboard.
+- The screenshot is not represented as a native Superset export.

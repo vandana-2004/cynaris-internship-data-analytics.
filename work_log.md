@@ -1,4 +1,4 @@
-﻿# Week 1 Day 1 â€” SQL Fundamentals
+# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -2560,9 +2560,13 @@ Completed two CIA mentor interactions:
 
 ### Superset Deployment Status
 
-- Python-generated dashboard preparation is complete.
-- Apache Superset has not been installed or deployed.
-- Superset database connection, native chart creation, dashboard export and stakeholder access configuration remain pending.
-- Python-generated Plotly artifacts are preparation evidence and are not represented as a deployed Superset dashboard.
+- Uploaded the four prepared CSV datasets to the hosted Preset workspace.
+- Created and saved five Superset charts: category bar, monthly line, order-status pie, state summary table and Big Number KPI.
+- Added all five charts to `W11D3 Stakeholder Dashboard` and published the dashboard.
+- Published dashboard: https://de37bc60.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=XVAbs_qn33MclWhO94eqZw
+- Captured the published dashboard using Windows Snipping Tool and saved `W11D3_dashboard.png` in the repository root.
+- The screenshot is a static capture, not a native Superset PNG export.
+- The hosted Preset dashboard's order-status pie chart differs from the local Python dashboard's horizontal bar chart.
+- Stakeholder access depends on Preset workspace permissions and service availability.
 
-**Status:** W11D3 Python dashboard preparation, generated-output validation and two CIA mentor interactions completed. Actual Apache Superset deployment remains pending.
+**Status:** W11D3 Python dashboard preparation, generated-output validation, two CIA mentor interactions, hosted Preset dashboard creation and publication, and screenshot capture completed. CIA did not independently review the hosted dashboard.

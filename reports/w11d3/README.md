@@ -58,9 +58,20 @@ Run from the repository root:
 
 ## Stakeholder Sharing
 
-The interactive HTML file can be shared through an approved internal file-sharing location. The PNG can be used as a static preview. Confirm access permissions and data-sharing approval before distributing either file.
+The hosted stakeholder dashboard is published in the Preset workspace:
 
-For a deployed Superset dashboard, stakeholders would access the dashboard through the configured Superset instance, subject to assigned permissions. That deployment has not yet been completed.
+**Dashboard:** [W11D3 Stakeholder Dashboard](https://de37bc60.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=XVAbs_qn33MclWhO94eqZw)
+
+The hosted dashboard contains five saved components:
+- Category-wise Amount Analysis (bar chart)
+- Monthly Amount Trend (line chart)
+- Order Status Distribution (pie chart)
+- State-wise Amount Summary (table)
+- Total Amount KPI Summary (Big Number, displayed as 39.4M)
+
+Stakeholder access depends on Preset workspace permissions and service availability.
+
+The local screenshot `W11D3_dashboard.png` is a Windows Snipping Tool capture, not a native Superset PNG export. The Python-generated interactive HTML and PNG preview remain separate local deliverables.
 
 ## Interpretation Limitations
 
@@ -73,6 +84,10 @@ For a deployed Superset dashboard, stakeholders would access the dashboard throu
 
 ## Deployment Status
 
-Python-generated dashboard preparation is complete.
-
-Apache Superset has not been installed, configured, connected to a database, or deployed. Actual Superset chart creation, dashboard export, and stakeholder access configuration remain pending.
+- Python-generated dashboard preparation and local output validation: complete.
+- Hosted Preset workspace database uploads and Superset chart creation: complete.
+- `W11D3 Stakeholder Dashboard`: published in the hosted Preset workspace.
+- Five saved dashboard components: bar, line, pie, table and Big Number KPI.
+- Published dashboard link and local screenshot are documented above.
+- The screenshot is a Snipping Tool capture; a native Superset PNG export is not claimed.
+- Stakeholder access remains subject to Preset workspace permissions and service availability.
