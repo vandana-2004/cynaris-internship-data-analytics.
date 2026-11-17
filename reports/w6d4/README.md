@@ -52,3 +52,44 @@ compared with a direct, read-only SQLite query.
 
 ## Safety
 The SQLite runner retains its read-only URI and SQL authorizer restrictions.
+
+## Preset Executive Reporting Integration
+
+### Dataset transfer
+- Source: local SQLite database `sales.db`, table `orders`.
+- Exported a 10-row CSV snapshot to `reports/w6d4/outputs/vanna_orders_snapshot.csv`.
+- Uploaded the CSV to Preset using the `File Uploads` database and `main` schema.
+- Created and verified dataset `main.w6d4_vanna_orders`.
+
+### Saved SQL queries
+- `W6D4 - Executive KPI Summary`
+- `W6D4 - Category Performance`
+- `W6D4 - Regional Performance`
+
+### Charts and dashboard
+Created and saved three charts:
+1. `W6D4 - Executive KPI Summary` - Table visualization.
+2. `W6D4 - Category Performance` - Bar chart grouped by category.
+3. `W6D4 - Regional Performance` - Bar chart grouped by region.
+
+Created and saved the dashboard:
+`W6D4 - Vanna Executive Reporting Dashboard`
+
+All three charts were added to the dashboard and visually checked.
+
+### Verified KPI results
+
+| Metric | Result |
+|---|---:|
+| Total orders | 10 |
+| Total units | 113 |
+| Gross sales | 1,109,000 |
+| Net sales after discount | 1,002,750 |
+
+Category and regional breakdowns were also executed successfully in Preset SQL Lab. Their totals reconcile with the executive KPI results.
+
+### Screenshot evidence
+- `reports/w6d4/outputs/w6d4_executive_dashboard.png`
+
+### Integration scope
+The CSV snapshot was uploaded to Preset as a reporting dataset. This demonstrates the Vanna SQLite-to-Preset reporting workflow; it does not represent a live database connection or automatic synchronization.

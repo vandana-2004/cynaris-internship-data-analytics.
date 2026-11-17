@@ -1,0 +1,11 @@
+﻿order_id,customer_name,product,category,quantity,unit_price,order_date,region,sales_rep,discount
+1,Ananya,Laptop,Electronics,5,75000.0,2026-01-05,North,Rahul,10.0
+2,Arjun,Chair,Furniture,12,2500.0,2026-01-07,South,Priya,5.0
+3,Bhavna,Shirt,Clothing,20,1200.0,2026-01-10,West,Amit,
+4,Carlos,Phone,Electronics,8,35000.0,2026-01-12,East,Neha,15.0
+5,Deepak,Desk,Furniture,6,8000.0,2026-01-15,North,Rahul,
+6,Aisha,Shoes,Clothing,15,3000.0,2026-01-18,South,Priya,10.0
+7,Farhan,Monitor,Electronics,11,15000.0,2026-01-20,West,Amit,5.0
+8,Gaurav,Table,Furniture,4,12000.0,2026-01-22,East,Neha,
+9,Anjali,Headphones,Electronics,25,2500.0,2026-01-25,North,Rahul,20.0
+10,Harish,Jacket,Clothing,7,4500.0,2026-01-28,South,Priya,

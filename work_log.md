@@ -1373,9 +1373,17 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - Verified all ten live query results against direct, read-only SQLite queries: total orders = 10; category counts = Clothing 3, Electronics 4, Furniture 3; region counts = East 2, North 3, South 3, West 2; average quantity = 11.3; total quantity = 113; sales by region = East 328000.0, North 485500.0, South 106500.0, West 189000.0; average unit price by category = Clothing 2900.0, Electronics 31875.0, Furniture 7500.0; orders by sales representative = Amit 2, Neha 2, Priya 3, Rahul 3; quantity by category = Clothing 42, Electronics 49, Furniture 22; highest order value = order #1, 375000.0.
 - Re-ran the existing W6D2 validator: all 10 predefined SQL checks passed, with 5 training examples.
 
+- Created and saved the W6D4 - Vanna Executive Reporting Dashboard containing all three charts.
+- Verified executive KPIs: 10 orders, 113 units, gross sales 1,109,000, and net sales 1,002,750.
+- Captured full dashboard evidence at reports/w6d4/outputs/w6d4_executive_dashboard.png.
+- The Preset reporting dataset is a CSV snapshot, not a live database connection.
 ### Validation and Remaining Work
 
 - Ten distinct live AI-generated query results have been verified against direct, read-only SQLite queries.
 - The existing 10/10 SQL checks use predefined queries and are separate from the ten live LLM-generated tests.
-- Superset installation, connection, and dashboard integration remain unverified.
-- Final documentation review, commit, and push completed; PR #41 description and validation progress comment updated. Superset integration remains unverified.
+- Exported the 10-row SQLite orders table to CSV and uploaded it to Preset as main.w6d4_vanna_orders.
+- Saved three Preset SQL queries and created three charts: Executive KPI Summary, Category Performance, and Regional Performance.
+- Created and saved the W6D4 - Vanna Executive Reporting Dashboard with all three charts.
+- Verified executive KPIs: 10 orders, 113 units, gross sales 1,109,000, and net sales 1,002,750.
+- Captured dashboard evidence at reports/w6d4/outputs/w6d4_executive_dashboard.png.
+- The Preset reporting dataset is a CSV snapshot, not a live database connection or automatic synchronization.
