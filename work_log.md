@@ -1360,6 +1360,37 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - CIA interactions: 2 completed successfully.
 - Note: The 10 SQL validation tests used predefined SQL queries; they do not represent 10 AI-generated query tests.
 
+HEAD
+
+## W6D4 - Combining Vanna and Superset for Executive Reporting
+
+### Work Completed
+
+- Completed the W6D4 lesson and passed its quiz with 100%.
+- Improved `vanna_sql/w6d1_app.py` with lazy agent initialization and explicit handling when `GROQ_API_KEY` is missing.
+- Added `reports/w6d4/README.md` with API validation evidence and limitations.
+- Completed the CIA Code review and Role Mentor interactions. The review emphasized request validation, safe error handling, and preserving read-only database access. The Role Mentor covered schema context, training examples, production SQL risks, validation, and the Superset integration architecture.
+- Tested the API with FastAPI TestClient: health returned HTTP 200, an empty question returned HTTP 400, and a valid question without the key returned HTTP 503.
+- Configured `GROQ_API_KEY` in the current terminal and successfully tested ten distinct live Vanna/Groq questions; all returned HTTP 200.
+- Verified all ten live query results against direct, read-only SQLite queries: total orders = 10; category counts = Clothing 3, Electronics 4, Furniture 3; region counts = East 2, North 3, South 3, West 2; average quantity = 11.3; total quantity = 113; sales by region = East 328000.0, North 485500.0, South 106500.0, West 189000.0; average unit price by category = Clothing 2900.0, Electronics 31875.0, Furniture 7500.0; orders by sales representative = Amit 2, Neha 2, Priya 3, Rahul 3; quantity by category = Clothing 42, Electronics 49, Furniture 22; highest order value = order #1, 375000.0.
+- Re-ran the existing W6D2 validator: all 10 predefined SQL checks passed, with 5 training examples.
+
+- Created and saved the W6D4 - Vanna Executive Reporting Dashboard containing all three charts.
+- Verified executive KPIs: 10 orders, 113 units, gross sales 1,109,000, and net sales 1,002,750.
+- Captured full dashboard evidence at reports/w6d4/outputs/w6d4_executive_dashboard.png.
+- The Preset reporting dataset is a CSV snapshot, not a live database connection.
+
+### Validation and Remaining Work
+
+- Ten distinct live AI-generated query results have been verified against direct, read-only SQLite queries.
+- The existing 10/10 SQL checks use predefined queries and are separate from the ten live LLM-generated tests.
+- Exported the 10-row SQLite orders table to CSV and uploaded it to Preset as main.w6d4_vanna_orders.
+- Saved three Preset SQL queries and created three charts: Executive KPI Summary, Category Performance, and Regional Performance.
+- Created and saved the W6D4 - Vanna Executive Reporting Dashboard with all three charts.
+- Verified executive KPIs: 10 orders, 113 units, gross sales 1,109,000, and net sales 1,002,750.
+- Captured dashboard evidence at reports/w6d4/outputs/w6d4_executive_dashboard.png.
+- # The Preset reporting dataset is a CSV snapshot, not a live database connection or automatic synchronization.
+
 ## W6D5 — Week 6 Project: Natural-Language SQL
 
 ### Practical Tasks Completed
@@ -1565,7 +1596,7 @@ Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
 
 ## W8D3 — Final Implementation and Review
 
-**Project:** Indian Business EDA PowerPoint Report  
+**Project:** Indian Business EDA PowerPoint Report
 **Overall Status:** Completed — PASS WITH IMPROVEMENTS
 
 ### 1. Implementation Completed
@@ -1642,9 +1673,9 @@ The findings were reviewed. No unverified changes were applied solely on the bas
 
 ## W8D4 — Production Deployment and API Documentation
 
-**Project:** CIA Data Analyst — Production Deployment  
-**Date:** 5 November 2026  
-**Branch:** `feat/w8d4-3m-vandana`  
+**Project:** CIA Data Analyst — Production Deployment
+**Date:** 5 November 2026
+**Branch:** `feat/w8d4-3m-vandana`
 **Overall Status:** Deployment LIVE — API validation passed
 
 ### 1. Deployment
@@ -2570,3 +2601,4 @@ Completed two CIA mentor interactions:
 - Stakeholder access depends on Preset workspace permissions and service availability.
 
 **Status:** W11D3 Python dashboard preparation, generated-output validation, two CIA mentor interactions, hosted Preset dashboard creation and publication, and screenshot capture completed. CIA did not independently review the hosted dashboard.
+origin/main
