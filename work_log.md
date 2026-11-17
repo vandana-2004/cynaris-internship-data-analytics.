@@ -2601,4 +2601,45 @@ Completed two CIA mentor interactions:
 - Stakeholder access depends on Preset workspace permissions and service availability.
 
 **Status:** W11D3 Python dashboard preparation, generated-output validation, two CIA mentor interactions, hosted Preset dashboard creation and publication, and screenshot capture completed. CIA did not independently review the hosted dashboard.
-origin/main
+
+---
+
+## W11D4 - Metabase Self-Serve BI Setup
+
+**Project:** Self-Serve BI Evaluation using Metabase and Apache Superset
+
+### Objective
+Evaluate self-service BI concepts, dashboard usability, data access controls and stakeholder sharing using the existing Indian Business Sales dashboard.
+
+### Implementation
+- Reused the W11D3 Indian Business Sales dataset and dashboard.
+- Avoided duplicating the 68.9 MB dataset and existing dashboard outputs.
+- Created `reports/w11d4/self_serve_bi_audit.py`.
+- Created `reports/w11d4/README.md` documenting Metabase versus Apache Superset, access controls, stakeholder sharing and deployment limitations.
+- Reused the five existing dashboard components and four aggregated CSV outputs.
+
+### Validation
+- Audit checks passed: 15/15.
+- Source dataset and dashboard evidence verified.
+- Four chart files and four summary CSVs verified.
+- All 13 order statuses validated.
+- Order-status aggregation total: 128,975 rows.
+- Dashboard KPI content detected.
+
+### Metabase Setup Limitation
+Metabase was not installed locally because Docker Desktop's Linux engine was unavailable. The existing hosted dashboard uses Apache Superset through Preset. No Metabase deployment is claimed.
+
+### CIA Mentor Interactions
+- Completed two W11D4 CIA mentor interactions.
+- Technical review: reuse approach accepted for analytical work, with the missing Metabase-specific implementation identified as a tooling gap.
+- Business review: SHIPPABLE WITH MINOR TWEAKS; recommended internal-pilot release with clear disclaimers.
+- Recommendations include clearer reporting-period labels, recorded Amount definitions, data-coverage visibility and simplified order-status presentation.
+- Both reviews documented in `reports/w11d4/cia_review.md`.
+- CIA reviewed supplied project information; it did not independently execute the audit or inspect the hosted dashboard.
+
+### Deliverables
+- `reports/w11d4/self_serve_bi_audit.py`
+- `reports/w11d4/README.md`
+- `reports/w11d4/cia_review.md`
+
+**Status:** W11D4 analytical reuse, documentation, 15-check audit and two CIA mentor interactions completed. Metabase-specific deployment remains an acknowledged limitation.
