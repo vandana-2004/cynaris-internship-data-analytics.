@@ -1,0 +1,4 @@
+Model,MAE (INR),RMSE (INR)
+Naive,77242.3,122634.73
+Seasonal naive (7-day),166387.24,189914.24
+"ARIMA(1, 1, 1)",71656.24,118706.45

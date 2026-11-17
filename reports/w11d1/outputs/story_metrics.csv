@@ -1,0 +1,17 @@
+metric,value
+total_rows,128975
+total_columns,23
+duplicate_rows,0
+valid_amount_rows,121180
+originally_missing_amount_rows,7795
+amount_parse_errors,0
+amount_coverage_pct,93.95619306067067
+recorded_amount_total,78592678.30000001
+recorded_amount_mean,648.5614647631623
+recorded_amount_median,605.0
+recorded_amount_skewness,0.8854806405409442
+top_category,Set
+top_category_share_pct,49.88266703464666
+top_two_category_share_pct,76.98385147156894
+cancelled_rows,18332
+cancelled_row_share_pct,14.213607288234154

@@ -2,3 +2,16 @@
 # Python cache
 __pycache__/
 *.pyc
+
+# Large generated W7D2 visualization
+reports/w7d2/autoviz/AutoViz/pair_scatters.html
+
+# MLflow local runs
+mlruns/
+
+
+# Local MLflow database
+mlflow.db
+mlflow.db-shm
+mlflow.db-wal
+

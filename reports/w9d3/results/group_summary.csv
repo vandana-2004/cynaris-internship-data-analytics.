@@ -1,0 +1,3 @@
+group,sample_size_orders,mean_order_amount,std_order_amount
+A - Amazon,71193,706.8708299973312,353.5668596552021
+B - Merchant,28714,721.8336003343317,365.33333188474086

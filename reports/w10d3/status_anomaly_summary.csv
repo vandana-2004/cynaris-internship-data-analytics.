@@ -1,0 +1,14 @@
+Status,total_records,flagged_records,average_amount,flagged_percentage
+Cancelled,18332,242,642.6977800483002,1.32
+Pending,658,27,655.9009146341464,4.1
+Pending - Waiting for Pick Up,281,7,683.7651245551601,2.49
+Shipped,77804,2471,648.5418707149853,3.18
+Shipped - Damaged,1,0,1136.0,0.0
+Shipped - Delivered to Buyer,28769,905,648.4758874865269,3.15
+Shipped - Lost in Transit,5,0,399.4,0.0
+Shipped - Out for Delivery,35,4,770.6,11.43
+Shipped - Picked Up,973,38,679.601233299075,3.91
+Shipped - Rejected by Buyer,11,0,663.1818181818181,0.0
+Shipped - Returned to Seller,1953,69,651.0994871794871,3.53
+Shipped - Returning to Seller,145,7,742.2068965517242,4.83
+Shipping,8,0,,0.0

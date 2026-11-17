@@ -1,4 +1,4 @@
-﻿# Week 1 Day 1 â€” SQL Fundamentals
+# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -1360,6 +1360,8 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - CIA interactions: 2 completed successfully.
 - Note: The 10 SQL validation tests used predefined SQL queries; they do not represent 10 AI-generated query tests.
 
+HEAD
+
 ## W6D4 - Combining Vanna and Superset for Executive Reporting
 
 ### Work Completed
@@ -1377,6 +1379,7 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - Verified executive KPIs: 10 orders, 113 units, gross sales 1,109,000, and net sales 1,002,750.
 - Captured full dashboard evidence at reports/w6d4/outputs/w6d4_executive_dashboard.png.
 - The Preset reporting dataset is a CSV snapshot, not a live database connection.
+
 ### Validation and Remaining Work
 
 - Ten distinct live AI-generated query results have been verified against direct, read-only SQLite queries.
@@ -1386,4 +1389,1216 @@ Python, Vanna 2.0.2, FastAPI, Uvicorn, SQLite, Groq OpenAI-compatible API, Git, 
 - Created and saved the W6D4 - Vanna Executive Reporting Dashboard with all three charts.
 - Verified executive KPIs: 10 orders, 113 units, gross sales 1,109,000, and net sales 1,002,750.
 - Captured dashboard evidence at reports/w6d4/outputs/w6d4_executive_dashboard.png.
-- The Preset reporting dataset is a CSV snapshot, not a live database connection or automatic synchronization.
+- # The Preset reporting dataset is a CSV snapshot, not a live database connection or automatic synchronization.
+
+## W6D5 — Week 6 Project: Natural-Language SQL
+
+### Practical Tasks Completed
+
+- Set up Vanna and connected the application to the local SQLite database, `sales.db`.
+- Used five question-to-SQL training examples documented in `vanna_sql/w6d2_training_examples.json`.
+- Tested 10 live natural-language questions through `POST /cia/sql-analyst`.
+- Independently verified all 10 API results against SQLite.
+- Verified order counts, category counts, total and regional sales, average quantity, top product by quantity, regional order counts, product quantities, top sales representative, and earliest order date.
+- Verified the sales calculation uses discounts as percentages and treats NULL discounts as zero.
+- Tested read-only SQL protection: a SELECT query succeeded, while the tested DELETE statement was rejected.
+- Reviewed the CIA feedback shared during the W6D5 review and incorporated the relevant findings into the evidence README.
+
+### Validation Results
+
+- Live API queries: 10/10 successful responses.
+- Independent SQLite verification: 10/10 results matched.
+- W6D2 predefined SQL validation: 10/10 passed in a separate test set.
+- Read-only SQL check: SELECT succeeded; tested DELETE was blocked.
+- These checks cover the tested queries and statements; they are not an exhaustive security audit.
+
+### CIA Review and Evaluation
+
+- CIA feedback received and reviewed; relevant documentation and safety recommendations were incorporated.
+- The lesson requires at least two CIA interactions and a Full Stack/Role Mentor code review.
+- Portal logging and formal Role Mentor review completion have not been independently confirmed. Do not mark these as completed until the portal confirms them.
+
+### Deliverables
+
+- `reports/w6d5/README.md` — query results, independent verification, read-only safety evidence, and limitations.
+- `vanna_sql/w6d1_app.py` — FastAPI endpoint and SQL execution protections.
+- `vanna_sql/w6d2_training_examples.json` — five training examples.
+- `vanna_sql/validate_w6d2.py` — predefined SQL validation tests.
+- PR #42 updated with W6D5 evidence.
+
+### Scope and Limitations
+
+- The verified database contains sales-order data.
+- A CRM-specific schema and a completed dashboard were not established by these checks.
+- The completed practical evidence demonstrates the tested natural-language SQL API workflow and query verification.
+
+### Tools and Technologies
+
+Python, SQLite, FastAPI, Vanna, Swagger UI, PowerShell, Git, GitHub.
+
+### Git and Pull Request Status
+
+- Branch: `feat/w6d5-3m-vandana`.
+- Latest pushed commit: `5d00869` — `docs: add W6D5 read-only SQL safety evidence`.
+- Local branch was synchronized with its origin branch at the last verification.
+- PR #42 remains open as of the last confirmed status.
+- Only `origin` is configured; no `upstream` remote is configured.
+
+### Final Actions
+
+1. Save and verify this work-log update.
+2. Commit and push the work-log update to the existing W6D5 branch.
+3. Check PR #42 for required reviews and status checks.
+4. Merge PR #42 when GitHub confirms it is eligible.
+5. Verify the PR shows Merged and record the final merge status.
+6. Confirm any required CIA interactions and Role Mentor review in the portal.
+
+## Week 7 Day 2 — Automated EDA: AutoViz + SweetViz
+
+**Hours Worked:** Enter actual hours worked.
+
+**Topics Covered:** Automated exploratory data analysis, AutoViz, SweetViz, reproducible sampling, business insights, and report comparison.
+
+**What did you work on today?**
+
+- Generated a SweetViz HTML report using a reproducible sample of 5,000 rows.
+- Ran AutoViz separately on the full 9,994-row Superstore dataset and generated five HTML visualizations.
+- Validated dataset statistics: 0 missing cells and 0 duplicate rows.
+- Identified three business insights using Pandas aggregations: highest-sales category, highest-sales region, and lowest-profit sub-category.
+- Documented findings in `reports/w7d2/insights.md` and compared the tools in `reports/w7d2/comparison.md`.
+
+**Tools / Technologies Used:** Python, Pandas, SweetViz, AutoViz, Pathlib, Git, VS Code.
+
+**Challenges / Blockers:** AutoViz reported limitations classifying some string columns and detecting date variables. Business insights were calculated separately using Pandas. The large AutoViz pair-scatter HTML output was excluded from Git to reduce repository size.
+
+**Validation:** Python syntax check passed using `python -m py_compile reports\w7d2\automated_eda.py`.
+
+**Git Status:** Two initial commits were pushed to `feat/w7d2-3m-vandana`. The comparison document was subsequently refined locally. Confirm final commits and PR status before marking the lesson complete.
+
+**CIA Review:** Code and comparison review performed . CIA review and the required two logged CIA interactions are confirmed.
+
+## Week 7 Day 3 — CIA Chart Generation: Plotly + ECharts
+
+**Hours Worked:** 2.
+
+**Topics Covered:** Interactive data visualization, Plotly, ECharts-compatible chart configurations, HTML dashboard generation, and chart validation.
+
+**What did you work on today?**
+
+- Created `reports/w7d3/chart_generation.py` to generate charts from the existing Superstore dataset.
+- Generated three Plotly charts: Sales by Category, Profit by Region, and Monthly Sales Trend.
+- Generated two ECharts-compatible configurations and saved them as JSON.
+- Created the standalone interactive HTML dashboard.
+- Documented implementation details and validation results in `reports/w7d3/README.md`.
+
+**Tools / Technologies Used:** Python, Pandas, Plotly, ECharts-compatible JSON, JSON, Git, VS Code.
+
+**Challenges / Blockers:** Initial execution used an environment without Plotly. Activated the existing `.venv` and successfully reran the script. Live CIA frontend integration has not been established.
+
+**Validation:**
+
+- Python compilation passed.
+- 9,994 dataset rows processed.
+- 0 invalid dates.
+- Three Plotly charts generated successfully.
+- Both ECharts configurations parsed successfully and contained valid series.
+- Dashboard visual check passed.
+
+**CIA Review:**
+
+- Interaction 1: Python code explanation and review.
+- Interaction 2: JavaScript/ECharts configuration review — PASS.
+- Both CIA interactions completed.
+
+**Git Status:** W7D3 completed with two commits (`b6b4e64`, `f307e8b`) pushed to `feat/w7d3-3m-vandana`. Pull Request #45 successfully merged into `main` (merge commit: `100c9e6`). W7D3 quiz passed.
+
+## Week 7 Day 4 — CIA SQL Mode: Vanna Integration
+
+**Topics Covered:** Vanna AI, natural-language-to-SQL, SQLite, FastAPI, read-only SQL execution, and API integration.
+
+**What did you work on today?**
+
+- Configured Vanna with Groq and connected it to the existing SQLite sales database.
+- Used five question-to-SQL training examples.
+- Tested 10 natural-language questions through `POST /cia/sql-analyst`.
+- Captured and manually reviewed all 10 AI-generated SQL statements.
+- Implemented read-only SQLite execution using database read-only mode and an SQLite authorizer.
+- Added generated SQL logging for review and debugging.
+- Documented results in `reports/w7d4/README.md`.
+
+**Tools / Technologies Used:** Python, Vanna 0.1.0, Groq, FastAPI, SQLite, Pandas, PowerShell, Git.
+
+**Validation:**
+
+- All 10 natural-language API requests returned HTTP 200.
+- All 10 generated SQL statements were captured and manually reviewed.
+- Existing W6D2 reference SQL validation passed 10/10.
+- Read-only SQL execution restrictions retained.
+
+**CIA Review:**
+
+- Interaction 1: Python code explanation using CIA Code — completed.
+- Interaction 2: Python Debug review using CIA Code — completed.
+- Reviewed CIA findings and retained the working implementation; no unverified suggested changes were applied.
+
+**Evidence:** `reports/w7d4/README.md`
+
+**Git Status:** W7D4 changes committed in two commits (`362eed6`, `a1cb58d`), pushed to `feat/w7d4-3m-vandana`, and merged into `main` through Pull Request #47 (merge commit `6c09f4e`).
+
+## Week 7 Day 5 ? CIA Data Analyst Mode
+
+- Implemented CSV upload and preview using FastAPI.
+- Integrated PandasAI with Groq through LiteLLM.
+- Added Plotly and Chart.js chart generation.
+- Built the CIA frontend.
+- Verified five AI queries successfully.
+- Verified homepage, health endpoint, and session cleanup.
+- Evidence: `reports/w7d5/README.md`.
+- CIA review and interactions: Two interactions completed; findings reviewed.
+- Git branch: `feat/w7d5-3m-vandana`.
+
+## Week 8 Day 1 — Executive Summary Generation
+
+**Topics Covered:** CSV analysis, data insights, Groq AI integration, executive summaries, PowerPoint export, FastAPI, and frontend integration.
+
+**What did you work on today?**
+
+- Implemented generation of five data insights from an uploaded CSV.
+- Integrated Groq to generate an AI-written executive summary.
+- Added summary cleanup and formatting logic.
+- Implemented PowerPoint export with an 8-slide presentation structure.
+- Integrated executive summary generation into the CIA Data Analyst frontend.
+
+**Tools / Technologies Used:** Python, Pandas, Groq, LiteLLM, FastAPI, python-pptx, JavaScript, HTML, PowerShell.
+
+**Validation:**
+
+- Python compilation passed.
+- Direct executive engine test returned success.
+- Processed `sales_100k.csv` with 100,000 rows and 5 columns.
+- Verified five data insights: dataset overview, completeness, duplicates, numeric analysis, and category distribution.
+- Groq executive summary generated successfully.
+- Downloaded PowerPoint and confirmed all 8 slides were present.
+- Browser summary still displays formatting artifacts (`&#x20;` and `\-`); further cleanup deferred.
+
+**Code Review:**
+
+- Reviewed `cia_analyst/app.py` for upload validation, session handling, subprocess execution, Groq key handling, and error handling.
+- Reviewed `cia_analyst/w8d1_ppt_export.py` for slide structure, formatting, and file generation.
+- Identified minor improvement opportunities involving session cleanup, CSV validation, and text overflow.
+- No rewrite required for the reviewed modules.
+
+**CIA Portal Session:** Review attempted, but CIA Code repeatedly returned `Request failed`. Successful CIA review session not confirmed. Manual code review completed.
+
+**Evidence:** `reports/w8d1/README.md`
+
+**Git Branch:** `feat/w8d1-3m-vandana`.
+
+## W8D3 — Final Implementation and Review
+
+**Project:** Indian Business EDA PowerPoint Report
+**Overall Status:** Completed — PASS WITH IMPROVEMENTS
+
+### 1. Implementation Completed
+
+- Analyzed the Indian Business / Amazon Sale Report dataset.
+- Implemented exploratory data analysis using Python and Pandas.
+- Added data-quality checks for missing values, duplicate rows, invalid dates, and Amount statistics.
+- Analyzed category amounts, order statuses, fulfilment methods, monthly trends, and top states.
+- Identified potential Amount outliers using the IQR method.
+- Generated six visualization charts.
+- Created a nine-slide PowerPoint business report using python-pptx.
+- Generated an EDA summary containing key metrics and analysis assumptions.
+
+### 2. Local Validation Results
+
+| Validation                | Result                |
+| ------------------------- | --------------------- |
+| Python compilation        | PASS                  |
+| Dataset dimensions        | 128,975 × 24          |
+| Date range                | 31 March–29 June 2022 |
+| Duplicate rows            | 0                     |
+| Missing Amount values     | 7,795                 |
+| Potential Amount outliers | 3,600                 |
+| Chart generation          | 6 charts generated    |
+| PowerPoint generation     | PASS                  |
+| PowerPoint slide count    | 9 slides verified     |
+| EDA summary generation    | PASS                  |
+
+### 3. Data Analysis Assumptions
+
+- Original source data was preserved.
+- No silent row deletion or missing-value imputation was performed.
+- Potential outliers were identified and retained.
+- `Unnamed: 22` was excluded because its meaning is undocumented.
+- Category Amount totals include all order statuses and are not presented as realized revenue.
+- Shipped-status analysis includes all statuses beginning with `Shipped`, including returned and rejected statuses.
+- Mean, median, and distribution statistics are reported to provide context for Amount analysis.
+
+### 4. CIA Review
+
+**Interaction 1:** Initial implementation review — completed.
+
+**Interaction 2:** EDA and PowerPoint report validation — completed.
+
+**CIA Overall Result:** PASS WITH IMPROVEMENTS.
+
+CIA findings:
+
+- Recommended documenting how missing Amount values affect calculations and visualizations.
+- Recommended presenting median alongside mean when discussing central tendency.
+- Highlighted the importance of avoiding misleading revenue claims.
+- Recommended retaining and transparently documenting potential outliers.
+
+**Review limitation:** CIA evaluated the metrics and assumptions supplied in the review prompt. It did not directly inspect the local Python script, summary file, or PowerPoint slides.
+
+The findings were reviewed. No unverified changes were applied solely on the basis of generic recommendations.
+
+### 5. Deliverables
+
+- `reports/w8d3/indian_business_eda_ppt.py`
+- `reports/w8d3/eda_summary.txt`
+- `reports/w8d3/indian_business_eda_report.pptx`
+- `reports/w8d3/charts/` — six PNG charts
+
+### 6. Final Git Status
+
+- Feature branch: `feat/w8d3-3m-vandana`
+- Work-log update: completed separately.
+- Two conventional commits: pending.
+- Push and Pull Request: pending.
+- Source dataset excluded from staging to avoid committing the large CSV unnecessarily.
+
+**Final Assessment:** W8D3 analysis, chart generation, PowerPoint generation, local validation, and both CIA interactions are completed. Git submission remains pending.
+
+## W8D4 — Production Deployment and API Documentation
+
+**Project:** CIA Data Analyst — Production Deployment
+**Date:** 5 November 2026
+**Branch:** `feat/w8d4-3m-vandana`
+**Overall Status:** Deployment LIVE — API validation passed
+
+### 1. Deployment
+
+- Deployed the FastAPI CIA Data Analyst application to Render.
+- Configured Python 3.10.14 for production compatibility.
+- Installed dependencies from `requirements.txt`.
+- Configured `GROQ_API_KEY` through Render environment settings.
+- Confirmed successful Render deployment.
+
+**Production URL:** https://cynaris-cia-data-analyst.onrender.com
+
+### 2. API Validation
+
+| Endpoint / Feature                            | Result              |
+| --------------------------------------------- | ------------------- |
+| GET `/health`                                 | HTTP 200            |
+| GET `/`                                       | HTTP 200            |
+| GET `/docs`                                   | Loaded successfully |
+| GET `/redoc`                                  | Loaded successfully |
+| POST `/cia/upload`                            | HTTP 200            |
+| POST `/cia/query`                             | HTTP 200            |
+| POST `/cia/executive-summary`                 | HTTP 200            |
+| GET `/cia/executive-summary/ppt/{session_id}` | HTTP 200            |
+
+### 3. Dataset Test Results
+
+- Dataset: `sales_100k.csv`
+- Rows processed: 100,000
+- Columns: 5
+- Missing values: 0
+- Duplicate rows: 0
+- Total sales returned by AI query: 459,712,000
+- Average sales reported by executive summary: 4,597.12
+- Minimum sales: 100.00
+- Maximum sales: 9,099.00
+- Most common region: North (25,000 rows; 25%).
+
+The AI query returned a chart successfully. The requested total quantity was not confirmed in the returned response.
+
+### 4. Executive Summary and PowerPoint
+
+- Generated an executive summary successfully.
+- Verified dataset overview, data completeness, duplicate records, numeric analysis, and category distribution.
+- Generated business implications and recommendations.
+- Downloaded `CIA_Executive_Summary.pptx`.
+- Verified HTTP 200 and PowerPoint MIME type.
+- Download response size: 37,308 bytes.
+
+### 5. CIA Analysis Insights
+
+The analysis highlighted:
+
+- No missing values or duplicate records were detected.
+- Sales values vary substantially, so distribution analysis is useful.
+- North represents 25% of dataset records, but record frequency alone does not establish its revenue contribution.
+- Sales should be analyzed by region before making regional performance claims.
+- Further segmentation can help identify factors associated with higher sales.
+
+### 6. Known Limitations
+
+- CSV upload limit: 10 MB.
+- Sessions are stored in memory and may be lost when the service restarts.
+- One application instance is recommended because sessions are not shared between instances.
+- AI features require a valid Groq API key.
+- Chart.js is loaded from a CDN.
+
+### 7. Deliverables
+
+- `render.yaml`
+- `.python-version`
+- `requirements.txt`
+- `README.md`
+- `work_log.md`
+- Production API: https://cynaris-cia-data-analyst.onrender.com
+- Swagger documentation: https://cynaris-cia-data-analyst.onrender.com/docs
+
+### 8. Git Status
+
+- Feature branch: `feat/w8d4-3m-vandana`
+- Deployment configuration and compatibility fixes committed and pushed.
+- README and work-log deployment documentation updated.
+- PR #52 and PR #53 successfully merged into main.
+
+**Final Assessment:** Production deployment, CSV upload, AI query, executive summary generation, and PowerPoint export were successfully tested.
+
+### 9. Indian Business Dataset Analysis
+
+- Reused the existing 128,975-row Indian Business Dataset from W8D3.
+- Created `reports/w8d4/indian_business_analysis.py`.
+- Generated `reports/w8d4/business_insights.txt`.
+- Analysed recorded amounts, quantities, categories, order statuses, states, fulfilment and potential outliers.
+- Identified a 14.21% cancellation rate and 7,795 missing Amount values.
+- Added five business recommendations and documented analysis limitations.
+- Preserved the original dataset and did not automatically remove outliers or impute missing values.
+- Executed the analysis successfully.
+
+### 10. CIA Interactions — W8D4
+
+Completed two CIA mentor interactions:
+
+**Interaction 1 — Data Quality Interpretation**
+
+- Discussed the 14.21% cancelled-record share.
+- Evaluated 7,795 missing Amount values (approximately 6.04%).
+- Discussed 3,600 potential high-value outliers.
+- Reviewed business implications, practical investigation steps and analytical limitations.
+- Distinguished possible revenue impact from confirmed financial loss.
+
+**Interaction 2 — Business Recommendations**
+
+- Discussed the Set category's highest recorded amount.
+- Reviewed Maharashtra's highest record count.
+- Explored data validation, regional segmentation and measurable business KPIs.
+- Emphasized the distinction between record counts, unique orders and net realised revenue.
+
+**Evidence:** Two CIA interactions completed. The second response was partially returned by CIA.
+
+### 11. Final W8D4 Demo Video
+
+- Demo duration: 3 minutes 23 seconds.
+- Production demo recording uploaded to Google Drive.
+- Sharing permission: Anyone with the link — Viewer.
+- Final demo link: https://drive.google.com/file/d/1g7PsHK-MVPO_Q0cfj2jtOQRHDRe8yrwz/view?usp=sharing
+- Updated the final demo link in GitHub PR #52.
+
+### 12. Final W8D4 Evidence and Viva Preparation
+
+- Saved `reports/w8d4/production_health_check.png` as production deployment evidence.
+- Saved `reports/w8d4/kpi_dashboard.png` as KPI dashboard evidence.
+- Prepared and saved three viva questions and answers in `reports/w8d4/viva_answers.md`.
+- Committed all three files in commit `39b4fd5` (`docs: add W8D4 evidence and viva preparation`).
+- Successfully pushed the commit to `origin/main`.
+- Verified local `main` and `origin/main` are synchronized.
+- Left unrelated untracked files and folders untouched.
+
+**Final status:** W8D4 implementation, documentation, evidence and viva preparation completed. CIA Code Review completion remains verified.
+
+## W8D5 — AI Data Platform: Final Demo and Documentation
+
+- Created `reports/w8d5/README.md` documenting the AI Data Analyst platform, API endpoints, deployment, setup, EDA findings, recommendations, and known limitations.
+- Verified the production homepage (`/`), Swagger documentation (`/docs`), and ReDoc (`/redoc`) returned HTTP 200 on 9 November 2026.
+- Confirmed the W8D4 production health endpoint had returned HTTP 200 with the application engines available.
+- Re-ran the Indian Business EDA analysis and confirmed the report generation completed successfully.
+- Documented the API workflow, deployment URL, business findings, and data-quality caveats.
+- Demo recording and shareable link: Pending.
+- CIA mentor review and interaction log: Pending.
+- Final W8D5 PR: Pending.
+
+### W8D5 Status Update - 11 November 2026
+
+**Final Demo**
+
+- Recorded the 3-minute W8D5 AI Data Platform demonstration.
+- Uploaded the demo to Google Drive.
+- Confirmed sharing permission: Anyone with the link - Viewer.
+- Demo: https://drive.google.com/file/d/151d9zyII5Q_bzwtwkLwX3bPXpVuUh154/view?usp=sharing
+
+**CIA Mentor Interactions**
+
+- Interaction 1: Requested practical improvements for the integrated AI Data Platform, covering CSV upload validation, file security, session management, AI query reliability, and production readiness.
+- Interaction 2: Requested production-readiness guidance covering Render resource limits, session storage, Groq API key security and rate limits, CSV validation, and API error handling.
+- CIA clarified that it could not access the local repository, source code, or live deployment.
+- Both responses provided general architecture-based recommendations, not verified code-review findings or test results.
+- The second response was incomplete, so only the recommendations actually received are recorded.
+
+**PR Evidence**
+
+- Updated GitHub PR #54 with the demo video link and summaries of both CIA interactions.
+- PR #54 remains open pending final work-log commit and verification.
+
+**Remaining**
+
+- Commit and push this work-log update.
+- Perform final PR verification.
+
+## W9D1 — MLflow Experiment Tracking
+
+- Reused the Indian Business Sales dataset (128,975 rows, 24 columns).
+- Created a reproducible Python EDA experiment with MLflow 3.18.0.
+- Logged dataset metrics, parameters, interpretation tag and EDA artifacts.
+- Tracking backend: local SQLite (mlflow.db).
+- Successful MLflow run ID: 8c1513f0e3694497a367667f2666682b.
+- Added experiment instructions in reports/w9d1/README.md.
+- CIA mentor interactions: pending.
+- Git commit 1: e13b01e.
+
+### CIA Interaction 1 — Reproducibility Audit
+
+- Reviewed MLflow parameters, metrics, tags and artifacts.
+- Mentor emphasized dataset versioning, cleaning thresholds, baseline data-quality metrics and business context.
+- Improvement opportunities identified: dataset hash, column-level missing-value metrics, environment versions and explicit cleaning decisions.
+- Existing MLflow run provides a good baseline; further reproducibility improvements are recommended.
+- Status: Interaction 1 completed; interaction 2 pending.
+
+### CIA Interaction 2 — EDA Methodology Review
+
+- Mentor assessed missing-value analysis, amount distribution, IQR outliers and category summaries.
+- Finding: these provide a good foundation but do not fully explain the business story.
+- Recommendations: analyze missingness by category/date, document cleaning assumptions, add bivariate analysis and temporal trends.
+- Mentor noted that actual numerical correctness requires reviewing the code and outputs.
+- Status: Two CIA interactions completed.
+
+## W9D2 — MLflow Model Registry for Analyst Models
+
+### Implementation and Verification
+
+- Trained a RandomForestRegressor using the Indian Business Sales dataset.
+- Used 121,180 valid records, with 96,944 training rows and 24,236 testing rows.
+- Features: Qty, Category, Fulfilment, Sales Channel, ship-service-level and B2B.
+- Target: Amount (recorded order amount, not net realised revenue).
+- Logged the model and evaluation metrics with MLflow 3.18.0.
+- MAE: 148.9428; RMSE: 208.4967; R²: 0.4501.
+- Registered `IndianBusinessOrderAmountRegressor`, version 1.
+- Assigned and verified the `champion` alias.
+- Verified model loading through the registry alias and generated three predictions successfully.
+- Successful MLflow run ID: `86e4765896664473b206016adc2d8f57`.
+- Added implementation and reproduction documentation in `reports/w9d2/README.md`.
+
+### CIA Mentor Interactions
+
+**Interaction 1 — MLflow Model Registry Review**
+
+- Reviewed experiment tracking, reproducibility, model registration, alias management and verification.
+- Mentor recommended documenting the dataset version/hash, explaining the rationale for the `champion` alias and adding automated model-loading and prediction tests.
+- The implementation calculates the dataset SHA256 hash; the successful run output confirms the hash.
+- The response was partially received, so only the available recommendations are recorded.
+
+**Interaction 2 — Model Quality and Business Interpretation**
+
+- Reviewed regression metrics and interpretation of R² = 0.4501.
+- Discussed the business meaning of MAE and RMSE and the unexplained variation in order amounts.
+- Mentor identified possible missing explanatory factors, including product pricing, discounts, promotions and seasonality.
+- Mentor highlighted target-encoding leakage as a risk to check.
+- The response was partially received, so only the available feedback is recorded.
+
+**Status:** Two CIA mentor interactions completed; both responses partially received.
+
+### Git
+
+- Working branch: `feat/w9d2-mlflow-model-registry-vandana`.
+- Implementation commit: `cd5b02a`.
+- CIA review documentation commit: `fd8fe79`.
+- Pull request: #56 — merged successfully into `main`.
+- Merge commit: `abc8056`.
+- Local `main` synchronized with `origin/main`.
+- Status: W9D2 implementation and documentation completed.
+
+## W9D3 — A/B Test Tracking with MLflow
+
+### Implementation and Results
+
+- Compared Amazon and Merchant fulfilment groups using the Indian Business Sales dataset.
+- Original dataset: 128,975 rows and 24 columns.
+- Filtered valid shipped-status records and retained required analysis columns.
+- Aggregated line-item Amount by unique Order ID before statistical testing.
+- Observation unit: unique order.
+- Valid shipped line records: 107,160.
+- Total unique orders: 99,907.
+- Amazon sample: 71,193 orders.
+- Merchant sample: 28,714 orders.
+- Amazon average order amount: INR 706.87.
+- Merchant average order amount: INR 721.83.
+- Mean difference (Merchant minus Amazon): INR 14.96 (approximately 2.12%).
+- Statistical method: Welch's independent two-sample t-test.
+- P-value: 3.3876344e-09.
+- 95% confidence interval: INR 10.00 to INR 19.92.
+- Cohen's d: 0.0419, indicating a very small standardized effect.
+- Statistical significance: significant at alpha = 0.05.
+- Interpretation: statistical significance does not establish practical business importance or causation. This is an observational comparison, not a randomized experiment.
+
+### MLflow Tracking
+
+- Experiment: `W9D3 - Indian Business A/B Testing`.
+- Run name: `order-level-amazon-vs-merchant`.
+- Successful run ID: `f58016f8861242718a327c8b61eddc48`.
+- Run status: FINISHED.
+- Logged artifacts: `ab_test_report.md` and `group_summary.csv`.
+- Tracking database: repository-root `mlflow.db`.
+
+### Deliverables
+
+- `reports/w9d3/ab_test_tracking.py`
+- `reports/w9d3/README.md`
+- `reports/w9d3/results/ab_test_report.md`
+- `reports/w9d3/results/group_summary.csv`
+
+- Optimized CSV loading to read only the five required columns.
+- Python syntax verification passed using `py_compile`.
+- Existing successful MLflow run was preserved; the full analysis was not rerun after the CSV-loading optimization.
+
+### CIA Mentor Interactions
+
+**Interaction 1 — Technical Checklist Review**
+
+- Requested review of data validation, filtering, order-level aggregation and Welch's t-test.
+- Mentor provided general recommendations because the source code had not been supplied.
+- Recommendations included excluding missing grouping/outcome values, filtering invalid statuses, aggregating line items before testing and using Welch's test without assuming equal variances.
+- The mentor did not perform a direct source-code audit or verify execution.
+
+**Interaction 2 — Statistical Interpretation Review**
+
+- Supplied the actual sample sizes, group means, p-value, confidence interval and Cohen's d.
+- Mentor confirmed the arithmetic for the mean difference and agreed that the p-value and confidence interval support a statistically significant difference.
+- Mentor confirmed that Cohen's d = 0.0419 represents a negligible standardized effect.
+- Mentor emphasized the distinction between statistical and practical significance.
+- Business importance requires additional context such as margins, costs and operational impact.
+- The comparison remains observational and cannot establish causation.
+- Note: the mentor reviewed the supplied figures; it did not independently execute the analysis code.
+
+**Status:** Two CIA mentor interactions completed. Feedback and limitations documented.
+
+### Git
+
+- Working branch: `feat/w9d3-ab-test-vandana`.
+- First implementation commit: `25343dd`.
+- Second CIA documentation commit: `28beb53`.
+- Pull request: #57 — merged successfully into `main`.
+- Merge commit: `e463b10`.
+- Local `main` synchronized with `origin/main`.
+- W9D3 quiz: completed.
+- Status: W9D3 implementation, documentation, review and coursework completed.
+
+## W9D4 — MLflow Dashboard: Compare Model Versions
+
+### Implementation
+
+- Compared two Random Forest regression model versions using the Indian Business Sales dataset.
+- Valid records: 121,180; training rows: 96,944; test rows: 24,236.
+- Used the same 80/20 split and `random_state=42` for a fair comparison.
+- Target: `Amount` (recorded order amount, not net revenue).
+- Features: Qty, Category, Fulfilment, Sales Channel, ship-service-level and B2B.
+- Used a scikit-learn Pipeline with median numeric imputation, most-frequent categorical imputation and OneHotEncoder.
+- Split the data before fitting preprocessing; the pipeline was fitted on training data and evaluated on held-out test data.
+
+### Model Comparison
+
+| Metric | Version 1 | Version 2 |
+| ------ | --------: | --------: |
+| MAE    |  148.9428 |  148.9365 |
+| RMSE   |  208.4967 |  208.4935 |
+| R2     |  0.450080 |  0.450097 |
+
+- Version 1: 150 trees, max depth 12.
+- Version 2: 250 trees, max depth 16.
+- Version 2 showed only marginal improvements across all three metrics.
+- Registered Version 2 successfully as a candidate.
+- Preserved Version 1 as the `champion` alias because the improvements were negligible and did not justify promotion.
+- Evaluation limitation: comparison used one hold-out split; cross-validation has not been performed.
+
+### MLflow Tracking and Registry
+
+- Experiment: `W9D4 - MLflow Model Version Comparison`.
+- Registered model: `IndianBusinessOrderAmountRegressor`.
+- Version 1 run ID: `86e4765896664473b206016adc2d8f57`.
+- Version 2 run ID: `5f3a536264564010a507a99518e88b0e`.
+- Champion alias: Version 1.
+- Tracking and registry database: repository-root `mlflow.db`.
+- MLflow UI verified locally at `http://127.0.0.1:5000`.
+
+### Deliverables
+
+- `reports/w9d4/model_version_comparison.py`
+- `reports/w9d4/model_comparison.csv`
+- `reports/w9d4/model_comparison.md`
+- `reports/w9d4/README.md`
+
+### CIA Mentor Interactions
+
+**Interaction 1 — Technical and Validation Review**
+
+- Requested an audit of metrics, dataset split, model parameters and validation consistency.
+- Reviewed the fixed split, dataset fingerprint and model comparison methodology.
+
+**Interaction 2 — Model Promotion Decision**
+
+- Reviewed the marginal metric improvements and the decision to retain Version 1 as champion.
+- Feedback highlighted the increased complexity of Version 2 and the limitation of relying on a single hold-out evaluation.
+- Recommendation: retain Version 1 pending further validation.
+
+**Status:** Two CIA mentor interactions completed. The review and validation limitations are documented.
+
+### Git
+
+- Working branch: `feat/w9d4-mlflow-dashboard-vandana`.
+- First implementation commit: `cb766e1`.
+- Second CIA documentation commit: `3ce9f58`.
+- Pull request: #58 — merged successfully into `main`.
+- Merge commit: `9b5ba28`.
+- Local `main` synchronized with `origin/main`.
+- W9D4 quiz: completed.
+- Status: W9D4 implementation, documentation, CIA review, Git workflow and quiz completed.
+
+## W9D5 — Tracked Data Analyst Experiment Pipeline
+
+### Implementation
+
+- Built a reproducible EDA pipeline for the Indian Business Sales dataset.
+- Excluded one unnamed export column from analytical summaries.
+- Calculated duplicate counts and raw/analytical missing-cell counts.
+- Distinguished originally missing Amount values from numeric parsing errors.
+- Generated category and order-status summaries and two visualizations.
+- Calculated Amount descriptive statistics and 1.5 × IQR outliers.
+- Documented Amount as recorded order amounts, not net revenue.
+
+### Verified Results
+
+- Dataset: 128,975 rows and 24 original columns.
+- Analytical columns: 23.
+- Duplicate rows: 0.
+- Raw missing cells: 210,495.
+- Analytical missing cells: 161,445.
+- Missing Amount values: 7,795.
+- Amount parsing errors: 0.
+- Valid Amount values: 121,180.
+- Mean Amount: INR 648.56.
+- Median Amount: INR 605.00.
+- Skewness: 0.8855.
+- IQR outliers: 3,600.
+
+### MLflow Tracking
+
+- Experiment: `W9D5 - Tracked DA Experiment Pipeline`.
+- Original run: `dc9b4abb58cf4d7bab197c312f070ce5`.
+- Updated run: `20810144df7042e4ab2993b0bd5b8d4f`.
+- Updated run status: FINISHED.
+- Verified all logged metrics, tags and five EDA artifacts.
+- Preserved the original run.
+
+### CIA Mentor Interactions
+
+**Interaction 1 — Technical Checklist Review**
+
+- Recommended separating raw and analytical missing-cell metrics.
+- Recommended distinguishing missing Amount values from parsing errors.
+- Reinforced that IQR outliers require review rather than automatic exclusion.
+
+**Interaction 2 — Interpretation and Tracking Review**
+
+- Recommended explaining positive skewness in business language.
+- Emphasized responsible interpretation of statistical outliers.
+- Recommended documenting missing-value handling and possible bias.
+- Reinforced the distinction between recorded Amount and net revenue.
+
+**Review limitation:** The mentor reviewed the supplied descriptions and metrics, not the Python source code directly. Pipeline execution and MLflow artifacts were independently verified.
+
+**Status:** Two CIA interactions completed and recommendations incorporated into the updated pipeline.
+
+### Deliverables
+
+- `reports/w9d5/tracked_eda_pipeline.py`
+- `reports/w9d5/README.md`
+- `reports/w9d5/outputs/`
+- MLflow experiment and verified updated run.
+
+### Git
+
+- Working branch: `feat/w9d5-tracked-da-experiment-vandana`.
+- Implementation commit: `86fa099` — Add W9D5 tracked EDA pipeline and findings.
+- CIA documentation commit: `79e94a9` — Document W9D5 CIA review and completion.
+- Pull request: [#60](https://github.com/vandana-2004/cynaris-internship-data-analytics./pull/60) — Merged successfully into `main`.
+- Merge commit: `044f035`.
+- Final local branch: `main`, synchronized with `origin/main`.
+- Status: **W9D5 completed and merged.**
+
+## W10D1 — Time Series Analysis: Trends, Seasonality and ARIMA
+
+### Implementation
+
+- Analyzed the Indian Business Sales dataset using daily recorded Amount values.
+- Included all order statuses and retained records with valid dates and non-null Amount values.
+- Aggregated recorded amounts and transaction counts by calendar day.
+- Retained all 91 dates; did not exclude dates based only on low transaction counts.
+- Calculated 7-day and 14-day rolling averages to examine trends.
+- Compared average recorded amounts across weekdays as a descriptive weekly pattern.
+- Applied the Augmented Dickey-Fuller (ADF) test for unit-root analysis.
+- Evaluated Naive, 7-day Seasonal Naive and ARIMA(1,1,1) models using a chronological 14-day holdout.
+- Generated a 14-day ARIMA forecast with model-based prediction intervals.
+
+### Verified Results
+
+- Dataset period: 31 March 2022 to 29 June 2022.
+- Daily observations retained: 91.
+- Missing calendar dates: 0.
+- Average daily recorded amount: INR 863,655.81.
+- Median daily recorded amount: INR 882,059.17.
+- Minimum daily recorded amount: INR 101,683.85.
+- Maximum daily recorded amount: INR 1,209,364.17.
+- First 7-day average: INR 801,659.41.
+- Latest 7-day rolling average: INR 658,666.33.
+- Latest 14-day rolling average: INR 710,615.76.
+- Change between first and latest 7-day averages: -17.84%.
+- Descriptive trend: Downward.
+- Highest weekday average: Sunday.
+- Lowest weekday average: Thursday.
+- ADF statistic: -5.7151.
+- ADF p-value: 0.000001; reject the unit-root null at the 5% significance level.
+
+### Model Evaluation
+
+- Training observations: 77.
+- Holdout observations: 14 (16 June to 29 June 2022).
+- Naive MAE: INR 77,242.30; RMSE: INR 122,634.73.
+- Seasonal Naive MAE: INR 166,387.24; RMSE: INR 189,914.24.
+- ARIMA(1,1,1) MAE: INR 71,656.24; RMSE: INR 118,706.45.
+- ARIMA(1,1,1) performed best on this particular holdout for both metrics.
+- Generated a 14-day forecast for 30 June to 13 July 2022.
+- Mean forecast amount: INR 398,121.53.
+
+### Interpretation and Limitations
+
+- Amount represents recorded order value, not verified net revenue.
+- All order statuses are included; recorded amounts must not be interpreted as completed sales or realized revenue.
+- No dates were excluded based solely on low transaction counts.
+- Weekday comparisons are descriptive and do not establish stable seasonality.
+- The dataset covers approximately three months and cannot establish annual seasonality.
+- The ARIMA model is non-seasonal and does not explicitly model a seven-day seasonal component.
+- The holdout is short, so model rankings may differ across other periods.
+- The forecast is experimental, and its prediction interval widens substantially.
+- The final ARIMA fit emitted non-fatal starting-parameter estimation warnings; fitting and forecast generation completed successfully.
+
+### CIA Mentor Interactions
+
+**Interaction 1 — Data Cleaning and Trend Review**
+
+- Mentor feedback questioned the earlier exclusion of dates based only on low transaction counts.
+- Recommended stronger evidence for excluding dates, such as a defined threshold or source-integrity checks.
+- Emphasized that low activity alone does not prove incomplete data.
+- The analysis was revised to retain all dates with valid recorded amounts.
+
+**Interaction 2 — Forecasting and Validation Review**
+
+- Reviewed the chronological 14-day holdout and the use of Naive and Seasonal Naive baselines.
+- Highlighted the need to avoid preprocessing leakage across training and holdout data.
+- Noted that ARIMA(1,1,1) does not explicitly model a seven-day seasonal component.
+- Recommended supporting weekly interpretation with raw daily and rolling-average plots.
+
+**Review limitation:** The available CIA responses were partial; complete final verdicts were not provided. No overall CIA PASS/FAIL verdict is claimed.
+
+### Deliverables
+
+- `reports/w10d1/time_series_analysis.py`
+- `reports/w10d1/analysis_summary.md`
+- `reports/w10d1/daily_sales.csv`
+- `reports/w10d1/weekly_seasonality.csv`
+- `reports/w10d1/weekly_seasonality.png`
+- `reports/w10d1/time_series_trend.png`
+- `reports/w10d1/model_comparison.csv`
+- `reports/w10d1/holdout_predictions.csv`
+- `reports/w10d1/arima_evaluation.png`
+- `reports/w10d1/forecast.csv`
+- `reports/w10d1/arima_forecast.png`
+
+**Status:** W10D1 analysis and documentation completed, verified, committed, pushed, and merged into main.
+
+### Git and Merge Details
+
+- Feature branch: `feat/w10d1-vandana`
+- Analysis commit: `e2d5954` — Add W10D1 time series analysis and forecasts.
+- Documentation commit: `861fbef` — Document W10D1 analysis and CIA review.
+- Pull request: #61 — successfully merged into `main`.
+- Merge commit: `0b02679`.
+- Local `main`: synchronized with `origin/main`.
+
+## W10D2 ? Prophet Forecasting on Indian Business Data
+
+### Implementation
+
+- Reused the verified 91-day daily recorded-amount aggregation from W10D1.
+- Used Prophet 1.5.0 in the existing `.venv-pandasai` environment.
+- Prepared Prophet inputs using `ds` and `y` columns.
+- Used a chronological split: 77 training observations and 14 holdout observations.
+- Enabled weekly seasonality; disabled daily and yearly seasonality.
+- Used Prophet's default automatic changepoint configuration.
+- Set uncertainty samples to 300.
+- Evaluated Prophet against the W10D1 Naive, Seasonal Naive and ARIMA results on the same holdout dates.
+- Refit Prophet on all 91 observations and generated a 14-day forecast.
+
+### Verified Results
+
+- Dataset period: 31 March 2022 to 29 June 2022.
+- Historical observations: 91.
+- Training observations: 77.
+- Holdout observations: 14 (16 June to 29 June 2022).
+- Prophet holdout MAE: INR 122,636.50.
+- Prophet holdout RMSE: INR 157,308.05.
+- Naive MAE: INR 77,242.30; RMSE: INR 122,634.73.
+- Seasonal Naive MAE: INR 166,387.24; RMSE: INR 189,914.24.
+- ARIMA(1,1,1) MAE: INR 71,656.24; RMSE: INR 118,706.45.
+- ARIMA achieved the lowest MAE and RMSE on this particular holdout.
+- Prophet forecast period: 30 June to 13 July 2022.
+- Mean predicted daily recorded amount: INR 736,636.79.
+- Forecast output contains 14 rows, no missing values, and valid lower and upper prediction bounds.
+
+### Interpretation and Limitations
+
+- Amount represents recorded order value, not verified net revenue.
+- All order statuses are included in the source aggregation.
+- The dataset contains only 91 daily observations, limiting the ability to estimate longer-term patterns.
+- Annual seasonality was disabled because the available period does not establish an annual pattern.
+- Indian holidays were not explicitly modelled.
+- Prophet's default changepoint settings were used; tuning remains future work.
+- The prediction intervals express model uncertainty and are not guaranteed business ranges. Their width should be interpreted cautiously given the short dataset.
+- The model comparison uses one 14-day holdout. It does not establish that ARIMA is universally superior for the business.
+- Residual diagnostics, including ARIMA Ljung-Box testing and further Prophet residual analysis, were not performed and remain future work.
+- Forecasts are experimental and should not be treated as guaranteed business outcomes.
+
+### CIA Mentor Interactions
+
+**Interaction 1 ? Technical Review**
+
+- Completed a CIA mentor review of the W10D2 Prophet implementation requirements.
+- The mentor provided a critical evaluation framework rather than a line-by-line review because the actual files were not supplied in the CIA conversation.
+- Reviewed chronological splitting, missing-date handling, scaling, seasonality, changepoints and Indian holiday effects.
+- Confirmed that the implementation uses a chronological 77/14 split, INR-scale target values and weekly seasonality.
+- Identified holiday modelling and changepoint tuning as possible improvements.
+- Retained yearly seasonality as disabled because the dataset covers only approximately three months.
+
+**Interaction 2 ? Business and Statistical Review**
+
+- Completed a separate CIA mentor review of model comparison and business interpretation.
+- The mentor cautioned against treating ARIMA's lower holdout errors as proof that it is universally better for the business.
+- Identified the short 91-day history as a major limitation.
+- Recommended residual diagnostics, including Ljung-Box testing for ARIMA and residual analysis for Prophet.
+- Highlighted holiday modelling and the need to interpret uncertainty cautiously.
+- Residual diagnostics and holiday effects were not implemented in this task and are recorded as future improvements.
+- The available response ended during its class/status discussion; no additional feedback or formal overall verdict is claimed.
+
+**Review outcome:** Both required CIA interactions completed. Feedback reviewed and improvement areas documented. No formal overall PASS/FAIL verdict was supplied by CIA.
+
+### Deliverables
+
+- `reports/w10d2/prophet_forecasting.py`
+- `reports/w10d2/analysis_summary.md`
+- `reports/w10d2/forecast.csv`
+- `reports/w10d2/holdout_predictions.csv`
+- `reports/w10d2/model_comparison.csv`
+- `reports/w10d2/prophet_holdout.png`
+- `reports/w10d2/prophet_forecast.png`
+
+### Git Details
+
+- Feature branch: `feat/w10d2-vandana`
+- Implementation and evidence commit: `0b4a32b` ? Add W10D2 Prophet sales forecasting pipeline.
+- Documentation commit: recorded after successful commit.
+
+**Status:** W10D2 implementation, evaluation, evidence and CIA documentation completed.
+
+---
+
+## W10D3 - Anomaly Detection (Day 72, 12 Nov 2026)
+
+### Objective and implementation
+
+- Applied IQR, Z-score and Isolation Forest anomaly detection to the Indian Business Sales dataset.
+- Created `reports/w10d3/anomaly_detection.py`.
+- Analysed 128,975 transaction-line records; the Isolation Forest model used 113,701 valid positive Amount and Qty records.
+- Generated method comparison, flagged-record and status-level CSV outputs, along with three PNG charts and an analysis summary.
+
+### Results
+
+- IQR: 3,600 flagged records (2.791% of the full dataset).
+- Z-score: 784 flagged records (0.608% of the full dataset).
+- Isolation Forest: 2,269 flagged records (1.759% of the full dataset; approximately 1.995% of its 113,701-record model population).
+- Union of methods: 3,770 flagged transaction rows.
+- All three methods agreed on 774 records.
+- The Isolation Forest contamination value of 2% is a modelling assumption, not a fraud rate.
+
+### Validation and interpretation
+
+- CSV validation passed: method counts, flagged rows and status-summary totals reconciled.
+- All flagged rows had `any_anomaly = True` and non-null Order IDs.
+- All three PNG evidence files were present.
+- The 3,770 flagged rows correspond to 3,701 distinct Order IDs.
+- Checked the original source rows for flagged orders: 4,247 source rows, zero exact duplicate rows, and zero duplicates by Order ID + SKU + Amount.
+- Repeated Order IDs represent multiple transaction lines and are not treated as duplicate orders.
+- Anomaly flags are candidates for review, not proof of fraud, data corruption or business error.
+- The methods have different assumptions and input populations; their counts should be interpreted accordingly.
+
+### CIA mentor interactions
+
+**Interaction 1 - Technical assessment**
+
+- CIA could not inspect the local Python file because its contents were not supplied in that chat.
+- It provided an intermediate assessment based on the reported metrics, not a line-by-line code review.
+- Its initial Isolation Forest comparison used 2% of the full dataset. The correct model population is 113,701 valid records; 2,269 flags are approximately 1.995%.
+- It also highlighted the need to interpret Z-score results cautiously for skewed sales data.
+- No formal overall verdict was supplied.
+
+**Interaction 2 - Business and statistical assessment**
+
+- CIA discussed why IQR, Z-score and Isolation Forest produce different results, including skewness and standard-deviation sensitivity.
+- CIA described Isolation Forest as a multivariate method. The implementation uses Amount and Qty; time was not a model feature.
+- The response was partial and no formal overall verdict was supplied.
+
+**Review outcome:** Both required CIA interactions completed; their available feedback and limitations documented. No formal PASS/FAIL verdict was provided.
+
+### Deliverables
+
+- `reports/w10d3/anomaly_detection.py`
+- `reports/w10d3/analysis_summary.md`
+- `reports/w10d3/anomaly_records.csv`
+- `reports/w10d3/method_comparison.csv`
+- `reports/w10d3/status_anomaly_summary.csv`
+- `reports/w10d3/amount_distribution.png`
+- `reports/w10d3/anomaly_scatter.png`
+- `reports/w10d3/method_comparison.png`
+
+**Status:** W10D3 implementation, evidence generation, validation, and CIA feedback documentation completed. Git commits completed, changes pushed to GitHub, and PR #63 successfully merged into `main`. Local `main` synchronized with `origin/main`. Work log updated with completion date (12 Nov 2026). All tracked changes verified clean.
+
+## W10D4 - Forecasting Dashboard
+
+### Implementation
+
+- Built a Holt-Winters forecasting engine using additive trend and additive weekly seasonality.
+- Aggregated the Indian Business Sales dataset into 91 daily recorded order amount observations.
+- Held out the final 14 days for chronological validation and generated a 14-day future forecast.
+- Built an interactive Streamlit and Plotly dashboard with a historical date filter, adjustable forecast horizon, validation metrics, forecast tables and CSV downloads.
+
+### Validation
+
+- MAE: 121,237.81
+- RMSE: 155,727.07
+- MAPE: 20.11%
+- WAPE: 17.06%
+- Verified 91 historical observations, 14 holdout observations and 14 future forecast observations.
+- Verified date continuity, nonnegative forecasts, finite numeric outputs and saved MAE, RMSE and WAPE calculations.
+- Manually tested dashboard chart, date filter, forecast horizon slider, metrics and CSV downloads.
+
+### CIA mentor reviews
+
+- Completed two CIA interactions: forecasting methodology review and dashboard architecture review.
+- Recorded actual feedback and review limitations in `reports/w10d4/cia_review.md`.
+- Potential improvements identified: further seasonal-pattern diagnostics and prediction intervals.
+
+### Evidence
+
+- `reports/w10d4/daily_recorded_amount.csv`
+- `reports/w10d4/validation_forecast.csv`
+- `reports/w10d4/future_forecast.csv`
+- `reports/w10d4/forecast_metrics.json`
+- `reports/w10d4/analysis_summary.md`
+- `reports/w10d4/cia_review.md`
+
+**Status:** W10D4 implementation, dashboard testing, forecast validation, and two CIA mentor interactions completed. Both Git commits successfully created and pushed to GitHub. PR #64 successfully merged into `main`. Local `main` synchronized with `origin/main` at merge commit `2605b6b`. All 9 W10D4 files verified on `main`.
+
+## W10D5 - Sales Intelligence Dashboard
+
+### Implementation
+
+- Built `w10d5_eda.py` to analyze the Indian Business Sales dataset (128,975 rows and 24 original columns).
+- Generated daily and monthly summaries, category, state, fulfilment and status performance reports.
+- Investigated missing Amount values by order status and fulfilment without imputing missing financial values.
+- Built `w10d5_dashboard.py`, integrating EDA and the W10D4 Holt-Winters forecasting engine.
+- Added date-range, multi-select category and state filters, interactive charts, adjustable forecast horizon and CSV report downloads.
+- Kept forecasting independent of the EDA filters.
+
+### Validation
+
+- Exact duplicate rows: 0; invalid dates: 0.
+- Missing Amount values: 7,795; valid Amount rows: 121,180; Amount coverage: 93.96%.
+- Recorded Amount total: 78,592,678.30; average recorded Amount per valid row: 648.56.
+- Total quantity: 116,649; daily observations: 91.
+- Confirmed that missing Amount values remain included in row counts but are excluded from financial totals and averages.
+- Confirmed that 7,566 missing Amount values are associated with Cancelled rows (descriptive association, not a causal conclusion).
+- Forecast validation: MAE 121,237.81; RMSE 155,727.07; MAPE 20.11%; WAPE 17.06%.
+- Python syntax checks passed for the EDA, dashboard and forecasting engine.
+- Manually tested dashboard sections, filters, forecast horizon and report downloads.
+
+### CIA mentor reviews
+
+- Completed two CIA mentor interactions.
+- Interaction 1 reviewed EDA data quality, missing Amount handling, row-count versus financial aggregation, and average recorded Amount per valid row.
+- Interaction 2 gave a Strong Pass with High Potential verdict (8.5/10) and reviewed dashboard architecture, time-series continuity, caching, filters and responsiveness.
+- The second review was based on the implementation description supplied to CIA, not direct inspection of the local source code or runtime.
+- Implemented the relevant missing-value breakdowns, multi-select filters and caching improvements.
+
+### Evidence
+
+- `reports/w10d5/README.md`
+- `reports/w10d5/eda_summary.md`
+- `reports/w10d5/data_quality.json`
+- `reports/w10d5/daily_business_summary.csv`
+- `reports/w10d5/monthly_business_summary.csv`
+- `reports/w10d5/category_performance.csv`
+- `reports/w10d5/state_performance.csv`
+- `reports/w10d5/fulfilment_summary.csv`
+- `reports/w10d5/status_summary.csv`
+- `reports/w10d5/missing_amount_by_status.csv`
+- `reports/w10d5/missing_amount_by_fulfilment.csv`
+
+**Status:** W10D5 EDA, dashboard implementation, validation and two CIA mentor interactions completed. Both commits pushed to GitHub. PR #65 successfully merged into `main`. Local `main` synchronized with `origin/main` at merge commit `572ee06`. All 14 W10D5 files verified on `main`. Completion date: 13 Nov 2026.
+
+## W11D1 – Data Storytelling Principles
+
+- Created and executed `reports/w11d1/storytelling_analysis.py`.
+- Generated three visualizations and supporting CSV outputs.
+- Created `reports/w11d1/outputs/story_report.md` and `reports/w11d1/README.md`.
+- Completed two CIA mentor interactions and documented feedback in `reports/w11d1/cia_review.md`.
+- Applied the What → So What → Now What storytelling framework.
+- Documented category concentration, cancellation share and Amount limitations.
+- **Status:** W11D1 storytelling analysis, three visualizations, supporting CSV outputs, story report, README and two CIA mentor interactions completed. Two commits created and pushed. PR #67 successfully merged into `main` (merge commit `c040c73`). Four-question lesson quiz completed. Completion date: 13 Nov 2026.
+
+## W11D2 ? Building Executive Reports
+
+### Implementation
+
+- Created and executed `reports/w11d2/executive_report.py` using the Indian Business Sales dataset.
+- Generated five interactive Plotly HTML charts, including a category Pareto chart.
+- Generated five static chart images and four supporting analytical CSV files.
+- Created `reports/w11d2/outputs/executive_summary.md` and an eight-slide executive PowerPoint report.
+- Documented execution instructions, metrics, outputs and limitations in `reports/w11d2/README.md`.
+
+### Verified Results
+
+- Dataset: 128,975 rows.
+- Total valid Recorded Amount: INR 78,592,678.30.
+- Mean Recorded Amount: INR 648.56; median: INR 605.00.
+- Amount coverage: 93.96%; missing Amount values: 7,795.
+- Cancelled rows: 18,332 (14.21%).
+- The top two categories account for 76.98% of valid recorded Amount.
+- Pareto cumulative category share reaches 100.00%.
+- Python compilation and report generation completed successfully.
+- The script validated 16 generated outputs and confirmed the PowerPoint contains eight slides.
+
+### Data Interpretation and Limitations
+
+- Recorded Amount is not verified net revenue or profit.
+- The source category label `Set` has no confirmed business definition.
+- Category concentration is described as a share of valid recorded Amount, not revenue.
+- Missing Amount values were not treated as zero or imputed.
+- Dataset rows are not assumed to represent unique orders or customers.
+
+### CIA Mentor Interactions
+
+- Completed two CIA mentor interactions: a technical review and a business stakeholder review.
+- Technical feedback covered interactive chart access, KPI validation, formatting and calculation safeguards.
+- Business feedback covered financial metric caveats, the undefined `Set` category and category concentration.
+- Added the Pareto chart and documented the concentration finding and business-definition caveat.
+- Recorded both interactions and their scope limitations in `reports/w11d2/cia_review.md`. CIA reviewed the information supplied during the conversations; it did not directly inspect or execute the local repository.
+
+### Evidence
+
+- `reports/w11d2/executive_report.py`
+- `reports/w11d2/README.md`
+- `reports/w11d2/cia_review.md`
+- `reports/w11d2/outputs/executive_summary.md`
+- `reports/w11d2/outputs/executive_report.pptx`
+- `reports/w11d2/outputs/charts/`
+- `reports/w11d2/outputs/images/`
+- `reports/w11d2/outputs/*.csv`
+
+**Status:** W11D2 report generation, 16-output validation, eight-slide presentation and two CIA mentor interactions completed.
+
+**Git:** Commit `1db795a` pushed successfully. Pull request #68 merged into `main` with merge commit `1acc05a`. Local `main` synchronized with `origin/main`.
+
+**Final result:** W11D2 fully completed.
+
+## W11D3 - Apache Superset BI Dashboard Preparation
+
+### Implementation
+
+- Created `reports/w11d3/dashboard.py` with separate functions for directory creation, data loading, validation, cleaning, aggregation, CSV exports, chart generation, summary documentation and output validation.
+- Used vectorized Pandas aggregations and project-relative paths.
+- Generated a five-component interactive Plotly dashboard using the Indian Business Sales dataset.
+- Included a category bar chart, monthly trend line chart, order-status horizontal bar chart, state summary table and metric card.
+- Retained all 13 order statuses instead of limiting the chart to the top eight.
+- Added the dataset date range to the category chart title.
+- Generated a static PNG dashboard preview and four supporting CSV summaries.
+- Created `reports/w11d3/README.md` with reproduction instructions, deliverables, validation details and interpretation limitations.
+
+### Verified Results
+
+- Dataset: 128,975 source rows and 22 analytical columns after removing index-only fields.
+- Data period: 31 March 2022 to 29 June 2022.
+- Recorded Amount: INR 78,592,678.30.
+- Amount coverage: 93.96%; missing Amount values: 7,795.
+- Cancelled rows: 18,332 (14.21%).
+- All 13 order statuses are present in the exported summary; their counts sum to 128,975.
+- Python compilation completed successfully.
+- Dashboard generation completed successfully.
+- All 11 expected updated deliverables were checked for existence and non-zero size.
+
+### Data Interpretation and Limitations
+
+- Recorded Amount is not verified net revenue or profit.
+- Missing Amount values are excluded from amount aggregations.
+- Cancelled rows represent recorded statuses, not completed sales.
+- The source data does not establish why orders were cancelled.
+- The `Set` category is retained as a source label; its business meaning is not assumed.
+- The dataset covers approximately three months, not a full year.
+- Dataset rows are not assumed to represent unique orders or customers.
+
+### CIA Mentor Interactions
+
+- Completed two CIA mentor interactions: a technical review and a business stakeholder review.
+- Technical feedback covered modular code, validation, data types, KPI definitions and chart readability.
+- Business feedback covered time-period context, state comparisons, order-status chart selection and accurate financial terminology.
+- Applied relevant recommendations by modularizing the script, adding validation, retaining all statuses, replacing the pie chart with a horizontal bar chart and clarifying the category chart period.
+- Recorded both interactions and their scope limitations in `reports/w11d3/cia_review.md`.
+- CIA reviewed the information supplied during the conversations; it did not directly execute the local script or inspect the generated dashboard.
+
+### Evidence
+
+- `reports/w11d3/dashboard.py`
+- `reports/w11d3/README.md`
+- `reports/w11d3/cia_review.md`
+- `reports/w11d3/outputs/dashboard.html`
+- `reports/w11d3/outputs/dashboard_summary.md`
+- `reports/w11d3/outputs/images/dashboard_preview.png`
+- `reports/w11d3/outputs/charts/`
+- `reports/w11d3/outputs/*.csv`
+
+### Superset Deployment Status
+
+- Uploaded the four prepared CSV datasets to the hosted Preset workspace.
+- Created and saved five Superset charts: category bar, monthly line, order-status pie, state summary table and Big Number KPI.
+- Added all five charts to `W11D3 Stakeholder Dashboard` and published the dashboard.
+- Published dashboard: https://de37bc60.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=XVAbs_qn33MclWhO94eqZw
+- Captured the published dashboard using Windows Snipping Tool and saved `W11D3_dashboard.png` in the repository root.
+- The screenshot is a static capture, not a native Superset PNG export.
+- The hosted Preset dashboard's order-status pie chart differs from the local Python dashboard's horizontal bar chart.
+- Stakeholder access depends on Preset workspace permissions and service availability.
+
+**Status:** W11D3 Python dashboard preparation, generated-output validation, two CIA mentor interactions, hosted Preset dashboard creation and publication, and screenshot capture completed. CIA did not independently review the hosted dashboard.
+origin/main

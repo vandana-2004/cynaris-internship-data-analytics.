@@ -1,0 +1,21 @@
+{
+  "source_rows": 128975,
+  "source_columns_used": 8,
+  "duplicate_rows": 0,
+  "invalid_dates": 0,
+  "missing_amounts": 7795,
+  "rows_with_valid_amount": 121180,
+  "missing_states_after_normalization": 33,
+  "date_start": "2022-03-31",
+  "date_end": "2022-06-29",
+  "daily_observations": 91,
+  "category_count": 9,
+  "normalized_state_count": 48,
+  "recorded_amount_total": 78592678.29999998,
+  "recorded_amount_average": 648.5614647631621,
+  "recorded_amount_median": 605.0,
+  "quantity_total": 116649.0,
+  "amount_coverage_percent": 93.96,
+  "cancelled_rows": 18332,
+  "cancelled_row_percent": 14.21
+}

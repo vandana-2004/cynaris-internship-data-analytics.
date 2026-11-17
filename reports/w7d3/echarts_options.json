@@ -1,0 +1,66 @@
+{
+  "sales_by_category": {
+    "title": {
+      "text": "Sales by Category"
+    },
+    "tooltip": {
+      "trigger": "axis"
+    },
+    "xAxis": {
+      "type": "category",
+      "data": [
+        "Technology",
+        "Furniture",
+        "Office Supplies"
+      ]
+    },
+    "yAxis": {
+      "type": "value",
+      "name": "Sales"
+    },
+    "series": [
+      {
+        "name": "Sales",
+        "type": "bar",
+        "data": [
+          836154.03,
+          741999.8,
+          719047.03
+        ]
+      }
+    ]
+  },
+  "profit_by_region": {
+    "title": {
+      "text": "Profit by Region"
+    },
+    "tooltip": {
+      "trigger": "axis"
+    },
+    "xAxis": {
+      "type": "category",
+      "data": [
+        "West",
+        "East",
+        "South",
+        "Central"
+      ]
+    },
+    "yAxis": {
+      "type": "value",
+      "name": "Profit"
+    },
+    "series": [
+      {
+        "name": "Profit",
+        "type": "bar",
+        "data": [
+          108418.45,
+          91522.78,
+          46749.43,
+          39706.36
+        ]
+      }
+    ]
+  }
+}

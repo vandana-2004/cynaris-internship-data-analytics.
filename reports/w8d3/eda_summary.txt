@@ -1,0 +1,81 @@
+W8D3 INDIAN E-COMMERCE EDA
+========================================
+Rows: 128975
+Columns: 24
+Date range: 31 Mar 2022 to 29 Jun 2022
+Duplicate rows: 0
+Invalid dates: 0
+Missing Amount: 7795
+Missing shipping city: 33
+
+DATA QUALITY: MISSING VALUES BY COLUMN
+index                     0
+Order ID                  0
+Date                      0
+Status                    0
+Fulfilment                0
+Sales Channel             0
+ship-service-level        0
+Style                     0
+SKU                       0
+Category                  0
+Size                      0
+ASIN                      0
+Courier Status         6872
+Qty                       0
+currency               7795
+Amount                 7795
+ship-city                33
+ship-state               33
+ship-postal-code         33
+ship-country             33
+promotion-ids         49153
+B2B                       0
+fulfilled-by          89698
+Unnamed: 22           49050
+
+AMOUNT DISTRIBUTION
+Count: 121180
+Mean: 648.56
+Median: 605.00
+Standard deviation: 281.21
+Skewness: 0.885
+Minimum: 0.00
+Maximum: 5584.00
+
+IQR OUTLIER ANALYSIS
+Q1: 449.00
+Q3: 788.00
+Lower bound: -59.50
+Upper bound: 1296.50
+Potential outliers: 3600
+
+RECORDED AMOUNT BY CATEGORY
+Category
+Set              39204124.03
+kurta            21299546.70
+Western Dress    11216072.69
+Top               5347792.30
+Ethnic Dress       791217.66
+Blouse             458408.18
+Bottom             150667.98
+Saree              123933.76
+
+ORDER STATUS COUNTS
+Status
+Shipped                          77804
+Shipped - Delivered to Buyer     28769
+Cancelled                        18332
+Shipped - Returned to Seller      1953
+Shipped - Picked Up                973
+Pending                            658
+Pending - Waiting for Pick Up      281
+Shipped - Returning to Seller      145
+
+ANALYSIS ASSUMPTIONS
+Original source records were preserved; no rows were silently removed or imputed.
+Date and numeric fields were converted with invalid values represented as missing.
+Potential outliers were identified using the 1.5 x IQR rule and were not automatically removed.
+Undocumented Unnamed: 22 was excluded from analysis.
+Category amounts include all order statuses and are not net realized revenue.
+Shipped-status monthly amounts include statuses beginning with Shipped, including returns.

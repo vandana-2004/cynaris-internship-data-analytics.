@@ -1,0 +1,4 @@
+method,anomaly_count,percentage_of_dataset
+IQR,3600,2.791
+Z-score,784,0.608
+Isolation Forest,2269,1.759
