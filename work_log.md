@@ -1,4 +1,4 @@
-# Week 1 Day 1 â€” SQL Fundamentals
+﻿# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -2643,3 +2643,58 @@ Metabase was not installed locally because Docker Desktop's Linux engine was una
 - `reports/w11d4/cia_review.md`
 
 **Status:** W11D4 analytical reuse, documentation, 15-check audit and two CIA mentor interactions completed. Metabase-specific deployment remains an acknowledged limitation.
+
+---
+
+## W11D5 - Stakeholder Report: Five Business Insights
+
+**Project:** Indian Business Sales Stakeholder Analysis
+
+### Objective
+Analyze the existing Indian Business Sales dataset and communicate five evidence-based business insights with actionable recommendations.
+
+### Implementation
+- Created `reports/w11d5/stakeholder_analysis.py` using Pandas and Matplotlib.
+- Reused the existing dataset without creating another copy.
+- Generated six supporting CSV analysis files and four charts.
+- Created `reports/w11d5/outputs/stakeholder_report.md`.
+- Created `reports/w11d5/README.md` with findings, reproduction instructions and limitations.
+
+### Key Findings
+- Dataset contains 128,975 records, covering 31 March to 29 June 2022.
+- Recorded Amount: ₹78,592,678.30, with 93.96% valid Amount coverage.
+- Set and kurta contribute 76.98% of recorded Amount.
+- Merchant fulfilment cancellation rate is 17.47%, compared with 12.79% for Amazon fulfilment, a descriptive difference of 4.68 percentage points.
+- Maharashtra and Karnataka contribute 30.30% of recorded Amount.
+- Cancelled status accounts for 18,332 records (14.21%).
+- Average recorded Amount is ₹701.33 for B2B records and ₹648.19 for non-B2B records; the observed difference is exploratory.
+
+### Validation
+- Script executed successfully using the project Python environment.
+- Validation result: `PASS`.
+- Verified 128,975 records, ₹78,592,678.30 recorded Amount and 93.96% Amount coverage.
+- Confirmed six CSV outputs and four chart outputs.
+- Used the explicit `%m-%d-%y` source date format.
+- Count metrics use the full dataset; financial metrics use valid Amount records.
+
+### CIA Mentor Interactions
+- Completed two CIA interactions: business/stakeholder review and technical methodology review.
+- Accepted the recommendation to provide category order-volume context.
+- Retained the fulfilment comparison with clear descriptive, non-causal wording.
+- Documented missing-value, cancellation, partial-month and B2B sample-size limitations.
+- Both reviews and decisions documented in `reports/w11d5/cia_review.md`.
+- CIA did not independently execute or inspect local files.
+
+### Limitations
+- Recorded Amount is not independently verified net revenue or profit.
+- Cancellation Amount is not confirmed lost revenue.
+- March and June are partial months.
+- The B2B comparison is exploratory due to the smaller sample.
+
+### Git
+- Feature branch: `feat/w11d5-vandana`
+- First commit: `f968e67` — stakeholder analysis and generated outputs.
+- Second documentation commit to follow.
+
+**Status:** W11D5 analysis, validation, stakeholder report and two CIA interactions completed. Documentation and GitHub delivery are in progress.
+
