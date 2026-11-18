@@ -1,221 +1,111 @@
+# W12D2: Performance Optimisation — DuckDB + Query Caching
 
-
-\# W12D2: Performance Optimisation — DuckDB + Query Caching
-
-
-
-\## Overview
-
-
+## Overview
 
 This project demonstrates in-process analytical SQL using DuckDB, compares DuckDB query performance with Pandas, and implements query-result caching.
 
-
-
 The analysis uses:
 
-\- A 100,000-row sales dataset for performance benchmarking.
+- A 100,000-row sales dataset for performance benchmarking.
+- A 128,975-row Indian Business dataset for practical EDA.
 
-\- A 128,975-row Indian Business dataset for practical EDA.
+## Technologies
 
+- Python
+- DuckDB
+- Pandas
+- Python `functools.lru_cache`
+- `time.perf_counter`
+- PowerShell
 
-
-\## Technologies
-
-
-
-\- Python
-
-\- DuckDB
-
-\- Pandas
-
-\- Python `functools.lru\_cache`
-
-\- `time.perf\_counter`
-
-\- PowerShell
-
-
-
-\## Project Structure
-
-
+## Project Structure
 
 ```text
-
 reports/w12d2/
-
-├── duckdb\_analytics.py
-
-├── performance\_comparison.md
-
+├── duckdb_analytics.py
+├── performance_comparison.md
 ├── README.md
-
-├── benchmark\_results.csv
-
-├── sales\_overall\_kpis.csv
-
-├── sales\_regional\_sales.csv
-
-├── sales\_category\_sales.csv
-
-├── sales\_top\_10\_orders.csv
-
-├── sales\_quantity\_by\_category.csv
-
-├── india\_status\_analysis.csv
-
-├── india\_category\_analysis.csv
-
-├── india\_state\_analysis.csv
-
-├── india\_fulfilment\_analysis.csv
-
-└── india\_monthly\_analysis.csv
-
+├── benchmark_results.csv
+├── sales_overall_kpis.csv
+├── sales_regional_sales.csv
+├── sales_category_sales.csv
+├── sales_top_10_orders.csv
+├── sales_quantity_by_category.csv
+├── india_status_analysis.csv
+├── india_category_analysis.csv
+├── india_state_analysis.csv
+├── india_fulfilment_analysis.csv
+└── india_monthly_analysis.csv
 ```
 
-
-
-\## Execution
-
-
+## Execution
 
 From the repository root, run:
 
-
-
 ```powershell
-
-\& "$root\\.venv\\Scripts\\python.exe" "$root\\reports\\w12d2\\duckdb\_analytics.py"
-
+& ".\.venv\Scripts\python.exe" ".\reports\w12d2\duckdb_analytics.py"
 ```
 
+## Required Datasets
 
+- `data/w5d3/sales_100k.csv`
+- `data/w8d3/indian_business_sales.csv`
 
-Required datasets:
+## Analytical SQL Queries
 
+### Sales Dataset
 
+1. Overall sales KPIs
+2. Regional sales
+3. Category sales
+4. Top 10 orders
+5. Quantity by category
 
-\- `data/w5d3/sales\_100k.csv`
+### Indian Business Dataset
 
-\- `data/w8d3/indian\_business\_sales.csv`
+1. Order status analysis
+2. Product category analysis
+3. State-wise analysis
+4. Fulfilment analysis
+5. Monthly analysis
 
-
-
-\## Analytical SQL Queries
-
-
-
-\### Sales dataset
-
-
-
-1\. Overall sales KPIs
-
-2\. Regional sales
-
-3\. Category sales
-
-4\. Top 10 orders
-
-5\. Quantity by category
-
-
-
-\### Indian Business dataset
-
-
-
-1\. Order status analysis
-
-2\. Product category analysis
-
-3\. State-wise analysis
-
-4\. Fulfilment analysis
-
-5\. Monthly analysis
-
-
-
-\## Performance Results
-
-
+## Performance Results
 
 | Query | DuckDB | Pandas | Speedup |
-
 |---|---:|---:|---:|
-
 | Regional sales | 0.004785 s | 0.010812 s | 2.26x |
-
 | Category sales | 0.005841 s | 0.010904 s | 1.87x |
-
 | Quantity by region | 0.004563 s | 0.009000 s | 1.97x |
-
-
 
 Average measured speedup: approximately 2.03x.
 
+See `performance_comparison.md` for the methodology and interpretation.
 
+## Query Caching
 
-See `performance\_comparison.md` for the methodology and interpretation.
+The `query_to_dataframe(sql)` function accepts a SQL query and returns a Pandas DataFrame.
 
-
-
-\## Query Caching
-
-
-
-The `query\_to\_dataframe(sql)` function accepts a SQL query and returns a Pandas DataFrame.
-
-
-
-The internal `\_cached\_query()` function uses `lru\_cache(maxsize=64)` to cache results for repeated identical SQL strings.
-
-
+The internal `_cached_query()` function uses `lru_cache(maxsize=64)` to cache results for repeated identical SQL strings.
 
 The cache is in-memory and lasts only for the current Python process.
 
+## Key Implementation Notes
 
+- DuckDB loads the CSV datasets directly into in-memory tables.
+- Pandas and DuckDB benchmark results are checked for equivalence.
+- Median execution time across five repetitions is recorded.
+- CSV loading time is excluded from query timings.
+- Monthly analysis uses the dataset's native DATE column.
+- The `Amount` field is described as recorded amount, not net revenue.
 
-\## Key Implementation Notes
-
-
-
-\- DuckDB loads the CSV datasets directly into in-memory tables.
-
-\- Pandas and DuckDB benchmark results are checked for equivalence.
-
-\- Median execution time across five repetitions is recorded.
-
-\- CSV loading time is excluded from query timings.
-
-\- Monthly analysis uses the dataset's native DATE column.
-
-\- The `Amount` field is described as recorded amount, not net revenue.
-
-
-
-\## Outputs
-
-
+## Outputs
 
 The generated CSV files contain analytical results and benchmark timings.
 
-
-
 The script prints query results and cache statistics to the terminal.
 
-
-
-\## Conclusion
-
-
+## Conclusion
 
 DuckDB successfully executed analytical SQL queries on both datasets and outperformed Pandas in the three measured benchmark operations.
-
-
 
 The implementation demonstrates SQL analytics, DataFrame integration, performance measurement, and query-result caching.

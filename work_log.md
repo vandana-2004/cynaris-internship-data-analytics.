@@ -1,4 +1,4 @@
-﻿# Week 1 Day 1 â€” SQL Fundamentals
+# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -2764,7 +2764,7 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 ### Git
 
 - Feature branch: `feat/w12d1-vandana`
-- Commits: pending.
+
 
 **Status:** W12D1 production architecture assessment, generated evidence, README, two CIA interactions, Git commits, remote push and PR #74 merge into `main` completed successfully.
 
@@ -2817,7 +2817,10 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 ### Git
 
 - Feature branch: `feat/w12d2-vandana`
-- Commits: pending.
+- Commits:
+  - `e494dbe` — feat: duckdb in-process sql analytics
+  - `3d46ace` — docs: document W12D2 benchmark and CIA review
+- Remote push: completed.
+- Pull request: #75 (open; awaiting merge).
 
-**Status:** W12D2 DuckDB analytics, Pandas comparison, query caching, generated evidence, documentation and two CIA interactions completed. Git commits and remote delivery pending.
-
+**Status:** W12D2 DuckDB analytics, Pandas comparison, query caching, generated evidence, documentation, two CIA interactions, Git commits and remote push completed. PR #75 is awaiting merge.
