@@ -2609,9 +2609,11 @@ Completed two CIA mentor interactions:
 **Project:** Self-Serve BI Evaluation using Metabase and Apache Superset
 
 ### Objective
+
 Evaluate self-service BI concepts, dashboard usability, data access controls and stakeholder sharing using the existing Indian Business Sales dashboard.
 
 ### Implementation
+
 - Reused the W11D3 Indian Business Sales dataset and dashboard.
 - Avoided duplicating the 68.9 MB dataset and existing dashboard outputs.
 - Created `reports/w11d4/self_serve_bi_audit.py`.
@@ -2619,6 +2621,7 @@ Evaluate self-service BI concepts, dashboard usability, data access controls and
 - Reused the five existing dashboard components and four aggregated CSV outputs.
 
 ### Validation
+
 - Audit checks passed: 15/15.
 - Source dataset and dashboard evidence verified.
 - Four chart files and four summary CSVs verified.
@@ -2627,9 +2630,11 @@ Evaluate self-service BI concepts, dashboard usability, data access controls and
 - Dashboard KPI content detected.
 
 ### Metabase Setup Limitation
+
 Metabase was not installed locally because Docker Desktop's Linux engine was unavailable. The existing hosted dashboard uses Apache Superset through Preset. No Metabase deployment is claimed.
 
 ### CIA Mentor Interactions
+
 - Completed two W11D4 CIA mentor interactions.
 - Technical review: reuse approach accepted for analytical work, with the missing Metabase-specific implementation identified as a tooling gap.
 - Business review: SHIPPABLE WITH MINOR TWEAKS; recommended internal-pilot release with clear disclaimers.
@@ -2638,6 +2643,7 @@ Metabase was not installed locally because Docker Desktop's Linux engine was una
 - CIA reviewed supplied project information; it did not independently execute the audit or inspect the hosted dashboard.
 
 ### Deliverables
+
 - `reports/w11d4/self_serve_bi_audit.py`
 - `reports/w11d4/README.md`
 - `reports/w11d4/cia_review.md`
@@ -2651,9 +2657,11 @@ Metabase was not installed locally because Docker Desktop's Linux engine was una
 **Project:** Indian Business Sales Stakeholder Analysis
 
 ### Objective
+
 Analyze the existing Indian Business Sales dataset and communicate five evidence-based business insights with actionable recommendations.
 
 ### Implementation
+
 - Created `reports/w11d5/stakeholder_analysis.py` using Pandas and Matplotlib.
 - Reused the existing dataset without creating another copy.
 - Generated six supporting CSV analysis files and four charts.
@@ -2661,6 +2669,7 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 - Created `reports/w11d5/README.md` with findings, reproduction instructions and limitations.
 
 ### Key Findings
+
 - Dataset contains 128,975 records, covering 31 March to 29 June 2022.
 - Recorded Amount: ₹78,592,678.30, with 93.96% valid Amount coverage.
 - Set and kurta contribute 76.98% of recorded Amount.
@@ -2670,6 +2679,7 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 - Average recorded Amount is ₹701.33 for B2B records and ₹648.19 for non-B2B records; the observed difference is exploratory.
 
 ### Validation
+
 - Script executed successfully using the project Python environment.
 - Validation result: `PASS`.
 - Verified 128,975 records, ₹78,592,678.30 recorded Amount and 93.96% Amount coverage.
@@ -2678,6 +2688,7 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 - Count metrics use the full dataset; financial metrics use valid Amount records.
 
 ### CIA Mentor Interactions
+
 - Completed two CIA interactions: business/stakeholder review and technical methodology review.
 - Accepted the recommendation to provide category order-volume context.
 - Retained the fulfilment comparison with clear descriptive, non-causal wording.
@@ -2686,15 +2697,16 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 - CIA did not independently execute or inspect local files.
 
 ### Limitations
+
 - Recorded Amount is not independently verified net revenue or profit.
 - Cancellation Amount is not confirmed lost revenue.
 - March and June are partial months.
 - The B2B comparison is exploratory due to the smaller sample.
 
 ### Git
+
 - Feature branch: `feat/w11d5-vandana`
 - First commit: `f968e67` — stakeholder analysis and generated outputs.
-- Second documentation commit to follow.
+- Second documentation commit: `5a7cd8c` — report documentation and CIA review.
 
-**Status:** W11D5 analysis, validation, stakeholder report and two CIA interactions completed. Documentation and GitHub delivery are in progress.
-
+**Status:** W11D5 analysis, validation, stakeholder report, documentation, two CIA interactions, and GitHub delivery completed. PR #73 successfully merged into `main`. Cynaris quiz passed with 100%, and the portal lesson is marked Completed.
