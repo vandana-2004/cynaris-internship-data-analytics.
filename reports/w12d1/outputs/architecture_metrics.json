@@ -1,0 +1,19 @@
+{
+    "project": "W12D1 Production Architecture Review",
+    "dataset": "data\\w8d3\\indian_business_sales.csv",
+    "rows": 128975,
+    "columns": 24,
+    "file_size_bytes": 68923428,
+    "memory_usage_mb": 173.69,
+    "load_time_seconds": 0.662,
+    "duplicate_rows": 0,
+    "invalid_amount_values": 0,
+    "invalid_date_values": 0,
+    "amount_missing_values": 7795,
+    "amount_missing_percentage": 6.04,
+    "date_missing_values": 0,
+    "date_min": "2022-03-31",
+    "date_max": "2022-06-29",
+    "python_version": "3.13.5",
+    "pandas_version": "2.3.2"
+}

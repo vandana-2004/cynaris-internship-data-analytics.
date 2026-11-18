@@ -1,0 +1,25 @@
+column,data_type,missing_count,missing_percentage,unique_values
+index,int64,0,0.0,128975
+Order ID,object,0,0.0,120378
+Date,object,0,0.0,91
+Status,object,0,0.0,13
+Fulfilment,object,0,0.0,2
+Sales Channel,object,0,0.0,2
+ship-service-level,object,0,0.0,2
+Style,object,0,0.0,1377
+SKU,object,0,0.0,7195
+Category,object,0,0.0,9
+Size,object,0,0.0,11
+ASIN,object,0,0.0,7190
+Courier Status,object,6872,5.33,3
+Qty,int64,0,0.0,10
+currency,object,7795,6.04,1
+Amount,float64,7795,6.04,1410
+ship-city,object,33,0.03,8955
+ship-state,object,33,0.03,69
+ship-postal-code,float64,33,0.03,9459
+ship-country,object,33,0.03,1
+promotion-ids,object,49153,38.11,5787
+B2B,bool,0,0.0,2
+fulfilled-by,object,89698,69.55,1
+Unnamed: 22,object,49050,38.03,1
