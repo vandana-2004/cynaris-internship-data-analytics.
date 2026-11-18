@@ -1,4 +1,4 @@
-# Week 1 Day 1 â€” SQL Fundamentals
+﻿# Week 1 Day 1 â€” SQL Fundamentals
 
 ## Practical Tasks Completed
 
@@ -2820,6 +2820,8 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 - Commits:
   - `e494dbe` — feat: duckdb in-process sql analytics
   - `3d46ace` — docs: document W12D2 benchmark and CIA review
+  - `7dd0987` — docs: correct W12D2 execution and work log status
+  - `f1f024a` — docs: add final W12D2 technical review
 - Remote push: completed.
 - Pull request: #75 (open; awaiting merge).
 
