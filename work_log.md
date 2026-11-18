@@ -2766,6 +2766,58 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 - Feature branch: `feat/w12d1-vandana`
 - Commits: pending.
 
-**Status:** W12D1 architecture assessment, generated evidence, README and two CIA interactions documented. Git commits and remote delivery pending.
+**Status:** W12D1 production architecture assessment, generated evidence, README, two CIA interactions, Git commits, remote push and PR #74 merge into `main` completed successfully.
 
+## W12D2 — Performance Optimisation: DuckDB + Query Caching
+
+### Work Completed
+
+- Created `reports/w12d2/duckdb_analytics.py` for DuckDB-based analytical queries.
+- Loaded the 100,000-row sales dataset and Indian Business dataset directly into in-memory DuckDB tables.
+- Implemented five analytical SQL queries on the sales dataset.
+- Implemented five additional analytical queries on the Indian Business dataset.
+- Built a reusable SQL-to-Pandas DataFrame function.
+- Implemented query-result caching using `lru_cache(maxsize=64)`.
+- Compared DuckDB and Pandas performance for three equivalent analytical queries.
+- Created benchmark results, analytical CSV outputs, README and performance comparison documentation.
+
+### Dataset and Benchmark Results
+
+- Sales dataset: 100,000 rows.
+- Indian Business dataset: 128,975 rows.
+- Benchmark repetitions: 5 per query, using median execution times.
+- Regional sales query speedup: 2.26×.
+- Category sales query speedup: 1.87×.
+- Quantity by region query speedup: 1.97×.
+- Average measured speedup: approximately 2.03×.
+- Verified output equivalence using `assert_frame_equal()` with numerical tolerances.
+
+### Query Caching
+
+- Implemented process-local caching with `lru_cache(maxsize=64)`.
+- Recorded cache statistics: 2 hits and 10 misses.
+- Documented cache invalidation and memory-consumption limitations.
+
+### CIA Mentor Interactions
+
+- Completed two CIA interactions.
+- Interaction 1: Code review with a PASS verdict.
+- Interaction 2: Reviewed in-memory DuckDB suitability and `lru_cache` limitations.
+- Documented the available technical feedback in `reports/w12d2/cia_review.md`.
+- The second CIA response was truncated before its final verdict; no additional findings were attributed to CIA.
+
+### Limitations and Future Improvements
+
+- Benchmark results are specific to the tested datasets, queries and local environment.
+- `lru_cache` is process-local and does not automatically invalidate results when source data changes.
+- Cache entry limits do not impose a total memory limit.
+- Larger analytical workloads require monitoring memory usage and reassessing caching strategy.
+- Production use should account for data refreshes, query execution costs and workload characteristics.
+
+### Git
+
+- Feature branch: `feat/w12d2-vandana`
+- Commits: pending.
+
+**Status:** W12D2 DuckDB analytics, Pandas comparison, query caching, generated evidence, documentation and two CIA interactions completed. Git commits and remote delivery pending.
 
