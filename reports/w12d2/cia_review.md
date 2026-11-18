@@ -93,3 +93,19 @@ Recommended improvements:
 
 
 \*\*Overall:\*\* The W12D2 implementation meets the core analytical performance and query-caching objectives, with the limitations documented above.
+
+## Additional Technical Review — Final Code Inspection
+
+**Review verdict: PASS WITH IMPROVEMENTS**
+
+The final inspection of `duckdb_analytics.py` identified the following limitations:
+
+1. **SQL validation:** The first-word SELECT/WITH check is not a complete SQL security validator. It is suitable for the current trusted internal queries, but not arbitrary user-supplied SQL.
+2. **Cache invalidation:** The LRU cache does not automatically invalidate results if underlying tables change. This is acceptable for the current fixed-data execution.
+3. **Benchmark methodology:** The comparison uses five repetitions and median timings. It does not include a dedicated warm-up phase, and results are environment-specific.
+4. **Order counting:** Indian Business `COUNT(*)` measures dataset records, not necessarily unique orders. The `order_count` label should be interpreted accordingly.
+5. **Memory measurement:** Peak memory consumption was not measured. The in-memory architecture is appropriate for the current datasets, but larger-scale capacity has not been established.
+
+**Final assessment:** The implementation satisfies the W12D2 coursework objectives: DuckDB SQL analytics, Pandas comparison, result caching, output generation, and benchmark validation. The limitations above should be considered before production deployment.
+
+**Merge recommendation:** Suitable for coursework delivery, with the documented improvements retained as future technical considerations.
