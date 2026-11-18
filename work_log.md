@@ -2825,3 +2825,59 @@ Analyze the existing Indian Business Sales dataset and communicate five evidence
 - Local main: synced with origin/main.
 
 **Status:** W12D2 DuckDB analytics, Pandas comparison, query caching, generated evidence, documentation, two CIA interactions, Git commits and remote push completed. PR #75 successfully merged into `main` and closed. Local `main` synced with `origin/main`. Merge commit: `f657840`.
+
+## W12D3 — Security Audit on Data Platform
+
+### Work Completed
+
+- Created `reports/w12d3/security_audit.py` to perform a security screening of the Indian Business Sales dataset.
+- Inspected dataset metadata, dimensions, missing values and duplicate rows.
+- Implemented chunk-based dataset processing.
+- Identified potentially sensitive location columns.
+- Implemented regex-based email and phone-pattern screening without printing raw matched values.
+- Implemented SHA-256 row fingerprinting for duplicate detection.
+- Scanned eligible source files for potential hardcoded credentials.
+- Implemented basic Windows file-permission screening using `icacls`.
+- Generated `reports/w12d3/security_audit_report.md`.
+- Created `reports/w12d3/README.md` documenting the methodology, findings and limitations.
+
+### Dataset and Security Audit Results
+
+- Dataset: Indian Business Sales.
+- Rows inspected: 128,975.
+- Columns inspected: 24.
+- Dataset size: 65.73 MB.
+- Potentially sensitive location columns: 4.
+- Email-pattern matches: 0.
+- Phone-pattern matching cells: 18, all in `ship-city`; not confirmed as actual phone numbers.
+- Duplicate rows detected: 0.
+- Missing cells: 210,495.
+- Source files scanned: 46.
+- Potential credential findings: 0.
+- Basic Windows permission screening: `NO_BROAD_WRITE_GRANT_DETECTED`.
+
+### CIA Mentor Interactions
+
+- Completed two CIA interactions and documented the available feedback in `reports/w12d3/cia_review.md`.
+- Interaction 1 reviewed privacy, data protection, PII detection and security architecture.
+- Interaction 2 reviewed internship-level suitability, production readiness and PII detection limitations.
+- CIA feedback highlighted regex limitations, potential false positives, additional PII categories and the need for risk interpretation.
+- Both CIA responses were partial; missing feedback and final CIA verdicts were not assumed.
+
+### Limitations and Future Improvements
+
+- Regex-based PII detection is an initial screening method and cannot guarantee detection of all sensitive information.
+- The 18 phone-pattern matches require validation before being classified as actual phone numbers.
+- Missing values represent data-quality findings and require business-context interpretation.
+- Credential scanning is limited to configured source-file types and patterns.
+- Basic Windows ACL screening does not prove complete dataset security.
+- Production deployment would require stronger access controls, comprehensive PII detection, secret management, monitoring and human review.
+
+### Git
+
+- Feature branch: `feat/w12d3-vandana`
+- First commit: `6048b96` — feat: implement W12D3 data security audit
+- Second commit: pending.
+- Remote push and pull request: pending.
+
+**Status:** W12D3 security audit implementation, generated report, README, Python compilation and two partial CIA mentor interactions completed. Final Git documentation, second commit, remote push and PR verification pending.
