@@ -2925,3 +2925,42 @@ Python, Pandas, Matplotlib, PowerShell, Git, GitHub, Markdown, CIA.
 W12D4 documentation, demo preparation, viva answers, CIA review record, technical checks, two commits, remote push, PR merge, and local main synchronization completed.
 
 No formal CIA approval or automated GitHub check success is claimed.
+
+## W12D5 — AI Data Analyst Platform Capstone
+
+**Project:** Indian E-Commerce Business EDA with deployed AI Data Analyst platform.
+
+### Work completed
+- Created `reports/w12d5/capstone_demo.ipynb` for full-dataset EDA validation.
+- Executed notebook code cells successfully.
+- Validated the full dataset: 128,975 rows × 24 columns, zero duplicate rows, and 7,795 missing Amount values.
+- Calculated recorded Amount statistics, skewness, IQR upper bound, and potential outliers.
+- Identified nine categories in the notebook, including Dupatta (₹915), omitted from the earlier eight-category W8D3 summary.
+- Created a reproducible 5,000-row, eight-column demonstration sample under the deployed API's 10 MB upload limit.
+- Verified sample validation: 271 missing Amount values and 82 duplicate rows.
+- Tested the deployed API using the demonstration sample.
+
+### Deployed API Verification
+- CSV upload: HTTP 200.
+- AI category query: HTTP 200; eight category totals and a chart returned.
+- Executive summary: HTTP 200; five insights and recommendations returned.
+- PowerPoint export: HTTP 200; downloaded presentation opened successfully.
+- Documented the query limitation: category averages were not returned.
+- Recorded the executive-summary filename mismatch (`uploaded.csv`).
+
+### CIA Interactions
+- Completed two API-level interactions: category analysis and executive summary.
+- Recorded actual responses and limitations in `reports/w12d5/cia_interactions.md`.
+- No formal CIA approval is claimed.
+
+### Tools and Technologies
+Python, Pandas, Jupyter Notebook format, FastAPI, PandasAI, Groq, Render, PowerShell, Git, GitHub, Markdown.
+
+### Deliverables
+- `reports/w12d5/capstone_demo.ipynb`
+- `reports/w12d5/create_demo_sample.py`
+- `reports/w12d5/indian_business_demo_sample.csv`
+- `reports/w12d5/README.md`
+- `reports/w12d5/cia_interactions.md`
+
+**Status:** Notebook execution and deployed API demonstration verified. Git commits, push, and pull request are pending.
