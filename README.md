@@ -57,3 +57,25 @@ FastAPI interactive documentation: `/docs`. Alternative documentation: `/redoc`.
 - Indian Business EDA findings and business recommendations are documented in the W8D5 report.
 - Demo recording and CIA mentor review: pending.
 
+## W12D5 — AI Data Analyst Platform Capstone
+
+**Project:** Indian E-Commerce Business EDA with a deployed AI Data Analyst platform.
+
+### Deliverables
+- [Capstone EDA notebook](reports/w12d5/capstone_demo.ipynb)
+- [Sample generator](reports/w12d5/create_demo_sample.py)
+- [Capstone documentation](reports/w12d5/README.md)
+- [CIA interaction evidence](reports/w12d5/cia_interactions.md)
+- Demonstration dataset: `reports/w12d5/indian_business_demo_sample.csv` (5,000 rows × 8 columns).
+
+### Demo Verification
+- Full-dataset notebook analysis: 128,975 rows × 24 columns.
+- Live API CSV upload: HTTP 200.
+- AI category query: HTTP 200.
+- Executive summary: HTTP 200.
+- PowerPoint export: HTTP 200; downloaded presentation opened successfully.
+
+**Dataset limitation:** The deployed API demonstration used a 5,000-row sample because the original dataset exceeds the API's 10 MB upload limit. Sample results must not be interpreted as full-dataset results or net revenue.
+
+**Deployment:** https://cynaris-cia-data-analyst.onrender.com
+
